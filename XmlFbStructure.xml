@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <functionblock>
+            <name>Device</name>
+            <description>On/Off Device 2 Directions</description>
+            <type>Devices</type>
+            <size>30</size>
+            <alarm id="1" tag="Device">Device Alarm</alarm>
+            <alarm id="2" tag="Spare2">Spare Alarm 2</alarm>
+            <parameter datatype = "word" addressoffset="14">Dir1FbDly</parameter>
+            <parameter datatype = "word" addressoffset="15">Dir2FbDly</parameter>
+    </functionblock>
+
+	<functionblock>
+		<name>Servo</name>
+		<description>On/Off Device 2 Directions</description>
+		<type>Devices</type>
+		<size>30</size>
+		<alarm id="1" tag="Device">Device Alarm</alarm>
+		<alarm id="2" tag="Spare2">Spare Alarm 2</alarm>
+		<parameter datatype = "word" addressoffset="14">Dir1FbDly</parameter>
+		<parameter datatype = "word" addressoffset="15">Dir2FbDly</parameter>
+	</functionblock>
+</library>
