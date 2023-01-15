@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TagTool.Models;
+using TagTool.Services;
 
 namespace TagTool.ViewModels
 {
     public class LibraryViewModel
     {
-        public static void loadLibraryFbListView(List<FunctionBlock> fbs, ListView lv)
+        public static void loadFbListView(List<FunctionBlock> fbs, ListView lv)
         {
             lv.Clear();
             foreach (FunctionBlock functionBlock in fbs)
@@ -36,6 +39,38 @@ namespace TagTool.ViewModels
             return selectedId;
         }
 
-        
+        public static DataGridView loadAlarmDgv(FunctionBlock fb, DataGridView dgv)
+        {
+            DataTable dt = DataTableHandler.AlarmsToDt(fb.Alarms);
+            dgv.DataSource = dt;
+            return dgv;
+        }
+        public static List<Alarm> NewAlarm(List<Alarm> alarms)
+        {
+            Alarm alarm = new Alarm();
+            alarm.Id = 1;
+            alarm.Tag = "NewAlm";
+            alarm.Text = "This is a new Alarm";
+            try
+                {
+                    if (alarms == null)
+                    {
+                        List<Alarm> newAlarms = new List<Alarm>();
+                        newAlarms.Add(alarm);
+                        alarms = newAlarms;
+                    }
+                    else
+                    {
+                        alarms.Add(alarm);
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            return alarms;
+            }
+        }
+
     }
-}

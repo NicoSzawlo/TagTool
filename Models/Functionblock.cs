@@ -19,7 +19,7 @@ namespace TagTool.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public int Size { get; set; }
-        public List<Parameter>? Parameters { get; set; }
-        public List<Alarm>? Alarms { get; set; }
+        public List<Parameter> Parameters { get; set; }
+        public List<Alarm> Alarms { get; set; }
     }
 }

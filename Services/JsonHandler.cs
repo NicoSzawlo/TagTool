@@ -13,6 +13,7 @@ namespace TagTool.Services
 {
     public class JsonHandler
     {        
+        //Load library json file from a filepath and return list of functionblocks
         public static List<FunctionBlock> DeserializeLibrary(string filepath)
         {
             List<FunctionBlock> fbs = new List<FunctionBlock>();
@@ -28,7 +29,7 @@ namespace TagTool.Services
             
             return fbs;
         }
-
+        //Save list of functionblocks to library json file
         public static void SerializeLibrary(List<FunctionBlock> fbs,string filepath)
         {
             try
