@@ -15,6 +15,7 @@ namespace TagTool
         public MainWindow()
         {
             InitializeComponent();
+            initApp();
         }
         //##########################
         //Navigation Button handling
@@ -140,16 +141,21 @@ namespace TagTool
         //Library Backend calls
         private void refreshLibraryListView()
         {
-            LibraryViewModel.loadLibraryFbListView(FbList, this.lvLibraryFunctionblocks);
+            lvLibraryFunctionblocks.Clear();
+            foreach (FunctionBlock functionBlock in FbList)
+            {
+                ListViewItem item = new ListViewItem(functionBlock.Name);
+                lvLibraryFunctionblocks.Items.Add(item);
+            }
         }
 
         //##########################
         //Application Initializaion
+        //##########################
         private void initApp()
         {
-
+            var columnToRemove = lvLibraryFunctionblocks.Columns["colLibviewBugged"];
+            this.lvLibraryFunctionblocks.Columns.Remove(columnToRemove);
         }
-
-        
     }
 }

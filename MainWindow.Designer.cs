@@ -32,6 +32,8 @@
             this.btnNavComponents = new System.Windows.Forms.Button();
             this.pnlLibrary = new System.Windows.Forms.Panel();
             this.lvLibraryFunctionblocks = new System.Windows.Forms.ListView();
+            this.colLibviewBugged = new System.Windows.Forms.ColumnHeader();
+            this.colLibviewName = new System.Windows.Forms.ColumnHeader();
             this.dgvLibraryAlarms = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnLibraryAddParameter = new System.Windows.Forms.Button();
@@ -111,14 +113,31 @@
             // 
             // lvLibraryFunctionblocks
             // 
+            this.lvLibraryFunctionblocks.CausesValidation = false;
+            this.lvLibraryFunctionblocks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colLibviewBugged,
+            this.colLibviewName});
+            this.lvLibraryFunctionblocks.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lvLibraryFunctionblocks.FullRowSelect = true;
+            this.lvLibraryFunctionblocks.GridLines = true;
             this.lvLibraryFunctionblocks.Location = new System.Drawing.Point(30, 152);
             this.lvLibraryFunctionblocks.MultiSelect = false;
             this.lvLibraryFunctionblocks.Name = "lvLibraryFunctionblocks";
             this.lvLibraryFunctionblocks.Size = new System.Drawing.Size(290, 489);
             this.lvLibraryFunctionblocks.TabIndex = 28;
+            this.lvLibraryFunctionblocks.TileSize = new System.Drawing.Size(290, 40);
             this.lvLibraryFunctionblocks.UseCompatibleStateImageBehavior = false;
-            this.lvLibraryFunctionblocks.View = System.Windows.Forms.View.Tile;
+            this.lvLibraryFunctionblocks.View = System.Windows.Forms.View.List;
             this.lvLibraryFunctionblocks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvLibraryFunctionblocks_ItemSelectionChanged);
+            // 
+            // colLibviewBugged
+            // 
+            this.colLibviewBugged.Width = 0;
+            // 
+            // colLibviewName
+            // 
+            this.colLibviewName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.colLibviewName.Width = 290;
             // 
             // dgvLibraryAlarms
             // 
@@ -530,5 +549,7 @@
         private DataGridView dgvLibraryAlarms;
         private Button button1;
         private ListView lvLibraryFunctionblocks;
+        private ColumnHeader colLibviewBugged;
+        private ColumnHeader colLibviewName;
     }
 }

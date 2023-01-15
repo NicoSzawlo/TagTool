@@ -39,7 +39,6 @@ namespace TagTool
             sfd.Filter = "json files (*.json)|*.json";
             sfd.FilterIndex = 2;
             sfd.RestoreDirectory = true;
-            Stream myStream;
             
             if (sfd.ShowDialog() == DialogResult.OK)
             {

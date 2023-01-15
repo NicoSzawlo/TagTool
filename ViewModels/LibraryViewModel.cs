@@ -14,8 +14,7 @@ namespace TagTool.ViewModels
             lv.Clear();
             foreach (FunctionBlock functionBlock in fbs)
             {
-                ListViewItem item = new ListViewItem();
-                item.Text = functionBlock.Name;
+                ListViewItem item = new ListViewItem(functionBlock.Name);
                 lv.Items.Add(item);
             }
         }
