@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.btnNavComponents = new System.Windows.Forms.Button();
             this.pnlLibrary = new System.Windows.Forms.Panel();
+            this.lvLibraryFunctionblocks = new System.Windows.Forms.ListView();
+            this.dgvLibraryAlarms = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnLibraryAddParameter = new System.Windows.Forms.Button();
             this.btnLibraryViewParameters = new System.Windows.Forms.Button();
             this.btnLibraryViewAlarms = new System.Windows.Forms.Button();
             this.dgvLibraryParameters = new System.Windows.Forms.DataGridView();
@@ -45,7 +49,6 @@
             this.btnLibraryOpenFile = new System.Windows.Forms.Button();
             this.btnLibrarySaveFile = new System.Windows.Forms.Button();
             this.btnLibraryCreateFb = new System.Windows.Forms.Button();
-            this.dgvLibraryFunctionblocks = new System.Windows.Forms.DataGridView();
             this.btnNavLibrary = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -55,15 +58,11 @@
             this.btnComponentsSave = new System.Windows.Forms.Button();
             this.btnComponentsCreateNew = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnLibraryAddParameter = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlLibrary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryFunctionblocks)).BeginInit();
             this.pnlComponents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNavComponents
@@ -87,7 +86,8 @@
             // pnlLibrary
             // 
             this.pnlLibrary.BackColor = System.Drawing.Color.LightGray;
-            this.pnlLibrary.Controls.Add(this.dataGridView1);
+            this.pnlLibrary.Controls.Add(this.lvLibraryFunctionblocks);
+            this.pnlLibrary.Controls.Add(this.dgvLibraryAlarms);
             this.pnlLibrary.Controls.Add(this.button1);
             this.pnlLibrary.Controls.Add(this.btnLibraryAddParameter);
             this.pnlLibrary.Controls.Add(this.btnLibraryViewParameters);
@@ -104,11 +104,60 @@
             this.pnlLibrary.Controls.Add(this.btnLibraryOpenFile);
             this.pnlLibrary.Controls.Add(this.btnLibrarySaveFile);
             this.pnlLibrary.Controls.Add(this.btnLibraryCreateFb);
-            this.pnlLibrary.Controls.Add(this.dgvLibraryFunctionblocks);
             this.pnlLibrary.Location = new System.Drawing.Point(4, 84);
             this.pnlLibrary.Name = "pnlLibrary";
             this.pnlLibrary.Size = new System.Drawing.Size(1176, 672);
             this.pnlLibrary.TabIndex = 1;
+            // 
+            // lvLibraryFunctionblocks
+            // 
+            this.lvLibraryFunctionblocks.Location = new System.Drawing.Point(30, 152);
+            this.lvLibraryFunctionblocks.MultiSelect = false;
+            this.lvLibraryFunctionblocks.Name = "lvLibraryFunctionblocks";
+            this.lvLibraryFunctionblocks.Size = new System.Drawing.Size(290, 489);
+            this.lvLibraryFunctionblocks.TabIndex = 28;
+            this.lvLibraryFunctionblocks.UseCompatibleStateImageBehavior = false;
+            this.lvLibraryFunctionblocks.View = System.Windows.Forms.View.Tile;
+            this.lvLibraryFunctionblocks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvLibraryFunctionblocks_ItemSelectionChanged);
+            // 
+            // dgvLibraryAlarms
+            // 
+            this.dgvLibraryAlarms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLibraryAlarms.Location = new System.Drawing.Point(362, 152);
+            this.dgvLibraryAlarms.Name = "dgvLibraryAlarms";
+            this.dgvLibraryAlarms.RowTemplate.Height = 25;
+            this.dgvLibraryAlarms.Size = new System.Drawing.Size(774, 204);
+            this.dgvLibraryAlarms.TabIndex = 27;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1081, 91);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 55);
+            this.button1.TabIndex = 26;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnLibraryAddParameter
+            // 
+            this.btnLibraryAddParameter.BackColor = System.Drawing.Color.DarkGray;
+            this.btnLibraryAddParameter.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLibraryAddParameter.FlatAppearance.BorderSize = 0;
+            this.btnLibraryAddParameter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibraryAddParameter.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLibraryAddParameter.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryAddParameter.Image")));
+            this.btnLibraryAddParameter.Location = new System.Drawing.Point(1081, 362);
+            this.btnLibraryAddParameter.Name = "btnLibraryAddParameter";
+            this.btnLibraryAddParameter.Size = new System.Drawing.Size(55, 55);
+            this.btnLibraryAddParameter.TabIndex = 25;
+            this.btnLibraryAddParameter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLibraryAddParameter.UseVisualStyleBackColor = false;
             // 
             // btnLibraryViewParameters
             // 
@@ -170,6 +219,7 @@
             this.txtLibraryDescription.Name = "txtLibraryDescription";
             this.txtLibraryDescription.Size = new System.Drawing.Size(352, 30);
             this.txtLibraryDescription.TabIndex = 20;
+            this.txtLibraryDescription.TextChanged += new System.EventHandler(this.txtLibraryDescription_TextChanged);
             // 
             // lblLibrarySize
             // 
@@ -188,6 +238,7 @@
             this.txtLibrarySize.Name = "txtLibrarySize";
             this.txtLibrarySize.Size = new System.Drawing.Size(205, 30);
             this.txtLibrarySize.TabIndex = 18;
+            this.txtLibrarySize.TextChanged += new System.EventHandler(this.txtLibrarySize_TextChanged);
             // 
             // lblLibraryFbName
             // 
@@ -206,6 +257,7 @@
             this.txtLibraryFbName.Name = "txtLibraryFbName";
             this.txtLibraryFbName.Size = new System.Drawing.Size(205, 30);
             this.txtLibraryFbName.TabIndex = 16;
+            this.txtLibraryFbName.TextChanged += new System.EventHandler(this.txtLibraryFbName_TextChanged);
             // 
             // btnLibrarySaveFileAs
             // 
@@ -221,6 +273,7 @@
             this.btnLibrarySaveFileAs.TabIndex = 14;
             this.btnLibrarySaveFileAs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLibrarySaveFileAs.UseVisualStyleBackColor = false;
+            this.btnLibrarySaveFileAs.Click += new System.EventHandler(this.btnLibrarySaveFileAs_Click);
             // 
             // btnLibraryTest
             // 
@@ -269,6 +322,7 @@
             this.btnLibrarySaveFile.TabIndex = 10;
             this.btnLibrarySaveFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLibrarySaveFile.UseVisualStyleBackColor = false;
+            this.btnLibrarySaveFile.Click += new System.EventHandler(this.btnLibrarySaveFile_Click);
             // 
             // btnLibraryCreateFb
             // 
@@ -287,15 +341,6 @@
             this.btnLibraryCreateFb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLibraryCreateFb.UseVisualStyleBackColor = false;
             this.btnLibraryCreateFb.Click += new System.EventHandler(this.btnLibraryCreateFb_Click);
-            // 
-            // dgvLibraryFunctionblocks
-            // 
-            this.dgvLibraryFunctionblocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLibraryFunctionblocks.Location = new System.Drawing.Point(30, 152);
-            this.dgvLibraryFunctionblocks.Name = "dgvLibraryFunctionblocks";
-            this.dgvLibraryFunctionblocks.RowTemplate.Height = 25;
-            this.dgvLibraryFunctionblocks.Size = new System.Drawing.Size(290, 489);
-            this.dgvLibraryFunctionblocks.TabIndex = 0;
             // 
             // btnNavLibrary
             // 
@@ -372,7 +417,6 @@
             this.pnlComponents.Name = "pnlComponents";
             this.pnlComponents.Size = new System.Drawing.Size(1176, 672);
             this.pnlComponents.TabIndex = 6;
-            this.pnlComponents.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlComponents_Paint);
             // 
             // btnComponentLoad
             // 
@@ -429,45 +473,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(952, 598);
             this.dataGridView2.TabIndex = 0;
             // 
-            // btnLibraryAddParameter
-            // 
-            this.btnLibraryAddParameter.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryAddParameter.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryAddParameter.FlatAppearance.BorderSize = 0;
-            this.btnLibraryAddParameter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryAddParameter.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryAddParameter.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryAddParameter.Image")));
-            this.btnLibraryAddParameter.Location = new System.Drawing.Point(1081, 362);
-            this.btnLibraryAddParameter.Name = "btnLibraryAddParameter";
-            this.btnLibraryAddParameter.Size = new System.Drawing.Size(55, 55);
-            this.btnLibraryAddParameter.TabIndex = 25;
-            this.btnLibraryAddParameter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryAddParameter.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1081, 91);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 55);
-            this.button1.TabIndex = 26;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(362, 152);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(774, 204);
-            this.dataGridView1.TabIndex = 27;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -486,11 +491,10 @@
             this.Text = "Form1";
             this.pnlLibrary.ResumeLayout(false);
             this.pnlLibrary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryFunctionblocks)).EndInit();
             this.pnlComponents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -504,7 +508,6 @@
         private Button button3;
         private Button button4;
         private Panel pnlComponents;
-        private DataGridView dgvLibraryFunctionblocks;
         private Button btnComponentsCreateNew;
         private DataGridView dataGridView2;
         private Button btnComponentLoad;
@@ -524,7 +527,8 @@
         private Button btnLibraryViewAlarms;
         private DataGridView dgvLibraryParameters;
         private Button btnLibraryAddParameter;
-        private DataGridView dataGridView1;
+        private DataGridView dgvLibraryAlarms;
         private Button button1;
+        private ListView lvLibraryFunctionblocks;
     }
 }

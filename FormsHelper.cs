@@ -30,5 +30,22 @@ namespace TagTool
             filepath = ofd.FileName;
             return filepath;
         }
+
+        public static string CallSaveFileDialog()
+        {
+            string filepath = "";
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.Filter = "json files (*.json)|*.json";
+            sfd.FilterIndex = 2;
+            sfd.RestoreDirectory = true;
+            Stream myStream;
+            
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                filepath = sfd.FileName;
+            }
+            return filepath;
+        }
     }
 }
