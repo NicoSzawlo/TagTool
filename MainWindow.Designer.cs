@@ -35,7 +35,7 @@
             this.colLibviewBugged = new System.Windows.Forms.ColumnHeader();
             this.colLibviewName = new System.Windows.Forms.ColumnHeader();
             this.dgvLibraryAlarms = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLibraryAddAlarm = new System.Windows.Forms.Button();
             this.btnLibraryAddParameter = new System.Windows.Forms.Button();
             this.btnLibraryViewParameters = new System.Windows.Forms.Button();
             this.btnLibraryViewAlarms = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@
             this.pnlLibrary.BackColor = System.Drawing.Color.LightGray;
             this.pnlLibrary.Controls.Add(this.lvLibraryFunctionblocks);
             this.pnlLibrary.Controls.Add(this.dgvLibraryAlarms);
-            this.pnlLibrary.Controls.Add(this.button1);
+            this.pnlLibrary.Controls.Add(this.btnLibraryAddAlarm);
             this.pnlLibrary.Controls.Add(this.btnLibraryAddParameter);
             this.pnlLibrary.Controls.Add(this.btnLibraryViewParameters);
             this.pnlLibrary.Controls.Add(this.btnLibraryViewAlarms);
@@ -148,20 +148,21 @@
             this.dgvLibraryAlarms.Size = new System.Drawing.Size(774, 204);
             this.dgvLibraryAlarms.TabIndex = 27;
             // 
-            // button1
+            // btnLibraryAddAlarm
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1081, 91);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 55);
-            this.button1.TabIndex = 26;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLibraryAddAlarm.BackColor = System.Drawing.Color.DarkGray;
+            this.btnLibraryAddAlarm.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLibraryAddAlarm.FlatAppearance.BorderSize = 0;
+            this.btnLibraryAddAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibraryAddAlarm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLibraryAddAlarm.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryAddAlarm.Image")));
+            this.btnLibraryAddAlarm.Location = new System.Drawing.Point(1081, 91);
+            this.btnLibraryAddAlarm.Name = "btnLibraryAddAlarm";
+            this.btnLibraryAddAlarm.Size = new System.Drawing.Size(55, 55);
+            this.btnLibraryAddAlarm.TabIndex = 26;
+            this.btnLibraryAddAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLibraryAddAlarm.UseVisualStyleBackColor = false;
+            this.btnLibraryAddAlarm.Click += new System.EventHandler(this.btnLibraryAddAlarm_Click);
             // 
             // btnLibraryAddParameter
             // 
@@ -309,7 +310,6 @@
             this.btnLibraryTest.Text = "Test";
             this.btnLibraryTest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLibraryTest.UseVisualStyleBackColor = false;
-            this.btnLibraryTest.Click += new System.EventHandler(this.btnLibraryTest_Click);
             // 
             // btnLibraryOpenFile
             // 
@@ -547,7 +547,7 @@
         private DataGridView dgvLibraryParameters;
         private Button btnLibraryAddParameter;
         private DataGridView dgvLibraryAlarms;
-        private Button button1;
+        private Button btnLibraryAddAlarm;
         private ListView lvLibraryFunctionblocks;
         private ColumnHeader colLibviewBugged;
         private ColumnHeader colLibviewName;

@@ -8,11 +8,7 @@ using TagTool.Models;
 namespace TagTool.Services
 {
     public class DataTableHandler
-    {
-        //Converts a list of functionblocks to a datatable for 
-        public static void FbsToDt(List<FunctionBlock> functionblocks)
-        {
+    {   
 
-        }
     }
 }

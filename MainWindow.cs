@@ -17,9 +17,10 @@ namespace TagTool
             InitializeComponent();
             initApp();
         }
-        //##########################
+
+        //##################################################################################################################################
         //Navigation Button handling
-        //##########################
+        //##################################################################################################################################
         private void btnNavComponents_Click(object sender, EventArgs e)
         {
             ResetAllNavBtn();
@@ -35,6 +36,7 @@ namespace TagTool
             this.pnlLibrary.BringToFront();
         }
 
+        //Initialize styling of Navigation buttons
         private void ResetAllNavBtn()
         {
             this.btnNavComponents = FormsHelper.NavBtnDeselect(this.btnNavComponents);
@@ -43,12 +45,9 @@ namespace TagTool
             this.button3 = FormsHelper.NavBtnDeselect(this.button3);
             this.button4 = FormsHelper.NavBtnDeselect(this.button4);
         }
-        private void btnLibraryTest_Click(object sender, EventArgs e)
-        {
-        }
-        //##########################
+        //##################################################################################################################################
         //Libray Panel Handling
-        //##########################
+        //##################################################################################################################################
 
         //User/File Interaction
         private void btnLibraryOpenFile_Click(object sender, EventArgs e)
@@ -94,6 +93,7 @@ namespace TagTool
         }
 
         //User FbList interaction
+        //##########################
         private void btnLibraryCreateFb_Click(object sender, EventArgs e)
         {
             FbList.Add(new FunctionBlock { Name = "NewFunctionBlock" });
@@ -117,6 +117,8 @@ namespace TagTool
             }
             
         }
+
+        //Set Function block properties in global Fb List when textboxes change
         private void txtLibraryFbName_TextChanged(object sender, EventArgs e)
         {
             FbList[SelectedFbId].Name= txtLibraryFbName.Text;
@@ -149,13 +151,15 @@ namespace TagTool
             }
         }
 
-        //##########################
+        //##################################################################################################################################
         //Application Initializaion
-        //##########################
+        //##################################################################################################################################
         private void initApp()
         {
             var columnToRemove = lvLibraryFunctionblocks.Columns["colLibviewBugged"];
             this.lvLibraryFunctionblocks.Columns.Remove(columnToRemove);
         }
+
+        
     }
 }
