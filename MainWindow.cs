@@ -65,6 +65,8 @@ namespace TagTool
                 {
                     FbList = JsonHandler.DeserializeLibrary(FilePath);
                     refreshLibraryListView();
+                    refreshLibraryAlarmView();
+                    LibraryViewModel.loadFb(FbList[0], this.txtLibraryFbName, this.txtLibrarySize, this.txtLibraryDescription, this.dgvLibraryAlarms, this.dgvLibraryParameters);
                 }
                 catch (Exception ex)
                 {
@@ -116,6 +118,28 @@ namespace TagTool
                 FbList[SelectedFbId].Alarms = LibraryViewModel.NewAlarm(FbList[SelectedFbId].Alarms);
                 refreshLibraryAlarmView();
             }
+        }
+        //Delete Selected Alarm
+        private void btnLibraryDeleteAlarm_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Change Alarm List value based on cell value
+        private void dgvLibraryAlarms_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                FbList[SelectedFbId].Alarms = LibraryViewModel.ModifyAlarmList(
+                    dgvLibraryAlarms.CurrentCell.ColumnIndex,
+                    dgvLibraryAlarms.CurrentCell.RowIndex, 
+                    dgvLibraryAlarms.CurrentCell.Value.ToString(), 
+                    FbList[SelectedFbId].Alarms);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            refreshLibraryAlarmView();
         }
 
         //Get index of selected functionblock and load selection into control elements
@@ -185,5 +209,7 @@ namespace TagTool
             var columnToRemove = lvLibraryFunctionblocks.Columns["colLibviewBugged"];
             this.lvLibraryFunctionblocks.Columns.Remove(columnToRemove);
         }
+
+        
     }
 }

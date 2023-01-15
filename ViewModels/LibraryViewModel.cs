@@ -65,12 +65,37 @@ namespace TagTool.ViewModels
                     }
                     
                 }
-                catch (Exception ex)
+            catch (Exception ex)
                 {
                     Debug.WriteLine(ex.Message);
                 }
             return alarms;
+        }
+        public static List<Alarm> ModifyAlarmList(int cellPosX, int cellPosY, string cellValue, List<Alarm> alarmList) 
+        {
+            switch (cellPosX)
+            {
+                case 0:
+                    try
+                    {
+                        alarmList[cellPosY].Id = int.Parse(cellValue);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Please only enter numbers in the id column." + System.Environment.NewLine + ex.Message);
+                        alarmList[cellPosY].Id = 1;
+                    }
+                    break;
+                case 1:
+                    alarmList[cellPosY].Tag = cellValue;
+                    break;
+                case 2:
+                    alarmList[cellPosY].Text = cellValue;
+                    break;
             }
+            return alarmList;
         }
 
     }
+}
