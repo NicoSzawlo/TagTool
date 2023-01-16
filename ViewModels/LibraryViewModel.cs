@@ -38,7 +38,6 @@ namespace TagTool.ViewModels
             }
             return selectedId;
         }
-
         public static DataGridView loadAlarmDgv(FunctionBlock fb, DataGridView dgv)
         {
             DataTable dt = DataTableHandler.AlarmsToDt(fb.Alarms);
@@ -71,6 +70,12 @@ namespace TagTool.ViewModels
                 }
             return alarms;
         }
+        public static List<Alarm> RemoveAlarm(List<Alarm> oldList, int dtIndex)
+        {
+            List<Alarm> newList = new List<Alarm>();
+            return newList;
+        }
+
         public static List<Alarm> ModifyAlarmList(int cellPosX, int cellPosY, string cellValue, List<Alarm> alarmList) 
         {
             switch (cellPosX)

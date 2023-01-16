@@ -122,7 +122,7 @@ namespace TagTool
         //Delete Selected Alarm
         private void btnLibraryDeleteAlarm_Click(object sender, EventArgs e)
         {
-
+            FbList[SelectedFbId].Alarms.RemoveAt(dgvLibraryAlarms.CurrentCell.RowIndex);
         }
         //Change Alarm List value based on cell value
         private void dgvLibraryAlarms_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -151,6 +151,7 @@ namespace TagTool
                 {
                     SelectedFbId = LibraryViewModel.selectedFb(FbList, lvLibraryFunctionblocks.SelectedIndices);
                     LibraryViewModel.loadFb(FbList[SelectedFbId], this.txtLibraryFbName, this.txtLibrarySize, this.txtLibraryDescription, this.dgvLibraryAlarms, this.dgvLibraryParameters);
+                    refreshLibraryAlarmView();
                 }
             }
             catch (Exception ex)

@@ -28,6 +28,5 @@ namespace TagTool.Services
             dt.Columns.Add("Text");
             return dt;
         }
-
     }
 }
