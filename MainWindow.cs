@@ -66,7 +66,7 @@ namespace TagTool
                     FbList = JsonHandler.DeserializeLibrary(FilePath);
                     refreshLibraryListView();
                     refreshLibraryAlarmView();
-                    LibraryViewModel.loadFb(FbList[0], this.txtLibraryFbName, this.txtLibrarySize, this.txtLibraryDescription, this.dgvLibraryAlarms, this.dgvLibraryParameters);
+                    LibraryViewModel.loadFb(FbList[0], this.txtLibraryFbName, this.txtLibrarySize, this.txtLibraryDescription);
                 }
                 catch (Exception ex)
                 {
@@ -122,7 +122,8 @@ namespace TagTool
         //Delete Selected Alarm
         private void btnLibraryDeleteAlarm_Click(object sender, EventArgs e)
         {
-            FbList[SelectedFbId].Alarms.RemoveAt(dgvLibraryAlarms.CurrentCell.RowIndex);
+            FbList[SelectedFbId].Alarms = LibraryViewModel.RemoveAlarm(FbList[SelectedFbId].Alarms, dgvLibraryAlarms.CurrentCell.RowIndex);
+            refreshLibraryAlarmView();
         }
         //Change Alarm List value based on cell value
         private void dgvLibraryAlarms_CellValueChanged(object sender, DataGridViewCellEventArgs e)

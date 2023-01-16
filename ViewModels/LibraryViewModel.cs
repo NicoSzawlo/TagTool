@@ -12,23 +12,14 @@ namespace TagTool.ViewModels
 {
     public class LibraryViewModel
     {
-        public static void loadFbListView(List<FunctionBlock> fbs, ListView lv)
-        {
-            lv.Clear();
-            foreach (FunctionBlock functionBlock in fbs)
-            {
-                ListViewItem item = new ListViewItem(functionBlock.Name);
-                lv.Items.Add(item);
-            }
-        }
-
-        public static void loadFb(FunctionBlock fb, TextBox txtName, TextBox txtSize, TextBox txtDescription, DataGridView dgvAlarms, DataGridView dgvParameters)
+        //Loads the content of the Functionblock into the textboxes for editing
+        public static void loadFb(FunctionBlock fb, TextBox txtName, TextBox txtSize, TextBox txtDescription)
         {
             txtName.Text = fb.Name;
             txtSize.Text = fb.Size.ToString();
             txtDescription.Text = fb.Description;
         }
-        
+        //Returns the index of the currently selected functionblock
         public static int selectedFb(List<FunctionBlock> fbs,ListView.SelectedIndexCollection lv) 
         {
             int selectedId = 0;
@@ -38,12 +29,7 @@ namespace TagTool.ViewModels
             }
             return selectedId;
         }
-        public static DataGridView loadAlarmDgv(FunctionBlock fb, DataGridView dgv)
-        {
-            DataTable dt = DataTableHandler.AlarmsToDt(fb.Alarms);
-            dgv.DataSource = dt;
-            return dgv;
-        }
+        //Adds a new alarm to the alarm list
         public static List<Alarm> NewAlarm(List<Alarm> alarms)
         {
             Alarm alarm = new Alarm();
@@ -70,12 +56,19 @@ namespace TagTool.ViewModels
                 }
             return alarms;
         }
+
+        //Removes alarm from List and generates new alarmlist with remaining items to reset listindices
         public static List<Alarm> RemoveAlarm(List<Alarm> oldList, int dtIndex)
         {
             List<Alarm> newList = new List<Alarm>();
+            oldList.Remove(oldList[dtIndex]);
+            foreach(Alarm alarm in oldList)
+            {
+                newList.Add(alarm);
+            }
             return newList;
         }
-
+        //Modifies the content of an alarmlist according to changes in datatable
         public static List<Alarm> ModifyAlarmList(int cellPosX, int cellPosY, string cellValue, List<Alarm> alarmList) 
         {
             switch (cellPosX)
