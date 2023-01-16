@@ -10,6 +10,7 @@ namespace TagTool.Services
 {
     public class DataTableHandler
     {   
+        //Write Alarmlist to datatable to display in DataGridView
         public static DataTable AlarmsToDt(List<Alarm> alarms)
         {
             DataTable dt = InitAlarmsDt();
@@ -19,13 +20,33 @@ namespace TagTool.Services
             }
             return dt;
         }
-
+        //Initialize Alarm datatable
         private static DataTable InitAlarmsDt()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("Tag");
             dt.Columns.Add("Text");
+            return dt;
+        }
+        //Write Parameterlist to datatable to display in DataGridView
+        public static DataTable ParametersToDt(List<Parameter> parameter)
+        {
+            DataTable dt = InitParameterDt();
+            foreach (Parameter param in parameter)
+            {
+                dt.Rows.Add(param.Tag, param.DataType, param.AddressOffset, param.Value);
+            }
+            return dt;
+        }
+        //Initialize Alarm datatable
+        private static DataTable InitParameterDt()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Tag");
+            dt.Columns.Add("DataType");
+            dt.Columns.Add("AddressOffset");
+            dt.Columns.Add("Value");
             return dt;
         }
     }

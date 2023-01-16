@@ -83,8 +83,10 @@ namespace TagTool
             }
             catch (Exception ex)
             {
+                
                 Debug.WriteLine(ex.Message);
             }
+            
 
         }
         //Saves current file under new name with savefiledialog
@@ -104,12 +106,56 @@ namespace TagTool
         //User FBLIST interaction
         //##########################
 
+        //Get index of selected functionblock and load selection into control elements
+        private void lvLibraryFunctionblocks_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            try
+            {
+                if (lvLibraryFunctionblocks.SelectedIndices.Count == 1)
+                {
+                    SelectedFbId = LibraryViewModel.selectedFb(FbList, lvLibraryFunctionblocks.SelectedIndices);
+                    LibraryViewModel.loadFb(FbList[SelectedFbId], this.txtLibraryFbName, this.txtLibrarySize, this.txtLibraryDescription);
+                    refreshLibraryAlarmView();
+                    refreshLibraryParameterView();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
         //Add a new Functionblock to the list
         private void btnLibraryCreateFb_Click(object sender, EventArgs e)
         {
             FbList.Add(new FunctionBlock { Name = "NewFb", Description = "This is a new Functionblock", Alarms = new List<Alarm>(), Parameters = new List<Parameter>()});
             refreshLibraryListView();
         }
+        //Set Function block properties in global Fb List when textboxes change
+        private void txtLibraryFbName_TextChanged(object sender, EventArgs e)
+        {
+            FbList[SelectedFbId].Name = txtLibraryFbName.Text;
+            refreshLibraryListView();
+        }
+        private void txtLibrarySize_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FbList[SelectedFbId].Size = int.Parse(txtLibrarySize.Text);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+        private void txtLibraryDescription_TextChanged(object sender, EventArgs e)
+        {
+            FbList[SelectedFbId].Description = txtLibraryDescription.Text;
+        }
+
+        //User ALARM interaction
+        //##########################
+
         //Add alarm to currently selected functionblock
         private void btnLibraryAddAlarm_Click(object sender, EventArgs e)
         {
@@ -143,45 +189,17 @@ namespace TagTool
             refreshLibraryAlarmView();
         }
 
-        //Get index of selected functionblock and load selection into control elements
-        private void lvLibraryFunctionblocks_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            try
-            {
-                if(lvLibraryFunctionblocks.SelectedIndices.Count == 1)
-                {
-                    SelectedFbId = LibraryViewModel.selectedFb(FbList, lvLibraryFunctionblocks.SelectedIndices);
-                    LibraryViewModel.loadFb(FbList[SelectedFbId], this.txtLibraryFbName, this.txtLibrarySize, this.txtLibraryDescription, this.dgvLibraryAlarms, this.dgvLibraryParameters);
-                    refreshLibraryAlarmView();
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-            
-        }
+        //User PARAMETER interaction
+        //##########################
 
-        //Set Function block properties in global Fb List when textboxes change
-        private void txtLibraryFbName_TextChanged(object sender, EventArgs e)
+        //Add parameter to list
+        private void btnLibraryAddParameter_Click(object sender, EventArgs e)
         {
-            FbList[SelectedFbId].Name= txtLibraryFbName.Text;
-            refreshLibraryListView();
-        }
-        private void txtLibrarySize_TextChanged(object sender, EventArgs e)
-        {
-            try
+            if (FbList.Count > 0)
             {
-                FbList[SelectedFbId].Size = int.Parse(txtLibrarySize.Text);
+                FbList[SelectedFbId].Parameters = LibraryViewModel.NewParameter(FbList[SelectedFbId].Parameters);
+                refreshLibraryParameterView();
             }
-            catch(Exception ex) 
-            {
-                Debug.WriteLine(ex.Message);
-            }   
-        }
-        private void txtLibraryDescription_TextChanged(object sender, EventArgs e)
-        {
-            FbList[SelectedFbId].Description = txtLibraryDescription.Text;
         }
 
         //Library Backend calls
@@ -201,6 +219,11 @@ namespace TagTool
         {
             DataTable dt = DataTableHandler.AlarmsToDt(FbList[SelectedFbId].Alarms);
             dgvLibraryAlarms.DataSource = dt;
+        }
+        private void refreshLibraryParameterView()
+        {
+            DataTable dt = DataTableHandler.ParametersToDt(FbList[SelectedFbId].Parameters);
+            dgvLibraryParameters.DataSource = dt;
         }
 
         //##################################################################################################################################

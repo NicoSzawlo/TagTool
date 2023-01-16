@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.btnNavComponents = new System.Windows.Forms.Button();
             this.pnlLibrary = new System.Windows.Forms.Panel();
+            this.btnLibraryDeleteParameter = new System.Windows.Forms.Button();
+            this.btnLibraryDeleteAlarm = new System.Windows.Forms.Button();
             this.lvLibraryFunctionblocks = new System.Windows.Forms.ListView();
             this.colLibviewBugged = new System.Windows.Forms.ColumnHeader();
             this.colLibviewName = new System.Windows.Forms.ColumnHeader();
@@ -60,7 +62,6 @@
             this.btnComponentsSave = new System.Windows.Forms.Button();
             this.btnComponentsCreateNew = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnLibraryDeleteAlarm = new System.Windows.Forms.Button();
             this.pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
@@ -89,6 +90,7 @@
             // pnlLibrary
             // 
             this.pnlLibrary.BackColor = System.Drawing.Color.LightGray;
+            this.pnlLibrary.Controls.Add(this.btnLibraryDeleteParameter);
             this.pnlLibrary.Controls.Add(this.btnLibraryDeleteAlarm);
             this.pnlLibrary.Controls.Add(this.lvLibraryFunctionblocks);
             this.pnlLibrary.Controls.Add(this.dgvLibraryAlarms);
@@ -112,6 +114,37 @@
             this.pnlLibrary.Name = "pnlLibrary";
             this.pnlLibrary.Size = new System.Drawing.Size(1176, 672);
             this.pnlLibrary.TabIndex = 1;
+            // 
+            // btnLibraryDeleteParameter
+            // 
+            this.btnLibraryDeleteParameter.BackColor = System.Drawing.Color.DarkGray;
+            this.btnLibraryDeleteParameter.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLibraryDeleteParameter.FlatAppearance.BorderSize = 0;
+            this.btnLibraryDeleteParameter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibraryDeleteParameter.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLibraryDeleteParameter.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryDeleteParameter.Image")));
+            this.btnLibraryDeleteParameter.Location = new System.Drawing.Point(1020, 362);
+            this.btnLibraryDeleteParameter.Name = "btnLibraryDeleteParameter";
+            this.btnLibraryDeleteParameter.Size = new System.Drawing.Size(55, 55);
+            this.btnLibraryDeleteParameter.TabIndex = 30;
+            this.btnLibraryDeleteParameter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLibraryDeleteParameter.UseVisualStyleBackColor = false;
+            // 
+            // btnLibraryDeleteAlarm
+            // 
+            this.btnLibraryDeleteAlarm.BackColor = System.Drawing.Color.DarkGray;
+            this.btnLibraryDeleteAlarm.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLibraryDeleteAlarm.FlatAppearance.BorderSize = 0;
+            this.btnLibraryDeleteAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibraryDeleteAlarm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLibraryDeleteAlarm.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryDeleteAlarm.Image")));
+            this.btnLibraryDeleteAlarm.Location = new System.Drawing.Point(1020, 90);
+            this.btnLibraryDeleteAlarm.Name = "btnLibraryDeleteAlarm";
+            this.btnLibraryDeleteAlarm.Size = new System.Drawing.Size(55, 55);
+            this.btnLibraryDeleteAlarm.TabIndex = 29;
+            this.btnLibraryDeleteAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLibraryDeleteAlarm.UseVisualStyleBackColor = false;
+            this.btnLibraryDeleteAlarm.Click += new System.EventHandler(this.btnLibraryDeleteAlarm_Click);
             // 
             // lvLibraryFunctionblocks
             // 
@@ -184,6 +217,7 @@
             this.btnLibraryAddParameter.TabIndex = 25;
             this.btnLibraryAddParameter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLibraryAddParameter.UseVisualStyleBackColor = false;
+            this.btnLibraryAddParameter.Click += new System.EventHandler(this.btnLibraryAddParameter_Click);
             // 
             // btnLibraryViewParameters
             // 
@@ -221,8 +255,11 @@
             // 
             // dgvLibraryParameters
             // 
+            this.dgvLibraryParameters.AllowUserToAddRows = false;
+            this.dgvLibraryParameters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLibraryParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLibraryParameters.Location = new System.Drawing.Point(362, 423);
+            this.dgvLibraryParameters.MultiSelect = false;
             this.dgvLibraryParameters.Name = "dgvLibraryParameters";
             this.dgvLibraryParameters.RowTemplate.Height = 25;
             this.dgvLibraryParameters.Size = new System.Drawing.Size(774, 218);
@@ -498,22 +535,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(952, 598);
             this.dataGridView2.TabIndex = 0;
             // 
-            // btnLibraryDeleteAlarm
-            // 
-            this.btnLibraryDeleteAlarm.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryDeleteAlarm.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryDeleteAlarm.FlatAppearance.BorderSize = 0;
-            this.btnLibraryDeleteAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryDeleteAlarm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryDeleteAlarm.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryDeleteAlarm.Image")));
-            this.btnLibraryDeleteAlarm.Location = new System.Drawing.Point(1020, 90);
-            this.btnLibraryDeleteAlarm.Name = "btnLibraryDeleteAlarm";
-            this.btnLibraryDeleteAlarm.Size = new System.Drawing.Size(55, 55);
-            this.btnLibraryDeleteAlarm.TabIndex = 29;
-            this.btnLibraryDeleteAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryDeleteAlarm.UseVisualStyleBackColor = false;
-            this.btnLibraryDeleteAlarm.Click += new System.EventHandler(this.btnLibraryDeleteAlarm_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -574,5 +595,6 @@
         private ColumnHeader colLibviewBugged;
         private ColumnHeader colLibviewName;
         private Button btnLibraryDeleteAlarm;
+        private Button btnLibraryDeleteParameter;
     }
 }

@@ -29,6 +29,7 @@ namespace TagTool.ViewModels
             }
             return selectedId;
         }
+
         //Adds a new alarm to the alarm list
         public static List<Alarm> NewAlarm(List<Alarm> alarms)
         {
@@ -56,7 +57,6 @@ namespace TagTool.ViewModels
                 }
             return alarms;
         }
-
         //Removes alarm from List and generates new alarmlist with remaining items to reset listindices
         public static List<Alarm> RemoveAlarm(List<Alarm> oldList, int dtIndex)
         {
@@ -93,6 +93,34 @@ namespace TagTool.ViewModels
                     break;
             }
             return alarmList;
+        }
+        //Adds a parameter to the parameter list
+        public static List<Parameter> NewParameter(List<Parameter> oldList)
+        {
+            Parameter parameter = new Parameter();
+            parameter.Tag = "NewParam";
+            parameter.DataType = "Word";
+            parameter.AddressOffset = 0;
+            parameter.Value = "1";
+            try
+            {
+                if (oldList == null)
+                {
+                    List<Parameter> newList = new List<Parameter>();
+                    newList.Add(parameter);
+                    oldList = newList;
+                }
+                else
+                {
+                    oldList.Add(parameter);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return oldList;
         }
 
     }
