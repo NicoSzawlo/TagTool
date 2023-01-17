@@ -122,6 +122,47 @@ namespace TagTool.ViewModels
             }
             return oldList;
         }
+        //Removes parameter from the list and generates a new parameter list with remaining items
+        public static List<Parameter> RemoveParameter(List<Parameter> oldList, int dtIndex)
+        {
+            List<Parameter> newList = new List<Parameter>();
+            oldList.Remove(oldList[dtIndex]);
+            foreach(Parameter param in oldList)
+            {
+                newList.Add(param);
+            }
+            return newList;
+        }
+        //Modify parameter list content
+        public static List<Parameter> ModifyParameterList(int cellPosX, int cellPosY, string cellValue, List<Parameter> paramList)
+        {
+            switch (cellPosX)
+            {
+                case 0:
+                    paramList[cellPosY].Tag = cellValue;
+                    break;
+                case 1:
+                    paramList[cellPosY].DataType = cellValue;
+                    break;
+                case 2:
+                    try
+                    {
+                        paramList[cellPosY].AddressOffset = int.Parse(cellValue);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Please only enter numbers in the Addressoffset column." + System.Environment.NewLine + ex.Message);
+                        paramList[cellPosY].AddressOffset = 1;
+                    }
+                    paramList[cellPosY].AddressOffset = int.Parse(cellValue);
+                    break;
+                case 3:
+                    paramList[cellPosY].Value = cellValue;
+                    break;
+            }
+            return paramList;
+        }
 
     }
 }

@@ -129,6 +129,7 @@
             this.btnLibraryDeleteParameter.TabIndex = 30;
             this.btnLibraryDeleteParameter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLibraryDeleteParameter.UseVisualStyleBackColor = false;
+            this.btnLibraryDeleteParameter.Click += new System.EventHandler(this.btnLibraryDeleteParameter_Click);
             // 
             // btnLibraryDeleteAlarm
             // 
@@ -264,6 +265,7 @@
             this.dgvLibraryParameters.RowTemplate.Height = 25;
             this.dgvLibraryParameters.Size = new System.Drawing.Size(774, 218);
             this.dgvLibraryParameters.TabIndex = 22;
+            this.dgvLibraryParameters.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibraryParameters_CellValueChanged);
             // 
             // lblLibraryFbDescription
             // 

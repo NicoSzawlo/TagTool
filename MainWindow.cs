@@ -201,7 +201,29 @@ namespace TagTool
                 refreshLibraryParameterView();
             }
         }
-
+        //Remove a parameter from the list
+        private void btnLibraryDeleteParameter_Click(object sender, EventArgs e)
+        {
+            FbList[SelectedFbId].Parameters = LibraryViewModel.RemoveParameter(FbList[SelectedFbId].Parameters, dgvLibraryParameters.CurrentCell.RowIndex);
+            refreshLibraryParameterView();
+        }
+        //Modify parameters in list according to change in datagridview
+        private void dgvLibraryParameters_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                FbList[SelectedFbId].Parameters = LibraryViewModel.ModifyParameterList(
+                    dgvLibraryAlarms.CurrentCell.ColumnIndex,
+                    dgvLibraryAlarms.CurrentCell.RowIndex,
+                    dgvLibraryAlarms.CurrentCell.Value.ToString(),
+                    FbList[SelectedFbId].Parameters);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            refreshLibraryParameterView();
+        }
         //Library Backend calls
         //##########################
 
