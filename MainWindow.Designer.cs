@@ -355,6 +355,7 @@
             this.btnLibraryTest.Text = "Test";
             this.btnLibraryTest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLibraryTest.UseVisualStyleBackColor = false;
+            this.btnLibraryTest.Click += new System.EventHandler(this.btnLibraryTest_Click);
             // 
             // btnLibraryOpenFile
             // 
@@ -547,9 +548,9 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.pnlLibrary);
-            this.Controls.Add(this.pnlComponents);
             this.Controls.Add(this.btnNavLibrary);
+            this.Controls.Add(this.pnlComponents);
+            this.Controls.Add(this.pnlLibrary);
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.Text = "Form1";
