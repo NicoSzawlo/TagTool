@@ -538,6 +538,8 @@
             this.dgvComponents.RowTemplate.Height = 25;
             this.dgvComponents.Size = new System.Drawing.Size(952, 598);
             this.dgvComponents.TabIndex = 0;
+            this.dgvComponents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComponents_CellValueChanged);
+            this.dgvComponents.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvComponents_RowsAdded);
             // 
             // MainWindow
             // 

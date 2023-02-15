@@ -24,6 +24,7 @@ namespace TagTool
         //##################################################################################################################################
         //Navigation Button handling
         //##################################################################################################################################
+        #region
         private void btnNavComponents_Click(object sender, EventArgs e)
         {
             ResetAllNavBtn();
@@ -48,11 +49,12 @@ namespace TagTool
             this.button3 = FormsHelper.NavBtnDeselect(this.button3);
             this.button4 = FormsHelper.NavBtnDeselect(this.button4);
         }
+        #endregion
 
         //##################################################################################################################################
         //Libray Panel Handling
         //##################################################################################################################################
-
+        #region
         //User FILE Interaction
         //##########################
 
@@ -248,16 +250,33 @@ namespace TagTool
             DataTable dt = DataTableHandler.ParametersToDt(FbList[SelectedFbId].Parameters);
             dgvLibraryParameters.DataSource = dt;
         }
+        #endregion
 
+        //##################################################################################################################################
+        //Components Panel Handling
+        //##################################################################################################################################
+        #region
+        private void dgvComponents_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvComponents_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+        }
+        #endregion
         //##################################################################################################################################
         //Application Initializaion
         //##################################################################################################################################
+        #region
+
+        //Initializing summary method
         private void initApp()
         {
             InitLibrary();
             InitComponents();
         }
-
+        //Initialisation method for library panel
         private void InitLibrary()
         {
 
@@ -278,7 +297,7 @@ namespace TagTool
                 Debug.WriteLine(ex.Message);
             }
         }
-
+        //Initialization method of components panel
         private void InitComponents()
         {
             //Create columns for Components Datagridview
@@ -309,6 +328,9 @@ namespace TagTool
             dgvComponents.Columns.Add(StartAdrCol);
             dgvComponents.Columns.Add(AlarmAdrCol);
         }
+        #endregion
+
+
 
         //##################################################################################################################################
         //TESTING AREA
@@ -317,5 +339,7 @@ namespace TagTool
         {
 
         }
+
+        
     }
 }
