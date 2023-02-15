@@ -61,12 +61,12 @@
             this.btnComponentLoad = new System.Windows.Forms.Button();
             this.btnComponentsSave = new System.Windows.Forms.Button();
             this.btnComponentsCreateNew = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvComponents = new System.Windows.Forms.DataGridView();
             this.pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
             this.pnlComponents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNavComponents
@@ -477,7 +477,7 @@
             this.pnlComponents.Controls.Add(this.btnComponentLoad);
             this.pnlComponents.Controls.Add(this.btnComponentsSave);
             this.pnlComponents.Controls.Add(this.btnComponentsCreateNew);
-            this.pnlComponents.Controls.Add(this.dataGridView2);
+            this.pnlComponents.Controls.Add(this.dgvComponents);
             this.pnlComponents.Location = new System.Drawing.Point(4, 84);
             this.pnlComponents.Name = "pnlComponents";
             this.pnlComponents.Size = new System.Drawing.Size(1176, 672);
@@ -528,15 +528,16 @@
             this.btnComponentsCreateNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnComponentsCreateNew.UseVisualStyleBackColor = false;
             // 
-            // dataGridView2
+            // dgvComponents
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 67);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(952, 598);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvComponents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvComponents.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.dgvComponents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComponents.Location = new System.Drawing.Point(8, 67);
+            this.dgvComponents.Name = "dgvComponents";
+            this.dgvComponents.RowTemplate.Height = 25;
+            this.dgvComponents.Size = new System.Drawing.Size(952, 598);
+            this.dgvComponents.TabIndex = 0;
             // 
             // MainWindow
             // 
@@ -559,7 +560,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).EndInit();
             this.pnlComponents.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -574,7 +575,7 @@
         private Button button4;
         private Panel pnlComponents;
         private Button btnComponentsCreateNew;
-        private DataGridView dataGridView2;
+        private DataGridView dgvComponents;
         private Button btnComponentLoad;
         private Button btnComponentsSave;
         private Button btnLibraryOpenFile;

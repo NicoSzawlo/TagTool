@@ -4,13 +4,14 @@ using TagTool.Models;
 using TagTool.Services;
 using TagTool.ViewModels;
 using static System.Net.Mime.MediaTypeNames;
+using Application = System.Windows.Forms.Application;
 
 namespace TagTool
 {
     public partial class MainWindow : Form
     {
         public string FilePath = "";
-
+        public string LibraryPath = Application.StartupPath + "Library.json";
         //Global Library View Properties
         public List<FunctionBlock> FbList = new List<FunctionBlock>();
         public int SelectedFbId = 0;
@@ -79,7 +80,7 @@ namespace TagTool
         {
             try
             {
-                JsonHandler.SerializeLibrary(FbList, FilePath);
+                JsonHandler.SerializeLibrary(FbList, LibraryPath);
             }
             catch (Exception ex)
             {
@@ -253,19 +254,68 @@ namespace TagTool
         //##################################################################################################################################
         private void initApp()
         {
-            var columnToRemove = lvLibraryFunctionblocks.Columns["colLibviewBugged"];
-            this.lvLibraryFunctionblocks.Columns.Remove(columnToRemove);
+            InitLibrary();
+            InitComponents();
         }
 
+        private void InitLibrary()
+        {
+
+            //Initialize Functionblock Listview
+            var columnToRemove = lvLibraryFunctionblocks.Columns["colLibviewBugged"];
+            this.lvLibraryFunctionblocks.Columns.Remove(columnToRemove);
+
+            //Load library file
+            try
+            {
+                FbList = JsonHandler.DeserializeLibrary(LibraryPath);
+                refreshLibraryListView();
+                refreshLibraryAlarmView();
+                LibraryViewModel.loadFb(FbList[0], this.txtLibraryFbName, this.txtLibrarySize, this.txtLibraryDescription);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private void InitComponents()
+        {
+            //Create columns for Components Datagridview
+            DataGridViewTextBoxColumn UnitCol = new DataGridViewTextBoxColumn();
+            UnitCol.Name = "Unit/Group";
+            DataGridViewTextBoxColumn TagCol = new DataGridViewTextBoxColumn();
+            TagCol.Name = "Tagname of Structure";
+            DataGridViewTextBoxColumn DescCol = new DataGridViewTextBoxColumn();
+            DescCol.Name = "Description";
+            DataGridViewTextBoxColumn StartAdrCol = new DataGridViewTextBoxColumn();
+            StartAdrCol.Name = "Startaddress of Structure";
+            DataGridViewTextBoxColumn AlarmAdrCol = new DataGridViewTextBoxColumn();
+            AlarmAdrCol.Name = "Address for Alarmmapping";
+            DataGridViewComboBoxColumn FbCol = new DataGridViewComboBoxColumn();
+            FbCol.Name = "Function Block";
+
+            //Add functionblocks for dropdown menu in datagridview
+            foreach (FunctionBlock fb in FbList)
+            {
+                FbCol.Items.Add(fb.Name);
+            }
+
+            //Add columns to datagridview
+            dgvComponents.Columns.Add(UnitCol);
+            dgvComponents.Columns.Add(TagCol);
+            dgvComponents.Columns.Add(DescCol);
+            dgvComponents.Columns.Add(FbCol);
+            dgvComponents.Columns.Add(StartAdrCol);
+            dgvComponents.Columns.Add(AlarmAdrCol);
+        }
+
+        //##################################################################################################################################
+        //TESTING AREA
+        //##################################################################################################################################
         private void btnLibraryTest_Click(object sender, EventArgs e)
         {
-            DataGridViewTextBoxColumn UnitCol = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn TagCol = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn DescCol = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn StartAdrCol = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn AlarmAdrCol = new DataGridViewTextBoxColumn();
-            DataGridViewComboBoxColumn FbCol = new DataGridViewComboBoxColumn();
-            
+
         }
     }
 }
