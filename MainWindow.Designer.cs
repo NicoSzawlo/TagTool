@@ -497,6 +497,7 @@
             this.btnComponentLoad.TabIndex = 8;
             this.btnComponentLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnComponentLoad.UseVisualStyleBackColor = false;
+            this.btnComponentLoad.Click += new System.EventHandler(this.btnComponentLoad_Click);
             // 
             // btnComponentsSave
             // 
@@ -512,6 +513,7 @@
             this.btnComponentsSave.TabIndex = 7;
             this.btnComponentsSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnComponentsSave.UseVisualStyleBackColor = false;
+            this.btnComponentsSave.Click += new System.EventHandler(this.btnComponentsSave_Click);
             // 
             // btnComponentsCreateNew
             // 
@@ -527,6 +529,7 @@
             this.btnComponentsCreateNew.TabIndex = 6;
             this.btnComponentsCreateNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnComponentsCreateNew.UseVisualStyleBackColor = false;
+            this.btnComponentsCreateNew.Click += new System.EventHandler(this.btnComponentsCreateNew_Click);
             // 
             // dgvComponents
             // 
@@ -539,7 +542,6 @@
             this.dgvComponents.Size = new System.Drawing.Size(952, 598);
             this.dgvComponents.TabIndex = 0;
             this.dgvComponents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComponents_CellValueChanged);
-            this.dgvComponents.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvComponents_RowsAdded);
             this.dgvComponents.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvComponents_UserAddedRow);
             // 
             // MainWindow

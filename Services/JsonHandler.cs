@@ -44,5 +44,36 @@ namespace TagTool.Services
             
         }
 
+        //Load library json file from a filepath and return list of functionblocks
+        public static List<Component> DeserializeComponentList(string filepath)
+        {
+            List<Component> components = new List<Component>();
+            try
+            {
+                string jsonString = File.ReadAllText(filepath);
+                components = JsonSerializer.Deserialize<List<Component>>(jsonString);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            return components;
+        }
+        //Save list of functionblocks to library json file
+        public static void SerializeComponentList(List<Component> components, string filepath)
+        {
+            try
+            {
+                string jsonString = JsonSerializer.Serialize(components);
+                File.WriteAllText(filepath, jsonString);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
     }
 }

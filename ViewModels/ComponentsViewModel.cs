@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,27 @@ namespace TagTool.ViewModels
                     break;
             }
             return components;
+        }
+
+        public static DataTable LoadComponents(List<Component> components)
+        {
+            DataTable dt = new DataTable();
+            for(int i = 0; i <= 6; i++)
+            {
+                dt.Columns.Add();
+            }
+            foreach (Component component in components)
+            {
+                DataRow dr = dt.NewRow();
+                dr[0] = component.Unit;
+                dr[1] = component.Tag;
+                dr[3] = component.Description;
+                dr[4] = component.Fb.Name;
+                dr[5] = component.StartAddress;
+                dr[6] = component.AlarmAddress;
+                dt.Rows.Add(dr);
+            }
+            return dt;
         }
     }
 }

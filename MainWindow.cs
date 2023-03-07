@@ -11,6 +11,7 @@ namespace TagTool
     public partial class MainWindow : Form
     {
         public string FilePath = "";
+        public string ComponentsPath = "";
         public string LibraryPath = Application.StartupPath + "Library.json";
         //Global Library View Properties
         public List<FunctionBlock> FbList = new List<FunctionBlock>();
@@ -257,6 +258,52 @@ namespace TagTool
         //Components Panel Handling
         //##################################################################################################################################
         #region
+        //User FILE Interaction
+        //##########################
+
+        //Initially save/Create new of components list
+        private void btnComponentsCreateNew_Click(object sender, EventArgs e)
+        {
+            ComponentsPath = FormsHelper.CallSaveFileDialog();
+            try
+            {
+                JsonHandler.SerializeComponentList(CompList, ComponentsPath);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+        //Load components list from json file
+        private void btnComponentLoad_Click(object sender, EventArgs e)
+        {
+            ComponentsPath = FormsHelper.CallFileDialog();
+            try
+            {
+                CompList = JsonHandler.DeserializeComponentList(ComponentsPath);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            refreshComponentView();
+        }
+        //Save last saved/loaded components file 
+        private void btnComponentsSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                JsonHandler.SerializeComponentList(CompList, ComponentsPath);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+        //User Component List interaction
+        //##########################
+
+        //Change Component list based on datagridview
         private void dgvComponents_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             CompList = ComponentsViewModel.ModifyComponentList(
@@ -266,10 +313,27 @@ namespace TagTool
                 CompList,
                 FbList);
         }
-
+        //Add row to component list when user added row to dgv
         private void dgvComponents_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
+            
             CompList.Add(new Component());
+        }
+
+        //Components Backend calls
+        //##########################
+        private void refreshComponentView()
+        {
+            foreach(Component component in CompList)
+            {
+                dgvComponents.Rows.Add(
+                    component.Unit, 
+                    component.Tag, 
+                    component.Description, 
+                    component.Fb.Name, 
+                    component.StartAddress, 
+                    component.AlarmAddress);
+            }
         }
         #endregion
         //##################################################################################################################################
@@ -282,6 +346,9 @@ namespace TagTool
         {
             InitLibrary();
             InitComponents();
+            ResetAllNavBtn();
+            this.btnNavComponents = FormsHelper.NavBtnSelect(this.btnNavComponents);
+            this.pnlComponents.BringToFront();
         }
         //Initialisation method for library panel
         private void InitLibrary()
