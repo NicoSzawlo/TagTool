@@ -14,6 +14,7 @@ namespace TagTool
         public string LibraryPath = Application.StartupPath + "Library.json";
         //Global Library View Properties
         public List<FunctionBlock> FbList = new List<FunctionBlock>();
+        public List<Component> CompList = new List<Component>();
         public int SelectedFbId = 0;
         public MainWindow()
         {
@@ -258,11 +259,17 @@ namespace TagTool
         #region
         private void dgvComponents_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-
+            CompList = ComponentsViewModel.ModifyComponentList(
+                dgvComponents.CurrentCell.ColumnIndex,
+                dgvComponents.CurrentCell.RowIndex,
+                dgvComponents.CurrentCell.Value.ToString(),
+                CompList,
+                FbList);
         }
 
-        private void dgvComponents_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void dgvComponents_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
+            CompList.Add(new Component());
         }
         #endregion
         //##################################################################################################################################

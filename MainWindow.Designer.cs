@@ -540,6 +540,7 @@
             this.dgvComponents.TabIndex = 0;
             this.dgvComponents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComponents_CellValueChanged);
             this.dgvComponents.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvComponents_RowsAdded);
+            this.dgvComponents.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvComponents_UserAddedRow);
             // 
             // MainWindow
             // 
