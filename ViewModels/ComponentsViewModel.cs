@@ -17,19 +17,19 @@ namespace TagTool.ViewModels
             switch (cellPosX)
             {
                 //Write Unit to Componentlist
-                case 0:
+                case 1:
                     components[cellPosY].Unit = cellValue;
                     break;
                 //Write Tag name into componentlist
-                case 1:
+                case 2:
                     components[cellPosY].Tag = cellValue;
                     break;
                 //Write description into componentlist
-                case 2:
+                case 3:
                     components[cellPosY].Description = cellValue;
                     break;
                 //Look up functionblock with same name in List and insert it into componentlist
-                case 3:
+                case 4:
                     foreach(FunctionBlock fb in fbList)
                     {
                         if(fb.Name == cellValue)
@@ -39,11 +39,11 @@ namespace TagTool.ViewModels
                     }
                     break;
                 //Convert value to int and write startaddress into componentlist
-                case 4:
+                case 5:
                     components[cellPosY].StartAddress = Convert.ToInt32(cellValue);
                     break;
                 //Convert value to int and write alarmaddress into componentlist
-                case 5:
+                case 6:
                     components[cellPosY].AlarmAddress = Convert.ToInt32(cellValue);
                     break;
             }

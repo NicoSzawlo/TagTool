@@ -317,15 +317,9 @@ namespace TagTool
                 FbList);
             checkComponentStartaddress();
         }
-        //Add row to component list when user added row to dgv
-        private void dgvComponents_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        private void btnComponentAdd_Click(object sender, EventArgs e)
         {
-            //Increase id counter
-            ComponentIdCounter++;
-            //Generate new component with new ID
-            Component comp = new Component() { Id = ComponentIdCounter };
-            //Add component to list
-            CompList.Add(comp);
+            addComponentRow();
         }
 
         //Components Backend calls
@@ -334,15 +328,25 @@ namespace TagTool
         //Refresh components datagridview after loading file
         private void refreshComponentView()
         {
-            foreach(Component component in CompList)
+            if (CompList.Count > 0)
             {
-                dgvComponents.Rows.Add(
-                    component.Unit, 
-                    component.Tag, 
-                    component.Description, 
-                    component.Fb.Name, 
-                    component.StartAddress, 
-                    component.AlarmAddress);
+                if(dgvComponents.Rows.Count > 1)
+                {
+                    dgvComponents.DataSource = null;
+                    dgvComponents.Rows.Clear();
+                }
+                
+                foreach (Component component in CompList)
+                {
+                    dgvComponents.Rows.Add(
+                        component.Id,
+                        component.Unit,
+                        component.Tag,
+                        component.Description,
+                        component.Fb.Name,
+                        component.StartAddress,
+                        component.AlarmAddress);
+                }
             }
         }
         //Check for startaddress overlaps and color faulty components startaddress cells red
@@ -353,7 +357,7 @@ namespace TagTool
             //Color every Startaddress cell white
             foreach (DataGridViewRow row in dgvComponents.Rows)
             {
-                row.Cells[4].Style.BackColor = Color.White;
+                row.Cells["Startaddress of Structure"].Style.BackColor = Color.White;
             }
             //Check if any component faulty
             if (faultyComponents.Count > 0)
@@ -361,9 +365,27 @@ namespace TagTool
                 //Color each faulty component startaddress-cell red
                 foreach(int faultyComponent in faultyComponents)
                 {
-                    dgvComponents.Rows[faultyComponent].Cells[4].Style.BackColor = Color.Red;
+                    dgvComponents.Rows[faultyComponent].Cells["Startaddress of Structure"].Style.BackColor = Color.Red;
                 }
             }
+        }
+
+        private void addComponentRow()
+        {
+            //Increase id counter
+            ComponentIdCounter++;
+            //Generate new component with new ID
+            Component comp = new Component() {
+                Id = ComponentIdCounter,
+                Unit = "NewUnit",
+                Tag = "NewTag",
+                AlarmAddress = 0,
+                StartAddress = 0,
+                Description = "New Description",
+                Fb = FbList[0] };
+            //Add component to list
+            CompList.Add(comp);
+            refreshComponentView();
         }
         #endregion
         //##################################################################################################################################
@@ -405,6 +427,9 @@ namespace TagTool
         private void InitComponents()
         {
             //Create columns for Components Datagridview
+            DataGridViewTextBoxColumn IdCol = new DataGridViewTextBoxColumn();
+            IdCol.Name = "ID";
+            IdCol.ReadOnly = true;
             DataGridViewTextBoxColumn UnitCol = new DataGridViewTextBoxColumn();
             UnitCol.Name = "Unit/Group";
             DataGridViewTextBoxColumn TagCol = new DataGridViewTextBoxColumn();
@@ -425,6 +450,7 @@ namespace TagTool
             }
 
             //Add columns to datagridview
+            dgvComponents.Columns.Add(IdCol);
             dgvComponents.Columns.Add(UnitCol);
             dgvComponents.Columns.Add(TagCol);
             dgvComponents.Columns.Add(DescCol);

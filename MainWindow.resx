@@ -234,6 +234,15 @@
         ECp+WiSbd863prXF+ZqQkppUfgDnf96wgrVcmgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnComponentAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAJ
+        cQAACXEBhnb+KwAAALZJREFUWEftlsENwjAQBF0cPaQL+qEIysmfSiA34cPjLLOJZE5iR1op0p2deVnb
+        TrBEnpFXJ8zYmc418ohcOmHGznT46fr+TGFmsU8spmIxFYupWEzlf8VoAFyg5h4ZibGTnR1lbyXUE5oA
+        F6m5RXowy86MggtOe3eiplQBF5ws9i0WU6kvVva5KPvAHoULRmLsTMdiKhZTsZiKxVQsplJajCZATcnC
+        7CdiNADqCd0pC7ODLaG1DbubuEGGY3AIAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnComponentLoad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAB2

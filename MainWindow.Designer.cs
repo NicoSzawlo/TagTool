@@ -58,6 +58,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pnlComponents = new System.Windows.Forms.Panel();
+            this.btnComponentAdd = new System.Windows.Forms.Button();
             this.btnComponentLoad = new System.Windows.Forms.Button();
             this.btnComponentsSave = new System.Windows.Forms.Button();
             this.btnComponentsCreateNew = new System.Windows.Forms.Button();
@@ -474,6 +475,7 @@
             // pnlComponents
             // 
             this.pnlComponents.BackColor = System.Drawing.Color.LightGray;
+            this.pnlComponents.Controls.Add(this.btnComponentAdd);
             this.pnlComponents.Controls.Add(this.btnComponentLoad);
             this.pnlComponents.Controls.Add(this.btnComponentsSave);
             this.pnlComponents.Controls.Add(this.btnComponentsCreateNew);
@@ -482,6 +484,22 @@
             this.pnlComponents.Name = "pnlComponents";
             this.pnlComponents.Size = new System.Drawing.Size(1176, 672);
             this.pnlComponents.TabIndex = 6;
+            // 
+            // btnComponentAdd
+            // 
+            this.btnComponentAdd.BackColor = System.Drawing.Color.DarkGray;
+            this.btnComponentAdd.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnComponentAdd.FlatAppearance.BorderSize = 0;
+            this.btnComponentAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComponentAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnComponentAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnComponentAdd.Image")));
+            this.btnComponentAdd.Location = new System.Drawing.Point(905, 7);
+            this.btnComponentAdd.Name = "btnComponentAdd";
+            this.btnComponentAdd.Size = new System.Drawing.Size(55, 55);
+            this.btnComponentAdd.TabIndex = 27;
+            this.btnComponentAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnComponentAdd.UseVisualStyleBackColor = false;
+            this.btnComponentAdd.Click += new System.EventHandler(this.btnComponentAdd_Click);
             // 
             // btnComponentLoad
             // 
@@ -533,6 +551,8 @@
             // 
             // dgvComponents
             // 
+            this.dgvComponents.AllowUserToAddRows = false;
+            this.dgvComponents.AllowUserToDeleteRows = false;
             this.dgvComponents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvComponents.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dgvComponents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -542,7 +562,6 @@
             this.dgvComponents.Size = new System.Drawing.Size(952, 598);
             this.dgvComponents.TabIndex = 0;
             this.dgvComponents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComponents_CellValueChanged);
-            this.dgvComponents.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvComponents_UserAddedRow);
             // 
             // MainWindow
             // 
@@ -605,5 +624,6 @@
         private ColumnHeader colLibviewName;
         private Button btnLibraryDeleteAlarm;
         private Button btnLibraryDeleteParameter;
+        private Button btnComponentAdd;
     }
 }
