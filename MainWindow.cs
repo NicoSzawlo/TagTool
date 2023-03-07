@@ -311,7 +311,7 @@ namespace TagTool
         {
             CompList = ComponentsViewModel.ModifyComponentList(
                 dgvComponents.CurrentCell.ColumnIndex,
-                dgvComponents.CurrentCell.RowIndex,
+                Convert.ToInt32(dgvComponents.CurrentRow.Cells["ID"].Value),
                 dgvComponents.CurrentCell.Value.ToString(),
                 CompList,
                 FbList);
@@ -362,10 +362,16 @@ namespace TagTool
             //Check if any component faulty
             if (faultyComponents.Count > 0)
             {
-                //Color each faulty component startaddress-cell red
-                foreach(int faultyComponent in faultyComponents)
+                foreach(DataGridViewRow dgvr in dgvComponents.Rows)
                 {
-                    dgvComponents.Rows[faultyComponent].Cells["Startaddress of Structure"].Style.BackColor = Color.Red;
+                    foreach (int faultyComponent in faultyComponents)
+                    {
+                        if (dgvr.Cells["ID"].Value.ToString() == faultyComponent.ToString())
+                        {
+                            dgvr.Cells["Startaddress of Structure"].Style.BackColor = Color.Red;
+                        }
+                            
+                    }
                 }
             }
         }

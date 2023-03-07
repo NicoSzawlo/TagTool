@@ -11,22 +11,43 @@ namespace TagTool.ViewModels
     public class ComponentsViewModel
     {
         //Go through datagridview data and convert to list of components
-        public static List<Component> ModifyComponentList(int cellPosX, int cellPosY, string cellValue, List<Component> components, List<FunctionBlock> fbList)
+        public static List<Component> ModifyComponentList(int cellPosX, int id, string cellValue, List<Component> components, List<FunctionBlock> fbList)
         {
             //Modify Componentlist based on cell position of the datagridview
             switch (cellPosX)
             {
                 //Write Unit to Componentlist
                 case 1:
-                    components[cellPosY].Unit = cellValue;
+                    //Go through components list
+                    foreach(Component component in components)
+                    {
+                        //When Id of component and passed id are the same change value of component in list
+                        if(component.Id == id)
+                        {
+                            component.Unit = cellValue;
+                        }
+                    }
                     break;
                 //Write Tag name into componentlist
                 case 2:
-                    components[cellPosY].Tag = cellValue;
+                    foreach (Component component in components)
+                    {
+                        if (component.Id == id)
+                        {
+                            component.Tag = cellValue;
+                        }
+                    }
                     break;
                 //Write description into componentlist
                 case 3:
-                    components[cellPosY].Description = cellValue;
+                    foreach (Component component in components)
+                    {
+                        if (component.Id == id)
+                        {
+                            component.Description = cellValue;
+                        }
+                    }
+                    
                     break;
                 //Look up functionblock with same name in List and insert it into componentlist
                 case 4:
@@ -34,17 +55,35 @@ namespace TagTool.ViewModels
                     {
                         if(fb.Name == cellValue)
                         {
-                            components[cellPosY].Fb = fb;
+                            foreach (Component component in components)
+                            {
+                                if (component.Id == id)
+                                {
+                                    component.Fb = fb;
+                                }
+                            }
                         }
                     }
                     break;
                 //Convert value to int and write startaddress into componentlist
                 case 5:
-                    components[cellPosY].StartAddress = Convert.ToInt32(cellValue);
+                    foreach (Component component in components)
+                    {
+                        if (component.Id == id)
+                        {
+                            component.StartAddress = Convert.ToInt32(cellValue);
+                        }
+                    }
                     break;
                 //Convert value to int and write alarmaddress into componentlist
                 case 6:
-                    components[cellPosY].AlarmAddress = Convert.ToInt32(cellValue);
+                    foreach (Component component in components)
+                    {
+                        if (component.Id == id)
+                        {
+                            component.AlarmAddress = Convert.ToInt32(cellValue);
+                        }
+                    }
                     break;
             }
             return components;
@@ -61,8 +100,8 @@ namespace TagTool.ViewModels
             for (int i = 0; i < sortedComponents.Count; i++)
             {
                 //Check if component has Fb and Startaddress set
-                if (components[i].StartAddress != 0 && components[i].Fb.Name != "")
-                {
+                //if (components[i].StartAddress != 0 && components[i].Fb.Name != "")
+                //{
                     //Check if last element
                     if (i + 1 < sortedComponents.Count)
                     {
@@ -74,7 +113,7 @@ namespace TagTool.ViewModels
                             faultyComponents.Add(sortedComponents[i+1].Id);
                         }
                     }
-                }
+                //}
             }
             return faultyComponents;
         }
