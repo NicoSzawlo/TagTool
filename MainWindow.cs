@@ -17,6 +17,7 @@ namespace TagTool
         public List<FunctionBlock> FbList = new List<FunctionBlock>();
         public List<Component> CompList = new List<Component>();
         public int SelectedFbId = 0;
+        public int ComponentIdCounter = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -286,7 +287,9 @@ namespace TagTool
             {
                 Debug.WriteLine(ex.Message);
             }
+            ComponentIdCounter = ComponentsViewModel.GetLastId(CompList);
             refreshComponentView();
+            checkComponentStartaddress();
         }
         //Save last saved/loaded components file 
         private void btnComponentsSave_Click(object sender, EventArgs e)
@@ -312,16 +315,23 @@ namespace TagTool
                 dgvComponents.CurrentCell.Value.ToString(),
                 CompList,
                 FbList);
+            checkComponentStartaddress();
         }
         //Add row to component list when user added row to dgv
         private void dgvComponents_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
-            
-            CompList.Add(new Component());
+            //Increase id counter
+            ComponentIdCounter++;
+            //Generate new component with new ID
+            Component comp = new Component() { Id = ComponentIdCounter };
+            //Add component to list
+            CompList.Add(comp);
         }
 
         //Components Backend calls
         //##########################
+        
+        //Refresh components datagridview after loading file
         private void refreshComponentView()
         {
             foreach(Component component in CompList)
@@ -333,6 +343,26 @@ namespace TagTool
                     component.Fb.Name, 
                     component.StartAddress, 
                     component.AlarmAddress);
+            }
+        }
+        //Check for startaddress overlaps and color faulty components startaddress cells red
+        private void checkComponentStartaddress()
+        {
+            //Get list of faulty Id's
+            List<int>faultyComponents = ComponentsViewModel.CheckStartAddress(CompList);
+            //Color every Startaddress cell white
+            foreach (DataGridViewRow row in dgvComponents.Rows)
+            {
+                row.Cells[4].Style.BackColor = Color.White;
+            }
+            //Check if any component faulty
+            if (faultyComponents.Count > 0)
+            {
+                //Color each faulty component startaddress-cell red
+                foreach(int faultyComponent in faultyComponents)
+                {
+                    dgvComponents.Rows[faultyComponent].Cells[4].Style.BackColor = Color.Red;
+                }
             }
         }
         #endregion
@@ -411,7 +441,7 @@ namespace TagTool
         //##################################################################################################################################
         private void btnLibraryTest_Click(object sender, EventArgs e)
         {
-
+            checkComponentStartaddress();
         }
 
         

@@ -49,26 +49,49 @@ namespace TagTool.ViewModels
             }
             return components;
         }
-
-        public static DataTable LoadComponents(List<Component> components)
+        //Checks component list for overlapping startaddresses
+        public static List<int> CheckStartAddress(List<Component>components)
         {
-            DataTable dt = new DataTable();
-            for(int i = 0; i <= 6; i++)
+            List<int> faultyComponents = new List<int>();
+            int endaddress = 0;
+            //Order list by startadresses, so checking for overlaps is easier
+            List<Component> sortedComponents = components.OrderBy(c=>c.StartAddress).ToList();
+            
+            //Go through sorted list
+            for (int i = 0; i < sortedComponents.Count; i++)
             {
-                dt.Columns.Add();
+                //Check if component has Fb and Startaddress set
+                if (components[i].StartAddress != 0 && components[i].Fb.Name != "")
+                {
+                    //Check if last element
+                    if (i + 1 < sortedComponents.Count)
+                    {
+                        //Add Startaddress and Fb Size
+                        endaddress = sortedComponents[i].StartAddress + sortedComponents[i].Fb.Size;
+                        //Check if startaddress+size > startaddress of next component
+                        if (endaddress > sortedComponents[i + 1].StartAddress)
+                        {
+                            faultyComponents.Add(sortedComponents[i+1].Id);
+                        }
+                    }
+                }
             }
-            foreach (Component component in components)
+            return faultyComponents;
+        }
+
+        public static int GetLastId(List<Component> components)
+        {
+            int lastid = 0;
+
+            foreach(Component component in components)
             {
-                DataRow dr = dt.NewRow();
-                dr[0] = component.Unit;
-                dr[1] = component.Tag;
-                dr[3] = component.Description;
-                dr[4] = component.Fb.Name;
-                dr[5] = component.StartAddress;
-                dr[6] = component.AlarmAddress;
-                dt.Rows.Add(dr);
+                if(component.Id > lastid)
+                {
+                    lastid = component.Id;
+                }
             }
-            return dt;
+
+            return lastid;
         }
     }
 }
