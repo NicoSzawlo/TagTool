@@ -54,8 +54,8 @@
             this.btnLibrarySaveFile = new System.Windows.Forms.Button();
             this.btnLibraryCreateFb = new System.Windows.Forms.Button();
             this.btnNavLibrary = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnNavAlarms = new System.Windows.Forms.Button();
+            this.btnNavExports = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pnlComponents = new System.Windows.Forms.Panel();
             this.btnComponentAdd = new System.Windows.Forms.Button();
@@ -63,6 +63,8 @@
             this.btnComponentsSave = new System.Windows.Forms.Button();
             this.btnComponentsCreateNew = new System.Windows.Forms.Button();
             this.dgvComponents = new System.Windows.Forms.DataGridView();
+            this.pnlAlarms = new System.Windows.Forms.Panel();
+            this.pnlExports = new System.Windows.Forms.Panel();
             this.pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
@@ -427,35 +429,37 @@
             this.btnNavLibrary.UseVisualStyleBackColor = false;
             this.btnNavLibrary.Click += new System.EventHandler(this.btnNavLibrary_Click);
             // 
-            // button2
+            // btnNavAlarms
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkGray;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(336, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 78);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Components";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnNavAlarms.BackColor = System.Drawing.Color.DarkGray;
+            this.btnNavAlarms.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnNavAlarms.FlatAppearance.BorderSize = 2;
+            this.btnNavAlarms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavAlarms.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNavAlarms.Location = new System.Drawing.Point(336, 4);
+            this.btnNavAlarms.Name = "btnNavAlarms";
+            this.btnNavAlarms.Size = new System.Drawing.Size(160, 78);
+            this.btnNavAlarms.TabIndex = 3;
+            this.btnNavAlarms.Text = "Alarms";
+            this.btnNavAlarms.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNavAlarms.UseVisualStyleBackColor = false;
+            this.btnNavAlarms.Click += new System.EventHandler(this.btnNavAlarms_Click);
             // 
-            // button3
+            // btnNavExports
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkGray;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(502, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 78);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Components";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnNavExports.BackColor = System.Drawing.Color.DarkGray;
+            this.btnNavExports.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnNavExports.FlatAppearance.BorderSize = 2;
+            this.btnNavExports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavExports.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNavExports.Location = new System.Drawing.Point(502, 4);
+            this.btnNavExports.Name = "btnNavExports";
+            this.btnNavExports.Size = new System.Drawing.Size(160, 78);
+            this.btnNavExports.TabIndex = 4;
+            this.btnNavExports.Text = "Exports";
+            this.btnNavExports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNavExports.UseVisualStyleBackColor = false;
+            this.btnNavExports.Click += new System.EventHandler(this.btnNavExports_Click);
             // 
             // button4
             // 
@@ -563,16 +567,34 @@
             this.dgvComponents.TabIndex = 0;
             this.dgvComponents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComponents_CellValueChanged);
             // 
+            // pnlAlarms
+            // 
+            this.pnlAlarms.BackColor = System.Drawing.Color.LightGray;
+            this.pnlAlarms.Location = new System.Drawing.Point(4, 84);
+            this.pnlAlarms.Name = "pnlAlarms";
+            this.pnlAlarms.Size = new System.Drawing.Size(1176, 672);
+            this.pnlAlarms.TabIndex = 7;
+            // 
+            // pnlExports
+            // 
+            this.pnlExports.BackColor = System.Drawing.Color.LightGray;
+            this.pnlExports.Location = new System.Drawing.Point(4, 84);
+            this.pnlExports.Name = "pnlExports";
+            this.pnlExports.Size = new System.Drawing.Size(1176, 672);
+            this.pnlExports.TabIndex = 8;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.pnlExports);
+            this.Controls.Add(this.pnlAlarms);
             this.Controls.Add(this.btnNavComponents);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnNavExports);
+            this.Controls.Add(this.btnNavAlarms);
             this.Controls.Add(this.btnNavLibrary);
             this.Controls.Add(this.pnlComponents);
             this.Controls.Add(this.pnlLibrary);
@@ -594,8 +616,8 @@
         private Button btnNavComponents;
         private Panel pnlLibrary;
         private Button btnNavLibrary;
-        private Button button2;
-        private Button button3;
+        private Button btnNavAlarms;
+        private Button btnNavExports;
         private Button button4;
         private Panel pnlComponents;
         private Button btnComponentsCreateNew;
@@ -625,5 +647,7 @@
         private Button btnLibraryDeleteAlarm;
         private Button btnLibraryDeleteParameter;
         private Button btnComponentAdd;
+        private Panel pnlAlarms;
+        private Panel pnlExports;
     }
 }

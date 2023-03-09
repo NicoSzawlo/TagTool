@@ -35,12 +35,23 @@ namespace TagTool
             this.pnlComponents.BringToFront();
 
         }
-
         private void btnNavLibrary_Click(object sender, EventArgs e)
         {
             ResetAllNavBtn();
             this.btnNavLibrary = FormsHelper.NavBtnSelect(this.btnNavLibrary);
             this.pnlLibrary.BringToFront();
+        }
+        private void btnNavAlarms_Click(object sender, EventArgs e)
+        {
+            ResetAllNavBtn();
+            this.btnNavAlarms = FormsHelper.NavBtnSelect(this.btnNavAlarms);
+            this.pnlAlarms.BringToFront();
+        }
+        private void btnNavExports_Click(object sender, EventArgs e)
+        {
+            ResetAllNavBtn();
+            this.btnNavExports = FormsHelper.NavBtnSelect(this.btnNavExports);
+            this.pnlExports.BringToFront();
         }
 
         //Initialize styling of Navigation buttons
@@ -48,8 +59,8 @@ namespace TagTool
         {
             this.btnNavComponents = FormsHelper.NavBtnDeselect(this.btnNavComponents);
             this.btnNavLibrary = FormsHelper.NavBtnDeselect(this.btnNavLibrary);
-            this.button2 = FormsHelper.NavBtnDeselect(this.button2);
-            this.button3 = FormsHelper.NavBtnDeselect(this.button3);
+            this.btnNavAlarms = FormsHelper.NavBtnDeselect(this.btnNavAlarms);
+            this.btnNavExports = FormsHelper.NavBtnDeselect(this.btnNavExports);
             this.button4 = FormsHelper.NavBtnDeselect(this.button4);
         }
         #endregion
@@ -476,6 +487,5 @@ namespace TagTool
             checkComponentStartaddress();
         }
 
-        
     }
 }
