@@ -1,5 +1,6 @@
 using System.Data;
 using System.Diagnostics;
+using System.Windows.Forms;
 using TagTool.Models;
 using TagTool.Services;
 using TagTool.ViewModels;
@@ -147,12 +148,15 @@ namespace TagTool
         {
             FbList.Add(new FunctionBlock { Name = "NewFb", Description = "This is a new Functionblock", Alarms = new List<Alarm>(), Parameters = new List<Parameter>()});
             refreshLibraryListView();
+            InitCompControl();
+
         }
         //Set Function block properties in global Fb List when textboxes change
         private void txtLibraryFbName_TextChanged(object sender, EventArgs e)
         {
             FbList[SelectedFbId].Name = txtLibraryFbName.Text;
             refreshLibraryListView();
+            loadDgvComboboxSelection();
         }
         private void txtLibrarySize_TextChanged(object sender, EventArgs e)
         {
@@ -405,6 +409,18 @@ namespace TagTool
             refreshComponentView();
         }
         #endregion
+
+        //##################################################################################################################################
+        //Alarm Panel Handling
+        //##################################################################################################################################
+        #region
+        //Refresh alarm datagridview
+        private void btnAlmRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
         //##################################################################################################################################
         //Application Initializaion
         //##################################################################################################################################
@@ -413,9 +429,15 @@ namespace TagTool
         //Initializing summary method
         private void initApp()
         {
+            //Initiate DataGridView for Components
+            InitCompDgv();
+            //Load Library View
             InitLibrary();
-            InitComponents();
+            //Add Components FbColumn content
+            InitCompControl();
+            //Reset Navigation
             ResetAllNavBtn();
+            //Start on components view
             this.btnNavComponents = FormsHelper.NavBtnSelect(this.btnNavComponents);
             this.pnlComponents.BringToFront();
         }
@@ -440,8 +462,25 @@ namespace TagTool
                 Debug.WriteLine(ex.Message);
             }
         }
-        //Initialization method of components panel
-        private void InitComponents()
+
+        //Initialize components controls
+        private void InitCompControl()
+        {
+            //When Fb List empty disable adding of components
+            if(FbList.Count == 0)
+            {
+                this.btnComponentAdd.Enabled = false;
+            }
+            //Else Activate and reload
+            else
+            {
+                this.btnComponentAdd.Enabled = true;
+                loadDgvComboboxSelection();
+            }
+        }
+
+        //Initialize columns for Components Datagrid View
+        private void InitCompDgv()
         {
             //Create columns for Components Datagridview
             DataGridViewTextBoxColumn IdCol = new DataGridViewTextBoxColumn();
@@ -460,12 +499,6 @@ namespace TagTool
             DataGridViewComboBoxColumn FbCol = new DataGridViewComboBoxColumn();
             FbCol.Name = "Function Block";
 
-            //Add functionblocks for dropdown menu in datagridview
-            foreach (FunctionBlock fb in FbList)
-            {
-                FbCol.Items.Add(fb.Name);
-            }
-
             //Add columns to datagridview
             dgvComponents.Columns.Add(IdCol);
             dgvComponents.Columns.Add(UnitCol);
@@ -474,6 +507,22 @@ namespace TagTool
             dgvComponents.Columns.Add(FbCol);
             dgvComponents.Columns.Add(StartAdrCol);
             dgvComponents.Columns.Add(AlarmAdrCol);
+
+        }
+
+        //Load Library for Combobox column
+        private void loadDgvComboboxSelection()
+        {
+            if(((DataGridViewComboBoxColumn)dgvComponents.Columns["Function Block"]).Items.Count != 0)
+            {
+                ((DataGridViewComboBoxColumn)dgvComponents.Columns["Function Block"]).Items.Clear();
+            }
+            
+            //Add functionblocks for dropdown menu in datagridview
+            foreach (FunctionBlock fb in FbList)
+            {
+                ((DataGridViewComboBoxColumn)dgvComponents.Columns["Function Block"]).Items.Add(fb.Name);
+            }
         }
         #endregion
 
@@ -486,6 +535,5 @@ namespace TagTool
         {
             checkComponentStartaddress();
         }
-
     }
 }

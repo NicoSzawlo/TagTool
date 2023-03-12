@@ -64,12 +64,20 @@
             this.btnComponentsCreateNew = new System.Windows.Forms.Button();
             this.dgvComponents = new System.Windows.Forms.DataGridView();
             this.pnlAlarms = new System.Windows.Forms.Panel();
+            this.dgvAlarms = new System.Windows.Forms.DataGridView();
             this.pnlExports = new System.Windows.Forms.Panel();
+            this.lblAlmStartAdr = new System.Windows.Forms.Label();
+            this.txtAlmStartAddr = new System.Windows.Forms.TextBox();
+            this.lblAlmMemArea = new System.Windows.Forms.Label();
+            this.txtAlmMemArea = new System.Windows.Forms.TextBox();
+            this.btnAlmRefresh = new System.Windows.Forms.Button();
             this.pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
             this.pnlComponents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).BeginInit();
+            this.pnlAlarms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlarms)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNavComponents
@@ -570,10 +578,25 @@
             // pnlAlarms
             // 
             this.pnlAlarms.BackColor = System.Drawing.Color.LightGray;
+            this.pnlAlarms.Controls.Add(this.btnAlmRefresh);
+            this.pnlAlarms.Controls.Add(this.lblAlmStartAdr);
+            this.pnlAlarms.Controls.Add(this.txtAlmStartAddr);
+            this.pnlAlarms.Controls.Add(this.lblAlmMemArea);
+            this.pnlAlarms.Controls.Add(this.txtAlmMemArea);
+            this.pnlAlarms.Controls.Add(this.dgvAlarms);
             this.pnlAlarms.Location = new System.Drawing.Point(4, 84);
             this.pnlAlarms.Name = "pnlAlarms";
             this.pnlAlarms.Size = new System.Drawing.Size(1176, 672);
             this.pnlAlarms.TabIndex = 7;
+            // 
+            // dgvAlarms
+            // 
+            this.dgvAlarms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlarms.Location = new System.Drawing.Point(30, 85);
+            this.dgvAlarms.Name = "dgvAlarms";
+            this.dgvAlarms.RowTemplate.Height = 25;
+            this.dgvAlarms.Size = new System.Drawing.Size(847, 556);
+            this.dgvAlarms.TabIndex = 0;
             // 
             // pnlExports
             // 
@@ -583,21 +606,73 @@
             this.pnlExports.Size = new System.Drawing.Size(1176, 672);
             this.pnlExports.TabIndex = 8;
             // 
+            // lblAlmStartAdr
+            // 
+            this.lblAlmStartAdr.AutoSize = true;
+            this.lblAlmStartAdr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAlmStartAdr.Location = new System.Drawing.Point(168, 15);
+            this.lblAlmStartAdr.Name = "lblAlmStartAdr";
+            this.lblAlmStartAdr.Size = new System.Drawing.Size(112, 23);
+            this.lblAlmStartAdr.TabIndex = 25;
+            this.lblAlmStartAdr.Text = "Start Address";
+            // 
+            // txtAlmStartAddr
+            // 
+            this.txtAlmStartAddr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAlmStartAddr.Location = new System.Drawing.Point(168, 40);
+            this.txtAlmStartAddr.Name = "txtAlmStartAddr";
+            this.txtAlmStartAddr.Size = new System.Drawing.Size(205, 30);
+            this.txtAlmStartAddr.TabIndex = 24;
+            // 
+            // lblAlmMemArea
+            // 
+            this.lblAlmMemArea.AutoSize = true;
+            this.lblAlmMemArea.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAlmMemArea.Location = new System.Drawing.Point(38, 15);
+            this.lblAlmMemArea.Name = "lblAlmMemArea";
+            this.lblAlmMemArea.Size = new System.Drawing.Size(115, 23);
+            this.lblAlmMemArea.TabIndex = 23;
+            this.lblAlmMemArea.Text = "Memory Area";
+            // 
+            // txtAlmMemArea
+            // 
+            this.txtAlmMemArea.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAlmMemArea.Location = new System.Drawing.Point(38, 41);
+            this.txtAlmMemArea.Name = "txtAlmMemArea";
+            this.txtAlmMemArea.Size = new System.Drawing.Size(115, 30);
+            this.txtAlmMemArea.TabIndex = 22;
+            // 
+            // btnAlmRefresh
+            // 
+            this.btnAlmRefresh.BackColor = System.Drawing.Color.DarkGray;
+            this.btnAlmRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnAlmRefresh.FlatAppearance.BorderSize = 0;
+            this.btnAlmRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlmRefresh.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAlmRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmRefresh.Image")));
+            this.btnAlmRefresh.Location = new System.Drawing.Point(822, 24);
+            this.btnAlmRefresh.Name = "btnAlmRefresh";
+            this.btnAlmRefresh.Size = new System.Drawing.Size(55, 55);
+            this.btnAlmRefresh.TabIndex = 28;
+            this.btnAlmRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAlmRefresh.UseVisualStyleBackColor = false;
+            this.btnAlmRefresh.Click += new System.EventHandler(this.btnAlmRefresh_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.pnlExports);
-            this.Controls.Add(this.pnlAlarms);
             this.Controls.Add(this.btnNavComponents);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnNavExports);
             this.Controls.Add(this.btnNavAlarms);
             this.Controls.Add(this.btnNavLibrary);
+            this.Controls.Add(this.pnlAlarms);
             this.Controls.Add(this.pnlComponents);
             this.Controls.Add(this.pnlLibrary);
+            this.Controls.Add(this.pnlExports);
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.Text = "Form1";
@@ -607,6 +682,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).EndInit();
             this.pnlComponents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).EndInit();
+            this.pnlAlarms.ResumeLayout(false);
+            this.pnlAlarms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlarms)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -649,5 +727,11 @@
         private Button btnComponentAdd;
         private Panel pnlAlarms;
         private Panel pnlExports;
+        private DataGridView dgvAlarms;
+        private Label lblAlmStartAdr;
+        private TextBox txtAlmStartAddr;
+        private Label lblAlmMemArea;
+        private TextBox txtAlmMemArea;
+        private Button btnAlmRefresh;
     }
 }
