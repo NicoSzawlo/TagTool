@@ -11,12 +11,19 @@ namespace TagTool
 {
     public partial class MainWindow : Form
     {
+        //Initialze filepaths
         public string FilePath = "";
         public string ComponentsPath = "";
         public string LibraryPath = Application.StartupPath + "Library.json";
-        //Global Library View Properties
+
+        //Initialize Global bussiness objects
+        public Project Project = new Project();
         public List<FunctionBlock> FbList = new List<FunctionBlock>();
         public List<Component> CompList = new List<Component>();
+        public List<Unit> UnitList = new List<Unit>();
+        public List<Alarm> AlarmList = new List<Alarm>();
+
+        //Initialize Ids
         public int SelectedFbId = 0;
         public int ComponentIdCounter = 0;
         public MainWindow()
