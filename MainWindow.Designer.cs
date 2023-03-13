@@ -64,6 +64,8 @@
             this.btnComponentsCreateNew = new System.Windows.Forms.Button();
             this.dgvComponents = new System.Windows.Forms.DataGridView();
             this.pnlAlarms = new System.Windows.Forms.Panel();
+            this.lblAlmSize = new System.Windows.Forms.Label();
+            this.txtAlmSize = new System.Windows.Forms.TextBox();
             this.btnAlmRefresh = new System.Windows.Forms.Button();
             this.lblAlmStartAdr = new System.Windows.Forms.Label();
             this.txtAlmStartAddr = new System.Windows.Forms.TextBox();
@@ -71,12 +73,8 @@
             this.txtAlmMemArea = new System.Windows.Forms.TextBox();
             this.dgvAlarms = new System.Windows.Forms.DataGridView();
             this.pnlExports = new System.Windows.Forms.Panel();
-            this.lblCompUnitTag = new System.Windows.Forms.Label();
-            this.txtCompUnitTag = new System.Windows.Forms.TextBox();
-            this.lblCompUnitText = new System.Windows.Forms.Label();
-            this.txtCompUnitText = new System.Windows.Forms.TextBox();
-            this.lblCompUnitAlarmAddr = new System.Windows.Forms.Label();
-            this.txtCompUnitAlarmAddr = new System.Windows.Forms.TextBox();
+            this.dgvCompUnits = new System.Windows.Forms.DataGridView();
+            this.lblCompUnits = new System.Windows.Forms.Label();
             this.pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
@@ -84,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).BeginInit();
             this.pnlAlarms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlarms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompUnits)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNavComponents
@@ -493,12 +492,8 @@
             // pnlComponents
             // 
             this.pnlComponents.BackColor = System.Drawing.Color.LightGray;
-            this.pnlComponents.Controls.Add(this.lblCompUnitAlarmAddr);
-            this.pnlComponents.Controls.Add(this.txtCompUnitAlarmAddr);
-            this.pnlComponents.Controls.Add(this.lblCompUnitText);
-            this.pnlComponents.Controls.Add(this.txtCompUnitText);
-            this.pnlComponents.Controls.Add(this.lblCompUnitTag);
-            this.pnlComponents.Controls.Add(this.txtCompUnitTag);
+            this.pnlComponents.Controls.Add(this.lblCompUnits);
+            this.pnlComponents.Controls.Add(this.dgvCompUnits);
             this.pnlComponents.Controls.Add(this.btnComponentAdd);
             this.pnlComponents.Controls.Add(this.btnComponentLoad);
             this.pnlComponents.Controls.Add(this.btnComponentsSave);
@@ -590,6 +585,8 @@
             // pnlAlarms
             // 
             this.pnlAlarms.BackColor = System.Drawing.Color.LightGray;
+            this.pnlAlarms.Controls.Add(this.lblAlmSize);
+            this.pnlAlarms.Controls.Add(this.txtAlmSize);
             this.pnlAlarms.Controls.Add(this.btnAlmRefresh);
             this.pnlAlarms.Controls.Add(this.lblAlmStartAdr);
             this.pnlAlarms.Controls.Add(this.txtAlmStartAddr);
@@ -600,6 +597,24 @@
             this.pnlAlarms.Name = "pnlAlarms";
             this.pnlAlarms.Size = new System.Drawing.Size(1176, 672);
             this.pnlAlarms.TabIndex = 7;
+            // 
+            // lblAlmSize
+            // 
+            this.lblAlmSize.AutoSize = true;
+            this.lblAlmSize.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAlmSize.Location = new System.Drawing.Point(370, 16);
+            this.lblAlmSize.Name = "lblAlmSize";
+            this.lblAlmSize.Size = new System.Drawing.Size(164, 23);
+            this.lblAlmSize.TabIndex = 30;
+            this.lblAlmSize.Text = "Alarm Area Size [W]";
+            // 
+            // txtAlmSize
+            // 
+            this.txtAlmSize.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAlmSize.Location = new System.Drawing.Point(370, 41);
+            this.txtAlmSize.Name = "txtAlmSize";
+            this.txtAlmSize.Size = new System.Drawing.Size(205, 30);
+            this.txtAlmSize.TabIndex = 29;
             // 
             // btnAlmRefresh
             // 
@@ -621,7 +636,7 @@
             // 
             this.lblAlmStartAdr.AutoSize = true;
             this.lblAlmStartAdr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAlmStartAdr.Location = new System.Drawing.Point(168, 15);
+            this.lblAlmStartAdr.Location = new System.Drawing.Point(159, 16);
             this.lblAlmStartAdr.Name = "lblAlmStartAdr";
             this.lblAlmStartAdr.Size = new System.Drawing.Size(112, 23);
             this.lblAlmStartAdr.TabIndex = 25;
@@ -630,7 +645,7 @@
             // txtAlmStartAddr
             // 
             this.txtAlmStartAddr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAlmStartAddr.Location = new System.Drawing.Point(168, 40);
+            this.txtAlmStartAddr.Location = new System.Drawing.Point(159, 41);
             this.txtAlmStartAddr.Name = "txtAlmStartAddr";
             this.txtAlmStartAddr.Size = new System.Drawing.Size(205, 30);
             this.txtAlmStartAddr.TabIndex = 24;
@@ -670,59 +685,24 @@
             this.pnlExports.Size = new System.Drawing.Size(1176, 672);
             this.pnlExports.TabIndex = 8;
             // 
-            // lblCompUnitTag
+            // dgvCompUnits
             // 
-            this.lblCompUnitTag.AutoSize = true;
-            this.lblCompUnitTag.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCompUnitTag.Location = new System.Drawing.Point(966, 67);
-            this.lblCompUnitTag.Name = "lblCompUnitTag";
-            this.lblCompUnitTag.Size = new System.Drawing.Size(76, 23);
-            this.lblCompUnitTag.TabIndex = 29;
-            this.lblCompUnitTag.Text = "Unit Tag";
+            this.dgvCompUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompUnits.Location = new System.Drawing.Point(966, 67);
+            this.dgvCompUnits.Name = "dgvCompUnits";
+            this.dgvCompUnits.RowTemplate.Height = 25;
+            this.dgvCompUnits.Size = new System.Drawing.Size(202, 178);
+            this.dgvCompUnits.TabIndex = 28;
             // 
-            // txtCompUnitTag
+            // lblCompUnits
             // 
-            this.txtCompUnitTag.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCompUnitTag.Location = new System.Drawing.Point(966, 93);
-            this.txtCompUnitTag.Name = "txtCompUnitTag";
-            this.txtCompUnitTag.Size = new System.Drawing.Size(205, 30);
-            this.txtCompUnitTag.TabIndex = 28;
-            // 
-            // lblCompUnitText
-            // 
-            this.lblCompUnitText.AutoSize = true;
-            this.lblCompUnitText.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCompUnitText.Location = new System.Drawing.Point(966, 126);
-            this.lblCompUnitText.Name = "lblCompUnitText";
-            this.lblCompUnitText.Size = new System.Drawing.Size(80, 23);
-            this.lblCompUnitText.TabIndex = 31;
-            this.lblCompUnitText.Text = "Unit Text";
-            // 
-            // txtCompUnitText
-            // 
-            this.txtCompUnitText.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCompUnitText.Location = new System.Drawing.Point(966, 152);
-            this.txtCompUnitText.Name = "txtCompUnitText";
-            this.txtCompUnitText.Size = new System.Drawing.Size(205, 30);
-            this.txtCompUnitText.TabIndex = 30;
-            // 
-            // lblCompUnitAlarmAddr
-            // 
-            this.lblCompUnitAlarmAddr.AutoSize = true;
-            this.lblCompUnitAlarmAddr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCompUnitAlarmAddr.Location = new System.Drawing.Point(966, 190);
-            this.lblCompUnitAlarmAddr.Name = "lblCompUnitAlarmAddr";
-            this.lblCompUnitAlarmAddr.Size = new System.Drawing.Size(159, 23);
-            this.lblCompUnitAlarmAddr.TabIndex = 33;
-            this.lblCompUnitAlarmAddr.Text = "Unit Alarm Address";
-            // 
-            // txtCompUnitAlarmAddr
-            // 
-            this.txtCompUnitAlarmAddr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCompUnitAlarmAddr.Location = new System.Drawing.Point(966, 216);
-            this.txtCompUnitAlarmAddr.Name = "txtCompUnitAlarmAddr";
-            this.txtCompUnitAlarmAddr.Size = new System.Drawing.Size(205, 30);
-            this.txtCompUnitAlarmAddr.TabIndex = 32;
+            this.lblCompUnits.AutoSize = true;
+            this.lblCompUnits.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCompUnits.Location = new System.Drawing.Point(966, 39);
+            this.lblCompUnits.Name = "lblCompUnits";
+            this.lblCompUnits.Size = new System.Drawing.Size(111, 23);
+            this.lblCompUnits.TabIndex = 29;
+            this.lblCompUnits.Text = "Units/Groups";
             // 
             // MainWindow
             // 
@@ -752,6 +732,7 @@
             this.pnlAlarms.ResumeLayout(false);
             this.pnlAlarms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlarms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompUnits)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -800,11 +781,9 @@
         private Label lblAlmMemArea;
         private TextBox txtAlmMemArea;
         private Button btnAlmRefresh;
-        private Label lblCompUnitAlarmAddr;
-        private TextBox txtCompUnitAlarmAddr;
-        private Label lblCompUnitText;
-        private TextBox txtCompUnitText;
-        private Label lblCompUnitTag;
-        private TextBox txtCompUnitTag;
+        private Label lblAlmSize;
+        private TextBox txtAlmSize;
+        private DataGridView dgvCompUnits;
+        private Label lblCompUnits;
     }
 }

@@ -362,7 +362,7 @@ namespace TagTool
                 {
                     dgvComponents.Rows.Add(
                         component.Id,
-                        component.Unit,
+                        component.Unit.Text,
                         component.Tag,
                         component.Description,
                         component.Fb.Name,
@@ -397,7 +397,6 @@ namespace TagTool
                 }
             }
         }
-
         private void addComponentRow()
         {
             //Increase id counter
@@ -405,7 +404,7 @@ namespace TagTool
             //Generate new component with new ID
             Component comp = new Component() {
                 Id = ComponentIdCounter,
-                Unit = "NewUnit",
+                Unit = new Unit() { Tag = "NewUnit", Text = "New Unit"},
                 Tag = "NewTag",
                 AlarmAddress = 0,
                 StartAddress = 0,
@@ -414,6 +413,34 @@ namespace TagTool
             //Add component to list
             CompList.Add(comp);
             refreshComponentView();
+        }
+        //Go through componentlist and:
+        //-add new units to unitlist
+        private void checkUnits()
+        {
+            bool isNew = true;
+            foreach(Component component in CompList)
+            {
+                if(UnitList.Count != 0)
+                {
+                    foreach(Unit unit in UnitList)
+                    {
+                        if(component.Unit.Text == unit.Text)
+                        {
+                            isNew = false;
+                            break;
+                        }
+                    }
+                    if (isNew)
+                    {
+                        UnitList.Add(component.Unit);
+                    }
+                }
+                else
+                {
+                    UnitList.Add(component.Unit);
+                }
+            }
         }
         #endregion
 
@@ -428,6 +455,7 @@ namespace TagTool
         }
 
         #endregion
+
         //##################################################################################################################################
         //Application Initializaion
         //##################################################################################################################################

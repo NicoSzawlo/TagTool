@@ -11,7 +11,7 @@ namespace TagTool.Models
         public int Id { get; set; }
         public string Tag { get; set; }
         public string Description { get; set; }
-        public string Unit { get; set; }
+        public Unit Unit { get; set; }
         public FunctionBlock Fb { get; set; }
         public int StartAddress { get; set; }
         public int AlarmAddress { get; set; }

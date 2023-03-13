@@ -24,7 +24,7 @@ namespace TagTool.ViewModels
                         //When Id of component and passed id are the same change value of component in list
                         if(component.Id == id)
                         {
-                            component.Unit = cellValue;
+                            component.Unit.Text = cellValue;
                         }
                     }
                     break;
@@ -99,21 +99,17 @@ namespace TagTool.ViewModels
             //Go through sorted list
             for (int i = 0; i < sortedComponents.Count; i++)
             {
-                //Check if component has Fb and Startaddress set
-                //if (components[i].StartAddress != 0 && components[i].Fb.Name != "")
-                //{
-                    //Check if last element
-                    if (i + 1 < sortedComponents.Count)
+                //Check if last element
+                if (i + 1 < sortedComponents.Count)
+                {
+                    //Add Startaddress and Fb Size
+                    endaddress = sortedComponents[i].StartAddress + sortedComponents[i].Fb.Size;
+                    //Check if startaddress+size > startaddress of next component
+                    if (endaddress > sortedComponents[i + 1].StartAddress)
                     {
-                        //Add Startaddress and Fb Size
-                        endaddress = sortedComponents[i].StartAddress + sortedComponents[i].Fb.Size;
-                        //Check if startaddress+size > startaddress of next component
-                        if (endaddress > sortedComponents[i + 1].StartAddress)
-                        {
-                            faultyComponents.Add(sortedComponents[i+1].Id);
-                        }
+                        faultyComponents.Add(sortedComponents[i+1].Id);
                     }
-                //}
+                }
             }
             return faultyComponents;
         }
