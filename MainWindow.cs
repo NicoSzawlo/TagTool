@@ -568,7 +568,7 @@ namespace TagTool
         //##################################################################################################################################
         private void btnLibraryTest_Click(object sender, EventArgs e)
         {
-            checkComponentStartaddress();
+            
         }
     }
 }

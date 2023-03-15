@@ -58,6 +58,8 @@
             this.btnNavExports = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pnlComponents = new System.Windows.Forms.Panel();
+            this.lblCompUnits = new System.Windows.Forms.Label();
+            this.dgvCompUnits = new System.Windows.Forms.DataGridView();
             this.btnComponentAdd = new System.Windows.Forms.Button();
             this.btnComponentLoad = new System.Windows.Forms.Button();
             this.btnComponentsSave = new System.Windows.Forms.Button();
@@ -73,16 +75,14 @@
             this.txtAlmMemArea = new System.Windows.Forms.TextBox();
             this.dgvAlarms = new System.Windows.Forms.DataGridView();
             this.pnlExports = new System.Windows.Forms.Panel();
-            this.dgvCompUnits = new System.Windows.Forms.DataGridView();
-            this.lblCompUnits = new System.Windows.Forms.Label();
             this.pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
             this.pnlComponents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompUnits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).BeginInit();
             this.pnlAlarms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompUnits)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNavComponents
@@ -504,6 +504,25 @@
             this.pnlComponents.Size = new System.Drawing.Size(1176, 672);
             this.pnlComponents.TabIndex = 6;
             // 
+            // lblCompUnits
+            // 
+            this.lblCompUnits.AutoSize = true;
+            this.lblCompUnits.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCompUnits.Location = new System.Drawing.Point(966, 39);
+            this.lblCompUnits.Name = "lblCompUnits";
+            this.lblCompUnits.Size = new System.Drawing.Size(111, 23);
+            this.lblCompUnits.TabIndex = 29;
+            this.lblCompUnits.Text = "Units/Groups";
+            // 
+            // dgvCompUnits
+            // 
+            this.dgvCompUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompUnits.Location = new System.Drawing.Point(966, 67);
+            this.dgvCompUnits.Name = "dgvCompUnits";
+            this.dgvCompUnits.RowTemplate.Height = 25;
+            this.dgvCompUnits.Size = new System.Drawing.Size(202, 178);
+            this.dgvCompUnits.TabIndex = 28;
+            // 
             // btnComponentAdd
             // 
             this.btnComponentAdd.BackColor = System.Drawing.Color.DarkGray;
@@ -604,9 +623,9 @@
             this.lblAlmSize.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAlmSize.Location = new System.Drawing.Point(370, 16);
             this.lblAlmSize.Name = "lblAlmSize";
-            this.lblAlmSize.Size = new System.Drawing.Size(164, 23);
+            this.lblAlmSize.Size = new System.Drawing.Size(175, 23);
             this.lblAlmSize.TabIndex = 30;
-            this.lblAlmSize.Text = "Alarm Area Size [W]";
+            this.lblAlmSize.Text = "Alarm Area Size [bits]";
             // 
             // txtAlmSize
             // 
@@ -638,9 +657,9 @@
             this.lblAlmStartAdr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAlmStartAdr.Location = new System.Drawing.Point(159, 16);
             this.lblAlmStartAdr.Name = "lblAlmStartAdr";
-            this.lblAlmStartAdr.Size = new System.Drawing.Size(112, 23);
+            this.lblAlmStartAdr.Size = new System.Drawing.Size(206, 23);
             this.lblAlmStartAdr.TabIndex = 25;
-            this.lblAlmStartAdr.Text = "Start Address";
+            this.lblAlmStartAdr.Text = "Start Address [Bitaddress]";
             // 
             // txtAlmStartAddr
             // 
@@ -685,25 +704,6 @@
             this.pnlExports.Size = new System.Drawing.Size(1176, 672);
             this.pnlExports.TabIndex = 8;
             // 
-            // dgvCompUnits
-            // 
-            this.dgvCompUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompUnits.Location = new System.Drawing.Point(966, 67);
-            this.dgvCompUnits.Name = "dgvCompUnits";
-            this.dgvCompUnits.RowTemplate.Height = 25;
-            this.dgvCompUnits.Size = new System.Drawing.Size(202, 178);
-            this.dgvCompUnits.TabIndex = 28;
-            // 
-            // lblCompUnits
-            // 
-            this.lblCompUnits.AutoSize = true;
-            this.lblCompUnits.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCompUnits.Location = new System.Drawing.Point(966, 39);
-            this.lblCompUnits.Name = "lblCompUnits";
-            this.lblCompUnits.Size = new System.Drawing.Size(111, 23);
-            this.lblCompUnits.TabIndex = 29;
-            this.lblCompUnits.Text = "Units/Groups";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -715,10 +715,10 @@
             this.Controls.Add(this.btnNavExports);
             this.Controls.Add(this.btnNavAlarms);
             this.Controls.Add(this.btnNavLibrary);
+            this.Controls.Add(this.pnlAlarms);
             this.Controls.Add(this.pnlComponents);
             this.Controls.Add(this.pnlLibrary);
             this.Controls.Add(this.pnlExports);
-            this.Controls.Add(this.pnlAlarms);
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.Text = "Form1";
@@ -728,11 +728,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).EndInit();
             this.pnlComponents.ResumeLayout(false);
             this.pnlComponents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompUnits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).EndInit();
             this.pnlAlarms.ResumeLayout(false);
             this.pnlAlarms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompUnits)).EndInit();
             this.ResumeLayout(false);
 
         }
