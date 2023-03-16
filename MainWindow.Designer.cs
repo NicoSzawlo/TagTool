@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.btnNavComponents = new System.Windows.Forms.Button();
             this.pnlLibrary = new System.Windows.Forms.Panel();
@@ -66,6 +67,9 @@
             this.btnComponentsCreateNew = new System.Windows.Forms.Button();
             this.dgvComponents = new System.Windows.Forms.DataGridView();
             this.pnlAlarms = new System.Windows.Forms.Panel();
+            this.rdbAlmMemSelMix = new System.Windows.Forms.RadioButton();
+            this.rdbAlmMemSelHex = new System.Windows.Forms.RadioButton();
+            this.rdbAlmMemSelDec = new System.Windows.Forms.RadioButton();
             this.lblAlmSize = new System.Windows.Forms.Label();
             this.txtAlmSize = new System.Windows.Forms.TextBox();
             this.btnAlmRefresh = new System.Windows.Forms.Button();
@@ -75,6 +79,7 @@
             this.txtAlmMemArea = new System.Windows.Forms.TextBox();
             this.dgvAlarms = new System.Windows.Forms.DataGridView();
             this.pnlExports = new System.Windows.Forms.Panel();
+            this.ttAlmMemSelMixInfo = new System.Windows.Forms.ToolTip(this.components);
             this.pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
@@ -604,6 +609,9 @@
             // pnlAlarms
             // 
             this.pnlAlarms.BackColor = System.Drawing.Color.LightGray;
+            this.pnlAlarms.Controls.Add(this.rdbAlmMemSelMix);
+            this.pnlAlarms.Controls.Add(this.rdbAlmMemSelHex);
+            this.pnlAlarms.Controls.Add(this.rdbAlmMemSelDec);
             this.pnlAlarms.Controls.Add(this.lblAlmSize);
             this.pnlAlarms.Controls.Add(this.txtAlmSize);
             this.pnlAlarms.Controls.Add(this.btnAlmRefresh);
@@ -616,6 +624,39 @@
             this.pnlAlarms.Name = "pnlAlarms";
             this.pnlAlarms.Size = new System.Drawing.Size(1176, 672);
             this.pnlAlarms.TabIndex = 7;
+            // 
+            // rdbAlmMemSelMix
+            // 
+            this.rdbAlmMemSelMix.AutoSize = true;
+            this.rdbAlmMemSelMix.Location = new System.Drawing.Point(619, 54);
+            this.rdbAlmMemSelMix.Name = "rdbAlmMemSelMix";
+            this.rdbAlmMemSelMix.Size = new System.Drawing.Size(144, 19);
+            this.rdbAlmMemSelMix.TabIndex = 33;
+            this.rdbAlmMemSelMix.TabStop = true;
+            this.rdbAlmMemSelMix.Text = "Mixed Address System";
+            this.rdbAlmMemSelMix.UseVisualStyleBackColor = true;
+            // 
+            // rdbAlmMemSelHex
+            // 
+            this.rdbAlmMemSelHex.AutoSize = true;
+            this.rdbAlmMemSelHex.Location = new System.Drawing.Point(619, 33);
+            this.rdbAlmMemSelHex.Name = "rdbAlmMemSelHex";
+            this.rdbAlmMemSelHex.Size = new System.Drawing.Size(180, 19);
+            this.rdbAlmMemSelHex.TabIndex = 32;
+            this.rdbAlmMemSelHex.TabStop = true;
+            this.rdbAlmMemSelHex.Text = "Hexadecimal Address System";
+            this.rdbAlmMemSelHex.UseVisualStyleBackColor = true;
+            // 
+            // rdbAlmMemSelDec
+            // 
+            this.rdbAlmMemSelDec.AutoSize = true;
+            this.rdbAlmMemSelDec.Location = new System.Drawing.Point(619, 12);
+            this.rdbAlmMemSelDec.Name = "rdbAlmMemSelDec";
+            this.rdbAlmMemSelDec.Size = new System.Drawing.Size(154, 19);
+            this.rdbAlmMemSelDec.TabIndex = 31;
+            this.rdbAlmMemSelDec.TabStop = true;
+            this.rdbAlmMemSelDec.Text = "Decimal Address System";
+            this.rdbAlmMemSelDec.UseVisualStyleBackColor = true;
             // 
             // lblAlmSize
             // 
@@ -785,5 +826,9 @@
         private TextBox txtAlmSize;
         private DataGridView dgvCompUnits;
         private Label lblCompUnits;
+        private RadioButton rdbAlmMemSelMix;
+        private RadioButton rdbAlmMemSelHex;
+        private RadioButton rdbAlmMemSelDec;
+        private ToolTip ttAlmMemSelMixInfo;
     }
 }

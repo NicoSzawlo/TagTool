@@ -451,7 +451,14 @@ namespace TagTool
         //Refresh alarm datagridview
         private void btnAlmRefresh_Click(object sender, EventArgs e)
         {
-
+            DataGridViewTextBoxColumn AlarmTextCol = new DataGridViewTextBoxColumn();
+            AlarmTextCol.Name = "Alarmtext";
+            AlarmTextCol.ReadOnly = true;
+            dgvAlarms.Columns.Add(AlarmTextCol);
+            foreach(Alarm alarm in AlarmsViewModel.FillAlarmList("40000", 10000, "MB"))
+            {
+                dgvAlarms.Rows.Add(alarm.Text);
+            }
         }
 
         #endregion
