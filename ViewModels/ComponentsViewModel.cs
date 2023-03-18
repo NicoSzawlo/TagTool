@@ -128,5 +128,52 @@ namespace TagTool.ViewModels
 
             return lastid;
         }
+
+        public static Component GenerateNewComponent(int id, FunctionBlock fb)
+        {
+            Component comp = new Component()
+            {
+                Id = id,
+                Unit = new Unit() { Tag = "NewUnit", Text = "New Unit" },
+                Tag = "NewTag",
+                AlarmAddress = 0,
+                StartAddress = 0,
+                Description = "New Description",
+                Fb = fb
+            };
+            return comp;
+        }
+        //Generates a List of Units from a Components DataGridview content
+        public static List<Unit> GenerateUnitListFromComponents(List<string> units)
+        {
+            List<Unit> unitList = new List<Unit>();
+            bool dupe = false;
+
+            foreach(string unittext in units)
+            {
+                if(unitList.Count == 0) 
+                {
+                    unitList.Add(new Unit() { Tag = "NewUnit", Text = unittext });
+                }
+                else
+                {
+                    foreach(Unit unit in unitList)
+                    {
+                        if(unit.Text == unittext)
+                        {
+                            dupe = true;
+                            break;
+                        }
+                    }
+                    if (!dupe)
+                    {
+                        unitList.Add(new Unit() { Tag = "NewUnit", Text = unittext });
+                    }
+                    dupe = false;
+                }
+            }
+
+            return unitList;
+        }
     }
 }

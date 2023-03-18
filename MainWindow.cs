@@ -338,10 +338,13 @@ namespace TagTool
                 CompList,
                 FbList);
             checkComponentStartaddress();
+            
         }
         private void btnComponentAdd_Click(object sender, EventArgs e)
         {
-            addComponentRow();
+            ComponentIdCounter++;
+            CompList.Add(ComponentsViewModel.GenerateNewComponent(ComponentIdCounter, FbList[0]));
+            refreshComponentView();
         }
 
         //Components Backend calls
@@ -394,51 +397,6 @@ namespace TagTool
                         }
                             
                     }
-                }
-            }
-        }
-        private void addComponentRow()
-        {
-            //Increase id counter
-            ComponentIdCounter++;
-            //Generate new component with new ID
-            Component comp = new Component() {
-                Id = ComponentIdCounter,
-                Unit = new Unit() { Tag = "NewUnit", Text = "New Unit"},
-                Tag = "NewTag",
-                AlarmAddress = 0,
-                StartAddress = 0,
-                Description = "New Description",
-                Fb = FbList[0] };
-            //Add component to list
-            CompList.Add(comp);
-            refreshComponentView();
-        }
-        //Go through componentlist and:
-        //-add new units to unitlist
-        private void checkUnits()
-        {
-            bool isNew = true;
-            foreach(Component component in CompList)
-            {
-                if(UnitList.Count != 0)
-                {
-                    foreach(Unit unit in UnitList)
-                    {
-                        if(component.Unit.Text == unit.Text)
-                        {
-                            isNew = false;
-                            break;
-                        }
-                    }
-                    if (isNew)
-                    {
-                        UnitList.Add(component.Unit);
-                    }
-                }
-                else
-                {
-                    UnitList.Add(component.Unit);
                 }
             }
         }
@@ -575,7 +533,8 @@ namespace TagTool
         //##################################################################################################################################
         private void btnLibraryTest_Click(object sender, EventArgs e)
         {
-            
+            UnitList = ComponentsViewModel.GenerateUnitListFromComponents(DataTableHandler.ConvertDgvUnitsToStrings(dgvComponents.Rows));
+            dgvCompUnits.DataSource = DataTableHandler.UnitsToDt(UnitList);
         }
     }
 }

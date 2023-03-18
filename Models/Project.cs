@@ -24,5 +24,6 @@ namespace TagTool.Models
         public List<Unit> Units { get; set; }
         //Short version of the memory area (e.g. MW, D,...)
         public string MemoryArea { get; set; }
+
     }
 }

@@ -521,6 +521,7 @@
             // 
             // dgvCompUnits
             // 
+            this.dgvCompUnits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCompUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompUnits.Location = new System.Drawing.Point(966, 67);
             this.dgvCompUnits.Name = "dgvCompUnits";
@@ -756,10 +757,10 @@
             this.Controls.Add(this.btnNavExports);
             this.Controls.Add(this.btnNavAlarms);
             this.Controls.Add(this.btnNavLibrary);
-            this.Controls.Add(this.pnlAlarms);
             this.Controls.Add(this.pnlComponents);
             this.Controls.Add(this.pnlLibrary);
             this.Controls.Add(this.pnlExports);
+            this.Controls.Add(this.pnlAlarms);
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.Text = "Form1";
