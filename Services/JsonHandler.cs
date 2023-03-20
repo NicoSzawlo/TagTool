@@ -96,6 +96,7 @@ namespace TagTool.Services
         {
             try
             {
+                File.Delete(filepath);
                 string jsonString = JsonSerializer.Serialize(proj);
                 File.WriteAllText(filepath, jsonString);
             }

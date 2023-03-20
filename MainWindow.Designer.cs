@@ -521,6 +521,7 @@
             // 
             // dgvCompUnits
             // 
+            this.dgvCompUnits.AllowUserToResizeRows = false;
             this.dgvCompUnits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCompUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompUnits.Location = new System.Drawing.Point(966, 67);

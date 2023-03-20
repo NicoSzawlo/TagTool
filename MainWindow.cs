@@ -13,11 +13,11 @@ namespace TagTool
     {
         //Initialze filepaths
         public string FilePath = "";
-        public string ComponentsPath = "";
+        public string ProjectPath = "";
         public string LibraryPath = Application.StartupPath + "Library.json";
 
         //Initialize Global bussiness objects
-        public Project Project = new Project();
+        public Project ActiveProject = new Project();
         public List<FunctionBlock> FbList = new List<FunctionBlock>();
         public List<Component> CompList = new List<Component>();
         public List<Unit> UnitList = new List<Unit>();
@@ -284,13 +284,17 @@ namespace TagTool
         //User FILE Interaction
         //##########################
 
-        //Initially save/Create new of components list
+        //Initially save/Create new project file
         private void btnComponentsCreateNew_Click(object sender, EventArgs e)
         {
-            ComponentsPath = FormsHelper.CallSaveFileDialog();
+            ProjectPath = FormsHelper.CallSaveFileDialog();
+            ActiveProject.FbLibrary = FbList;
+            ActiveProject.Components = CompList;
+            ActiveProject.AlarmList = AlarmList;
+            ActiveProject.Units = UnitList;
             try
             {
-                JsonHandler.SerializeComponentList(CompList, ComponentsPath);
+                JsonHandler.SerializeProject(ActiveProject, ProjectPath);
             }
             catch (Exception ex)
             {
@@ -300,25 +304,30 @@ namespace TagTool
         //Load components list from json file
         private void btnComponentLoad_Click(object sender, EventArgs e)
         {
-            ComponentsPath = FormsHelper.CallFileDialog();
+            ProjectPath = FormsHelper.CallFileDialog();
             try
             {
-                CompList = JsonHandler.DeserializeComponentList(ComponentsPath);
+                ActiveProject = JsonHandler.DeserializeProject(ProjectPath);
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
+
+            CompList = ActiveProject.Components;
+            AlarmList = ActiveProject.AlarmList;
+            UnitList = ActiveProject.Units;
+
             ComponentIdCounter = ComponentsViewModel.GetLastId(CompList);
+
             refreshComponentView();
-            checkComponentStartaddress();
         }
         //Save last saved/loaded components file 
         private void btnComponentsSave_Click(object sender, EventArgs e)
         {
             try
             {
-                JsonHandler.SerializeComponentList(CompList, ComponentsPath);
+                JsonHandler.SerializeProject(ActiveProject, ProjectPath);
             }
             catch (Exception ex)
             {
@@ -338,7 +347,9 @@ namespace TagTool
                 CompList,
                 FbList);
             checkComponentStartaddress();
-            
+            refreshUnits();
+
+
         }
         private void btnComponentAdd_Click(object sender, EventArgs e)
         {
@@ -355,7 +366,7 @@ namespace TagTool
         {
             if (CompList.Count > 0)
             {
-                if(dgvComponents.Rows.Count > 1)
+                if(dgvComponents.Rows.Count >= 1)
                 {
                     dgvComponents.DataSource = null;
                     dgvComponents.Rows.Clear();
@@ -372,6 +383,8 @@ namespace TagTool
                         component.StartAddress,
                         component.AlarmAddress);
                 }
+                checkComponentStartaddress();
+                refreshUnits();
             }
         }
         //Check for startaddress overlaps and color faulty components startaddress cells red
@@ -398,6 +411,18 @@ namespace TagTool
                             
                     }
                 }
+            }
+        }
+        //Refresh Units Dgv
+        private void refreshUnits()
+        {
+            dgvCompUnits.DataSource = null;
+            dgvCompUnits.Rows.Clear();
+            UnitList = ComponentsViewModel.GenerateUnitListFromComponents(DataTableHandler.ConvertDgvUnitsToStrings(dgvComponents.Rows));
+            dgvCompUnits.DataSource = DataTableHandler.UnitsToDt(UnitList);
+            foreach(DataGridViewColumn col in dgvCompUnits.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
         #endregion
