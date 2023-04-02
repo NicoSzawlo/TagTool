@@ -351,6 +351,7 @@ namespace TagTool
 
 
         }
+        //Adds new default component to list
         private void btnComponentAdd_Click(object sender, EventArgs e)
         {
             ComponentIdCounter++;
@@ -418,8 +419,9 @@ namespace TagTool
         {
             dgvCompUnits.DataSource = null;
             dgvCompUnits.Rows.Clear();
-            UnitList = ComponentsViewModel.GenerateUnitListFromComponents(DataTableHandler.ConvertDgvUnitsToStrings(dgvComponents.Rows));
+            UnitList = ComponentsViewModel.UpdateUnitList(UnitList, dgvComponents.Rows);
             dgvCompUnits.DataSource = DataTableHandler.UnitsToDt(UnitList);
+            dgvCompUnits.Columns["ID"].Visible = false;
             foreach(DataGridViewColumn col in dgvCompUnits.Columns)
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -558,7 +560,7 @@ namespace TagTool
         //##################################################################################################################################
         private void btnLibraryTest_Click(object sender, EventArgs e)
         {
-            UnitList = ComponentsViewModel.GenerateUnitListFromComponents(DataTableHandler.ConvertDgvUnitsToStrings(dgvComponents.Rows));
+            UnitList = ComponentsViewModel.UpdateUnitList(UnitList, dgvComponents.Rows);
             dgvCompUnits.DataSource = DataTableHandler.UnitsToDt(UnitList);
         }
     }

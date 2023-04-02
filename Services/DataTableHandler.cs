@@ -50,19 +50,7 @@ namespace TagTool.Services
             dt.Columns.Add("Value");
             return dt;
         }
-
-        //Method to get Unit Texts from Components DataGridView 
-        public static List<string> ConvertDgvUnitsToStrings(DataGridViewRowCollection rows)
-        {
-            List<string> str = new List<string>();
-
-            foreach (DataGridViewRow row in rows)
-            {
-                str.Add(row.Cells["Unit/Group"].Value.ToString());
-            }
-
-            return str;
-        }
+        
         //Generate DataTable from Units List to display in datagridview
         public static DataTable UnitsToDt(List<Unit> units)
         {
@@ -70,7 +58,7 @@ namespace TagTool.Services
 
             foreach (Unit unit in units)
             {
-                dt.Rows.Add(unit.Text, unit.Tag);
+                dt.Rows.Add(unit.Id, unit.Text, unit.Tag);
             }
             return dt;
         }
@@ -78,6 +66,7 @@ namespace TagTool.Services
         private static DataTable InitUnitsDt()
         {
             DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
             dt.Columns.Add("Full Text");
             dt.Columns.Add("Tag");
 

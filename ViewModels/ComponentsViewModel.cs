@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TagTool.Models;
+using TagTool.Services;
 
 namespace TagTool.ViewModels
 {
@@ -128,7 +130,7 @@ namespace TagTool.ViewModels
 
             return lastid;
         }
-
+        //Generate new blank component
         public static Component GenerateNewComponent(int id, FunctionBlock fb)
         {
             Component comp = new Component()
@@ -143,37 +145,38 @@ namespace TagTool.ViewModels
             };
             return comp;
         }
-        //Generates a List of Units from a Components DataGridview content
-        public static List<Unit> GenerateUnitListFromComponents(List<string> units)
+        //Function to update unitlist based on another unitlist but only compare Text property
+        public static List<Unit> UpdateUnitList(List<Unit> unitList, DataGridViewRowCollection rows)
         {
-            List<Unit> unitList = new List<Unit>();
+            List<Unit> newUnitList = Unit.GenerateRawUnitList(rows);
             bool dupe = false;
-
-            foreach(string unittext in units)
-            {
-                if(unitList.Count == 0) 
-                {
-                    unitList.Add(new Unit() { Tag = "NewUnit", Text = unittext });
-                }
-                else
-                {
-                    foreach(Unit unit in unitList)
-                    {
-                        if(unit.Text == unittext)
-                        {
-                            dupe = true;
-                            break;
-                        }
-                    }
-                    if (!dupe)
-                    {
-                        unitList.Add(new Unit() { Tag = "NewUnit", Text = unittext });
-                    }
-                    dupe = false;
-                }
-            }
+            //Go through newUnitList
+            unitList = Unit.DeleteUnitEntries(unitList, newUnitList);
+            
+            //Go through unitlist and check if unit is still in newUnitList else, delete it from list
+            unitList = Unit.UpdateUnitList(unitList, newUnitList);
 
             return unitList;
+        }
+        
+        //Function to set units to componentslist based on text property of unitlist and component unit text
+        public static List<Component> SetUnitToComponents(List<Unit> unitList, List<Component> components)
+        {
+            //Go through components
+            foreach(Component component in components)
+            {
+                //Go through units
+                foreach(Unit unit in unitList)
+                {
+                    //Check if unit text is the same as component unit text
+                    if(unit.Text == component.Unit.Text)
+                    {
+                        //Set unit to component
+                        component.Unit = unit;
+                    }
+                }
+            }
+            return components;
         }
     }
 }
