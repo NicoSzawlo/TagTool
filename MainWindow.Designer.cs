@@ -28,756 +28,754 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.btnNavComponents = new System.Windows.Forms.Button();
-            this.pnlLibrary = new System.Windows.Forms.Panel();
-            this.btnLibraryDeleteParameter = new System.Windows.Forms.Button();
-            this.btnLibraryDeleteAlarm = new System.Windows.Forms.Button();
-            this.lvLibraryFunctionblocks = new System.Windows.Forms.ListView();
-            this.colLibviewBugged = new System.Windows.Forms.ColumnHeader();
-            this.colLibviewName = new System.Windows.Forms.ColumnHeader();
-            this.dgvLibraryAlarms = new System.Windows.Forms.DataGridView();
-            this.btnLibraryAddAlarm = new System.Windows.Forms.Button();
-            this.btnLibraryAddParameter = new System.Windows.Forms.Button();
-            this.btnLibraryViewParameters = new System.Windows.Forms.Button();
-            this.btnLibraryViewAlarms = new System.Windows.Forms.Button();
-            this.dgvLibraryParameters = new System.Windows.Forms.DataGridView();
-            this.lblLibraryFbDescription = new System.Windows.Forms.Label();
-            this.txtLibraryDescription = new System.Windows.Forms.TextBox();
-            this.lblLibrarySize = new System.Windows.Forms.Label();
-            this.txtLibrarySize = new System.Windows.Forms.TextBox();
-            this.lblLibraryFbName = new System.Windows.Forms.Label();
-            this.txtLibraryFbName = new System.Windows.Forms.TextBox();
-            this.btnLibrarySaveFileAs = new System.Windows.Forms.Button();
-            this.btnLibraryTest = new System.Windows.Forms.Button();
-            this.btnLibraryOpenFile = new System.Windows.Forms.Button();
-            this.btnLibrarySaveFile = new System.Windows.Forms.Button();
-            this.btnLibraryCreateFb = new System.Windows.Forms.Button();
-            this.btnNavLibrary = new System.Windows.Forms.Button();
-            this.btnNavAlarms = new System.Windows.Forms.Button();
-            this.btnNavExports = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pnlComponents = new System.Windows.Forms.Panel();
-            this.lblCompUnits = new System.Windows.Forms.Label();
-            this.dgvCompUnits = new System.Windows.Forms.DataGridView();
-            this.btnComponentAdd = new System.Windows.Forms.Button();
-            this.btnComponentLoad = new System.Windows.Forms.Button();
-            this.btnComponentsSave = new System.Windows.Forms.Button();
-            this.btnComponentsCreateNew = new System.Windows.Forms.Button();
-            this.dgvComponents = new System.Windows.Forms.DataGridView();
-            this.pnlAlarms = new System.Windows.Forms.Panel();
-            this.rdbAlmMemSelMix = new System.Windows.Forms.RadioButton();
-            this.rdbAlmMemSelHex = new System.Windows.Forms.RadioButton();
-            this.rdbAlmMemSelDec = new System.Windows.Forms.RadioButton();
-            this.lblAlmSize = new System.Windows.Forms.Label();
-            this.txtAlmSize = new System.Windows.Forms.TextBox();
-            this.btnAlmRefresh = new System.Windows.Forms.Button();
-            this.lblAlmStartAdr = new System.Windows.Forms.Label();
-            this.txtAlmStartAddr = new System.Windows.Forms.TextBox();
-            this.lblAlmMemArea = new System.Windows.Forms.Label();
-            this.txtAlmMemArea = new System.Windows.Forms.TextBox();
-            this.dgvAlarms = new System.Windows.Forms.DataGridView();
-            this.pnlExports = new System.Windows.Forms.Panel();
-            this.ttAlmMemSelMixInfo = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlLibrary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).BeginInit();
-            this.pnlComponents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompUnits)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).BeginInit();
-            this.pnlAlarms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlarms)).BeginInit();
-            this.SuspendLayout();
+            btnNavComponents = new Button();
+            pnlLibrary = new Panel();
+            btnLibraryDeleteParameter = new Button();
+            btnLibraryDeleteAlarm = new Button();
+            lvLibraryFunctionblocks = new ListView();
+            colLibviewBugged = new ColumnHeader();
+            colLibviewName = new ColumnHeader();
+            dgvLibraryAlarms = new DataGridView();
+            btnLibraryAddAlarm = new Button();
+            btnLibraryAddParameter = new Button();
+            btnLibraryViewParameters = new Button();
+            btnLibraryViewAlarms = new Button();
+            dgvLibraryParameters = new DataGridView();
+            lblLibraryFbDescription = new Label();
+            txtLibraryDescription = new TextBox();
+            lblLibrarySize = new Label();
+            txtLibrarySize = new TextBox();
+            lblLibraryFbName = new Label();
+            txtLibraryFbName = new TextBox();
+            btnLibrarySaveFileAs = new Button();
+            btnLibraryTest = new Button();
+            btnLibraryOpenFile = new Button();
+            btnLibrarySaveFile = new Button();
+            btnLibraryCreateFb = new Button();
+            btnNavLibrary = new Button();
+            btnNavAlarms = new Button();
+            btnNavExports = new Button();
+            button4 = new Button();
+            pnlComponents = new Panel();
+            lblCompUnits = new Label();
+            dgvCompUnits = new DataGridView();
+            btnComponentAdd = new Button();
+            btnComponentLoad = new Button();
+            btnComponentsSave = new Button();
+            btnComponentsCreateNew = new Button();
+            dgvComponents = new DataGridView();
+            pnlAlarms = new Panel();
+            rdbAlmMemSelMix = new RadioButton();
+            rdbAlmMemSelHex = new RadioButton();
+            rdbAlmMemSelDec = new RadioButton();
+            lblAlmSize = new Label();
+            txtAlmSize = new TextBox();
+            btnAlmRefresh = new Button();
+            lblAlmStartAdr = new Label();
+            txtAlmStartAddr = new TextBox();
+            lblAlmMemArea = new Label();
+            txtAlmMemArea = new TextBox();
+            dgvAlarms = new DataGridView();
+            pnlExports = new Panel();
+            ttAlmMemSelMixInfo = new ToolTip(components);
+            pnlLibrary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLibraryAlarms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLibraryParameters).BeginInit();
+            pnlComponents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCompUnits).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvComponents).BeginInit();
+            pnlAlarms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAlarms).BeginInit();
+            SuspendLayout();
             // 
             // btnNavComponents
             // 
-            this.btnNavComponents.BackColor = System.Drawing.Color.DarkGray;
-            this.btnNavComponents.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnNavComponents.FlatAppearance.BorderSize = 2;
-            this.btnNavComponents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavComponents.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNavComponents.Image = ((System.Drawing.Image)(resources.GetObject("btnNavComponents.Image")));
-            this.btnNavComponents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNavComponents.Location = new System.Drawing.Point(4, 4);
-            this.btnNavComponents.Name = "btnNavComponents";
-            this.btnNavComponents.Size = new System.Drawing.Size(160, 78);
-            this.btnNavComponents.TabIndex = 0;
-            this.btnNavComponents.Text = "Components";
-            this.btnNavComponents.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNavComponents.UseVisualStyleBackColor = false;
-            this.btnNavComponents.Click += new System.EventHandler(this.btnNavComponents_Click);
+            btnNavComponents.BackColor = Color.DarkGray;
+            btnNavComponents.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnNavComponents.FlatAppearance.BorderSize = 2;
+            btnNavComponents.FlatStyle = FlatStyle.Flat;
+            btnNavComponents.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavComponents.Image = (Image)resources.GetObject("btnNavComponents.Image");
+            btnNavComponents.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNavComponents.Location = new Point(4, 4);
+            btnNavComponents.Name = "btnNavComponents";
+            btnNavComponents.Size = new Size(160, 78);
+            btnNavComponents.TabIndex = 0;
+            btnNavComponents.Text = "Components";
+            btnNavComponents.TextAlign = ContentAlignment.MiddleRight;
+            btnNavComponents.UseVisualStyleBackColor = false;
+            btnNavComponents.Click += btnNavComponents_Click;
             // 
             // pnlLibrary
             // 
-            this.pnlLibrary.BackColor = System.Drawing.Color.LightGray;
-            this.pnlLibrary.Controls.Add(this.btnLibraryDeleteParameter);
-            this.pnlLibrary.Controls.Add(this.btnLibraryDeleteAlarm);
-            this.pnlLibrary.Controls.Add(this.lvLibraryFunctionblocks);
-            this.pnlLibrary.Controls.Add(this.dgvLibraryAlarms);
-            this.pnlLibrary.Controls.Add(this.btnLibraryAddAlarm);
-            this.pnlLibrary.Controls.Add(this.btnLibraryAddParameter);
-            this.pnlLibrary.Controls.Add(this.btnLibraryViewParameters);
-            this.pnlLibrary.Controls.Add(this.btnLibraryViewAlarms);
-            this.pnlLibrary.Controls.Add(this.dgvLibraryParameters);
-            this.pnlLibrary.Controls.Add(this.lblLibraryFbDescription);
-            this.pnlLibrary.Controls.Add(this.txtLibraryDescription);
-            this.pnlLibrary.Controls.Add(this.lblLibrarySize);
-            this.pnlLibrary.Controls.Add(this.txtLibrarySize);
-            this.pnlLibrary.Controls.Add(this.lblLibraryFbName);
-            this.pnlLibrary.Controls.Add(this.txtLibraryFbName);
-            this.pnlLibrary.Controls.Add(this.btnLibrarySaveFileAs);
-            this.pnlLibrary.Controls.Add(this.btnLibraryTest);
-            this.pnlLibrary.Controls.Add(this.btnLibraryOpenFile);
-            this.pnlLibrary.Controls.Add(this.btnLibrarySaveFile);
-            this.pnlLibrary.Controls.Add(this.btnLibraryCreateFb);
-            this.pnlLibrary.Location = new System.Drawing.Point(4, 84);
-            this.pnlLibrary.Name = "pnlLibrary";
-            this.pnlLibrary.Size = new System.Drawing.Size(1176, 672);
-            this.pnlLibrary.TabIndex = 1;
+            pnlLibrary.BackColor = Color.LightGray;
+            pnlLibrary.Controls.Add(btnLibraryDeleteParameter);
+            pnlLibrary.Controls.Add(btnLibraryDeleteAlarm);
+            pnlLibrary.Controls.Add(lvLibraryFunctionblocks);
+            pnlLibrary.Controls.Add(dgvLibraryAlarms);
+            pnlLibrary.Controls.Add(btnLibraryAddAlarm);
+            pnlLibrary.Controls.Add(btnLibraryAddParameter);
+            pnlLibrary.Controls.Add(btnLibraryViewParameters);
+            pnlLibrary.Controls.Add(btnLibraryViewAlarms);
+            pnlLibrary.Controls.Add(dgvLibraryParameters);
+            pnlLibrary.Controls.Add(lblLibraryFbDescription);
+            pnlLibrary.Controls.Add(txtLibraryDescription);
+            pnlLibrary.Controls.Add(lblLibrarySize);
+            pnlLibrary.Controls.Add(txtLibrarySize);
+            pnlLibrary.Controls.Add(lblLibraryFbName);
+            pnlLibrary.Controls.Add(txtLibraryFbName);
+            pnlLibrary.Controls.Add(btnLibrarySaveFileAs);
+            pnlLibrary.Controls.Add(btnLibraryTest);
+            pnlLibrary.Controls.Add(btnLibraryOpenFile);
+            pnlLibrary.Controls.Add(btnLibrarySaveFile);
+            pnlLibrary.Controls.Add(btnLibraryCreateFb);
+            pnlLibrary.Location = new Point(4, 84);
+            pnlLibrary.Name = "pnlLibrary";
+            pnlLibrary.Size = new Size(1176, 672);
+            pnlLibrary.TabIndex = 1;
             // 
             // btnLibraryDeleteParameter
             // 
-            this.btnLibraryDeleteParameter.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryDeleteParameter.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryDeleteParameter.FlatAppearance.BorderSize = 0;
-            this.btnLibraryDeleteParameter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryDeleteParameter.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryDeleteParameter.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryDeleteParameter.Image")));
-            this.btnLibraryDeleteParameter.Location = new System.Drawing.Point(1020, 362);
-            this.btnLibraryDeleteParameter.Name = "btnLibraryDeleteParameter";
-            this.btnLibraryDeleteParameter.Size = new System.Drawing.Size(55, 55);
-            this.btnLibraryDeleteParameter.TabIndex = 30;
-            this.btnLibraryDeleteParameter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryDeleteParameter.UseVisualStyleBackColor = false;
-            this.btnLibraryDeleteParameter.Click += new System.EventHandler(this.btnLibraryDeleteParameter_Click);
+            btnLibraryDeleteParameter.BackColor = Color.DarkGray;
+            btnLibraryDeleteParameter.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryDeleteParameter.FlatAppearance.BorderSize = 0;
+            btnLibraryDeleteParameter.FlatStyle = FlatStyle.Flat;
+            btnLibraryDeleteParameter.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibraryDeleteParameter.Image = (Image)resources.GetObject("btnLibraryDeleteParameter.Image");
+            btnLibraryDeleteParameter.Location = new Point(1020, 362);
+            btnLibraryDeleteParameter.Name = "btnLibraryDeleteParameter";
+            btnLibraryDeleteParameter.Size = new Size(55, 55);
+            btnLibraryDeleteParameter.TabIndex = 30;
+            btnLibraryDeleteParameter.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryDeleteParameter.UseVisualStyleBackColor = false;
+            btnLibraryDeleteParameter.Click += btnLibraryDeleteParameter_Click;
             // 
             // btnLibraryDeleteAlarm
             // 
-            this.btnLibraryDeleteAlarm.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryDeleteAlarm.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryDeleteAlarm.FlatAppearance.BorderSize = 0;
-            this.btnLibraryDeleteAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryDeleteAlarm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryDeleteAlarm.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryDeleteAlarm.Image")));
-            this.btnLibraryDeleteAlarm.Location = new System.Drawing.Point(1020, 90);
-            this.btnLibraryDeleteAlarm.Name = "btnLibraryDeleteAlarm";
-            this.btnLibraryDeleteAlarm.Size = new System.Drawing.Size(55, 55);
-            this.btnLibraryDeleteAlarm.TabIndex = 29;
-            this.btnLibraryDeleteAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryDeleteAlarm.UseVisualStyleBackColor = false;
-            this.btnLibraryDeleteAlarm.Click += new System.EventHandler(this.btnLibraryDeleteAlarm_Click);
+            btnLibraryDeleteAlarm.BackColor = Color.DarkGray;
+            btnLibraryDeleteAlarm.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryDeleteAlarm.FlatAppearance.BorderSize = 0;
+            btnLibraryDeleteAlarm.FlatStyle = FlatStyle.Flat;
+            btnLibraryDeleteAlarm.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibraryDeleteAlarm.Image = (Image)resources.GetObject("btnLibraryDeleteAlarm.Image");
+            btnLibraryDeleteAlarm.Location = new Point(1020, 90);
+            btnLibraryDeleteAlarm.Name = "btnLibraryDeleteAlarm";
+            btnLibraryDeleteAlarm.Size = new Size(55, 55);
+            btnLibraryDeleteAlarm.TabIndex = 29;
+            btnLibraryDeleteAlarm.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryDeleteAlarm.UseVisualStyleBackColor = false;
+            btnLibraryDeleteAlarm.Click += btnLibraryDeleteAlarm_Click;
             // 
             // lvLibraryFunctionblocks
             // 
-            this.lvLibraryFunctionblocks.CausesValidation = false;
-            this.lvLibraryFunctionblocks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colLibviewBugged,
-            this.colLibviewName});
-            this.lvLibraryFunctionblocks.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lvLibraryFunctionblocks.FullRowSelect = true;
-            this.lvLibraryFunctionblocks.GridLines = true;
-            this.lvLibraryFunctionblocks.Location = new System.Drawing.Point(30, 152);
-            this.lvLibraryFunctionblocks.MultiSelect = false;
-            this.lvLibraryFunctionblocks.Name = "lvLibraryFunctionblocks";
-            this.lvLibraryFunctionblocks.Size = new System.Drawing.Size(290, 489);
-            this.lvLibraryFunctionblocks.TabIndex = 28;
-            this.lvLibraryFunctionblocks.TileSize = new System.Drawing.Size(290, 40);
-            this.lvLibraryFunctionblocks.UseCompatibleStateImageBehavior = false;
-            this.lvLibraryFunctionblocks.View = System.Windows.Forms.View.List;
-            this.lvLibraryFunctionblocks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvLibraryFunctionblocks_ItemSelectionChanged);
+            lvLibraryFunctionblocks.CausesValidation = false;
+            lvLibraryFunctionblocks.Columns.AddRange(new ColumnHeader[] { colLibviewBugged, colLibviewName });
+            lvLibraryFunctionblocks.Font = new Font("Malgun Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lvLibraryFunctionblocks.FullRowSelect = true;
+            lvLibraryFunctionblocks.GridLines = true;
+            lvLibraryFunctionblocks.Location = new Point(30, 152);
+            lvLibraryFunctionblocks.MultiSelect = false;
+            lvLibraryFunctionblocks.Name = "lvLibraryFunctionblocks";
+            lvLibraryFunctionblocks.Size = new Size(290, 489);
+            lvLibraryFunctionblocks.TabIndex = 28;
+            lvLibraryFunctionblocks.TileSize = new Size(290, 40);
+            lvLibraryFunctionblocks.UseCompatibleStateImageBehavior = false;
+            lvLibraryFunctionblocks.View = View.List;
+            lvLibraryFunctionblocks.ItemSelectionChanged += lvLibraryFunctionblocks_ItemSelectionChanged;
             // 
             // colLibviewBugged
             // 
-            this.colLibviewBugged.Width = 0;
+            colLibviewBugged.Width = 0;
             // 
             // colLibviewName
             // 
-            this.colLibviewName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colLibviewName.Width = 290;
+            colLibviewName.TextAlign = HorizontalAlignment.Right;
+            colLibviewName.Width = 290;
             // 
             // dgvLibraryAlarms
             // 
-            this.dgvLibraryAlarms.AllowUserToAddRows = false;
-            this.dgvLibraryAlarms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvLibraryAlarms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLibraryAlarms.Location = new System.Drawing.Point(362, 152);
-            this.dgvLibraryAlarms.MultiSelect = false;
-            this.dgvLibraryAlarms.Name = "dgvLibraryAlarms";
-            this.dgvLibraryAlarms.RowTemplate.Height = 25;
-            this.dgvLibraryAlarms.Size = new System.Drawing.Size(774, 204);
-            this.dgvLibraryAlarms.TabIndex = 27;
-            this.dgvLibraryAlarms.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibraryAlarms_CellValueChanged);
+            dgvLibraryAlarms.AllowUserToAddRows = false;
+            dgvLibraryAlarms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvLibraryAlarms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLibraryAlarms.Location = new Point(362, 152);
+            dgvLibraryAlarms.MultiSelect = false;
+            dgvLibraryAlarms.Name = "dgvLibraryAlarms";
+            dgvLibraryAlarms.RowTemplate.Height = 25;
+            dgvLibraryAlarms.Size = new Size(774, 204);
+            dgvLibraryAlarms.TabIndex = 27;
+            dgvLibraryAlarms.CellValueChanged += dgvLibraryAlarms_CellValueChanged;
             // 
             // btnLibraryAddAlarm
             // 
-            this.btnLibraryAddAlarm.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryAddAlarm.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryAddAlarm.FlatAppearance.BorderSize = 0;
-            this.btnLibraryAddAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryAddAlarm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryAddAlarm.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryAddAlarm.Image")));
-            this.btnLibraryAddAlarm.Location = new System.Drawing.Point(1081, 91);
-            this.btnLibraryAddAlarm.Name = "btnLibraryAddAlarm";
-            this.btnLibraryAddAlarm.Size = new System.Drawing.Size(55, 55);
-            this.btnLibraryAddAlarm.TabIndex = 26;
-            this.btnLibraryAddAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryAddAlarm.UseVisualStyleBackColor = false;
-            this.btnLibraryAddAlarm.Click += new System.EventHandler(this.btnLibraryAddAlarm_Click);
+            btnLibraryAddAlarm.BackColor = Color.DarkGray;
+            btnLibraryAddAlarm.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryAddAlarm.FlatAppearance.BorderSize = 0;
+            btnLibraryAddAlarm.FlatStyle = FlatStyle.Flat;
+            btnLibraryAddAlarm.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibraryAddAlarm.Image = (Image)resources.GetObject("btnLibraryAddAlarm.Image");
+            btnLibraryAddAlarm.Location = new Point(1081, 91);
+            btnLibraryAddAlarm.Name = "btnLibraryAddAlarm";
+            btnLibraryAddAlarm.Size = new Size(55, 55);
+            btnLibraryAddAlarm.TabIndex = 26;
+            btnLibraryAddAlarm.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryAddAlarm.UseVisualStyleBackColor = false;
+            btnLibraryAddAlarm.Click += btnLibraryAddAlarm_Click;
             // 
             // btnLibraryAddParameter
             // 
-            this.btnLibraryAddParameter.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryAddParameter.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryAddParameter.FlatAppearance.BorderSize = 0;
-            this.btnLibraryAddParameter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryAddParameter.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryAddParameter.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryAddParameter.Image")));
-            this.btnLibraryAddParameter.Location = new System.Drawing.Point(1081, 362);
-            this.btnLibraryAddParameter.Name = "btnLibraryAddParameter";
-            this.btnLibraryAddParameter.Size = new System.Drawing.Size(55, 55);
-            this.btnLibraryAddParameter.TabIndex = 25;
-            this.btnLibraryAddParameter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryAddParameter.UseVisualStyleBackColor = false;
-            this.btnLibraryAddParameter.Click += new System.EventHandler(this.btnLibraryAddParameter_Click);
+            btnLibraryAddParameter.BackColor = Color.DarkGray;
+            btnLibraryAddParameter.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryAddParameter.FlatAppearance.BorderSize = 0;
+            btnLibraryAddParameter.FlatStyle = FlatStyle.Flat;
+            btnLibraryAddParameter.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibraryAddParameter.Image = (Image)resources.GetObject("btnLibraryAddParameter.Image");
+            btnLibraryAddParameter.Location = new Point(1081, 362);
+            btnLibraryAddParameter.Name = "btnLibraryAddParameter";
+            btnLibraryAddParameter.Size = new Size(55, 55);
+            btnLibraryAddParameter.TabIndex = 25;
+            btnLibraryAddParameter.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryAddParameter.UseVisualStyleBackColor = false;
+            btnLibraryAddParameter.Click += btnLibraryAddParameter_Click;
             // 
             // btnLibraryViewParameters
             // 
-            this.btnLibraryViewParameters.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryViewParameters.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryViewParameters.FlatAppearance.BorderSize = 0;
-            this.btnLibraryViewParameters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryViewParameters.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryViewParameters.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryViewParameters.Image")));
-            this.btnLibraryViewParameters.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibraryViewParameters.Location = new System.Drawing.Point(362, 362);
-            this.btnLibraryViewParameters.Name = "btnLibraryViewParameters";
-            this.btnLibraryViewParameters.Size = new System.Drawing.Size(148, 55);
-            this.btnLibraryViewParameters.TabIndex = 24;
-            this.btnLibraryViewParameters.Text = "Parameters";
-            this.btnLibraryViewParameters.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryViewParameters.UseVisualStyleBackColor = false;
+            btnLibraryViewParameters.BackColor = Color.DarkGray;
+            btnLibraryViewParameters.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryViewParameters.FlatAppearance.BorderSize = 0;
+            btnLibraryViewParameters.FlatStyle = FlatStyle.Flat;
+            btnLibraryViewParameters.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLibraryViewParameters.Image = (Image)resources.GetObject("btnLibraryViewParameters.Image");
+            btnLibraryViewParameters.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLibraryViewParameters.Location = new Point(362, 362);
+            btnLibraryViewParameters.Name = "btnLibraryViewParameters";
+            btnLibraryViewParameters.Size = new Size(148, 55);
+            btnLibraryViewParameters.TabIndex = 24;
+            btnLibraryViewParameters.Text = "Parameters";
+            btnLibraryViewParameters.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryViewParameters.UseVisualStyleBackColor = false;
             // 
             // btnLibraryViewAlarms
             // 
-            this.btnLibraryViewAlarms.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryViewAlarms.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryViewAlarms.FlatAppearance.BorderSize = 0;
-            this.btnLibraryViewAlarms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryViewAlarms.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryViewAlarms.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryViewAlarms.Image")));
-            this.btnLibraryViewAlarms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibraryViewAlarms.Location = new System.Drawing.Point(362, 91);
-            this.btnLibraryViewAlarms.Name = "btnLibraryViewAlarms";
-            this.btnLibraryViewAlarms.Size = new System.Drawing.Size(148, 55);
-            this.btnLibraryViewAlarms.TabIndex = 23;
-            this.btnLibraryViewAlarms.Text = "Alarms";
-            this.btnLibraryViewAlarms.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryViewAlarms.UseVisualStyleBackColor = false;
+            btnLibraryViewAlarms.BackColor = Color.DarkGray;
+            btnLibraryViewAlarms.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryViewAlarms.FlatAppearance.BorderSize = 0;
+            btnLibraryViewAlarms.FlatStyle = FlatStyle.Flat;
+            btnLibraryViewAlarms.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLibraryViewAlarms.Image = (Image)resources.GetObject("btnLibraryViewAlarms.Image");
+            btnLibraryViewAlarms.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLibraryViewAlarms.Location = new Point(362, 91);
+            btnLibraryViewAlarms.Name = "btnLibraryViewAlarms";
+            btnLibraryViewAlarms.Size = new Size(148, 55);
+            btnLibraryViewAlarms.TabIndex = 23;
+            btnLibraryViewAlarms.Text = "Alarms";
+            btnLibraryViewAlarms.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryViewAlarms.UseVisualStyleBackColor = false;
             // 
             // dgvLibraryParameters
             // 
-            this.dgvLibraryParameters.AllowUserToAddRows = false;
-            this.dgvLibraryParameters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvLibraryParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLibraryParameters.Location = new System.Drawing.Point(362, 423);
-            this.dgvLibraryParameters.MultiSelect = false;
-            this.dgvLibraryParameters.Name = "dgvLibraryParameters";
-            this.dgvLibraryParameters.RowTemplate.Height = 25;
-            this.dgvLibraryParameters.Size = new System.Drawing.Size(774, 218);
-            this.dgvLibraryParameters.TabIndex = 22;
-            this.dgvLibraryParameters.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibraryParameters_CellValueChanged);
+            dgvLibraryParameters.AllowUserToAddRows = false;
+            dgvLibraryParameters.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvLibraryParameters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLibraryParameters.Location = new Point(362, 423);
+            dgvLibraryParameters.MultiSelect = false;
+            dgvLibraryParameters.Name = "dgvLibraryParameters";
+            dgvLibraryParameters.RowTemplate.Height = 25;
+            dgvLibraryParameters.Size = new Size(774, 218);
+            dgvLibraryParameters.TabIndex = 22;
+            dgvLibraryParameters.CellValueChanged += dgvLibraryParameters_CellValueChanged;
             // 
             // lblLibraryFbDescription
             // 
-            this.lblLibraryFbDescription.AutoSize = true;
-            this.lblLibraryFbDescription.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLibraryFbDescription.Location = new System.Drawing.Point(784, 29);
-            this.lblLibraryFbDescription.Name = "lblLibraryFbDescription";
-            this.lblLibraryFbDescription.Size = new System.Drawing.Size(96, 23);
-            this.lblLibraryFbDescription.TabIndex = 21;
-            this.lblLibraryFbDescription.Text = "Description";
+            lblLibraryFbDescription.AutoSize = true;
+            lblLibraryFbDescription.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLibraryFbDescription.Location = new Point(784, 29);
+            lblLibraryFbDescription.Name = "lblLibraryFbDescription";
+            lblLibraryFbDescription.Size = new Size(96, 23);
+            lblLibraryFbDescription.TabIndex = 21;
+            lblLibraryFbDescription.Text = "Description";
             // 
             // txtLibraryDescription
             // 
-            this.txtLibraryDescription.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLibraryDescription.Location = new System.Drawing.Point(784, 54);
-            this.txtLibraryDescription.Name = "txtLibraryDescription";
-            this.txtLibraryDescription.Size = new System.Drawing.Size(352, 30);
-            this.txtLibraryDescription.TabIndex = 20;
-            this.txtLibraryDescription.TextChanged += new System.EventHandler(this.txtLibraryDescription_TextChanged);
+            txtLibraryDescription.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLibraryDescription.Location = new Point(784, 54);
+            txtLibraryDescription.Name = "txtLibraryDescription";
+            txtLibraryDescription.Size = new Size(352, 30);
+            txtLibraryDescription.TabIndex = 20;
+            txtLibraryDescription.TextChanged += txtLibraryDescription_TextChanged;
             // 
             // lblLibrarySize
             // 
-            this.lblLibrarySize.AutoSize = true;
-            this.lblLibrarySize.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLibrarySize.Location = new System.Drawing.Point(573, 28);
-            this.lblLibrarySize.Name = "lblLibrarySize";
-            this.lblLibrarySize.Size = new System.Drawing.Size(40, 23);
-            this.lblLibrarySize.TabIndex = 19;
-            this.lblLibrarySize.Text = "Size";
+            lblLibrarySize.AutoSize = true;
+            lblLibrarySize.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLibrarySize.Location = new Point(573, 28);
+            lblLibrarySize.Name = "lblLibrarySize";
+            lblLibrarySize.Size = new Size(40, 23);
+            lblLibrarySize.TabIndex = 19;
+            lblLibrarySize.Text = "Size";
             // 
             // txtLibrarySize
             // 
-            this.txtLibrarySize.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLibrarySize.Location = new System.Drawing.Point(573, 54);
-            this.txtLibrarySize.Name = "txtLibrarySize";
-            this.txtLibrarySize.Size = new System.Drawing.Size(205, 30);
-            this.txtLibrarySize.TabIndex = 18;
-            this.txtLibrarySize.TextChanged += new System.EventHandler(this.txtLibrarySize_TextChanged);
+            txtLibrarySize.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLibrarySize.Location = new Point(573, 54);
+            txtLibrarySize.Name = "txtLibrarySize";
+            txtLibrarySize.Size = new Size(205, 30);
+            txtLibrarySize.TabIndex = 18;
+            txtLibrarySize.TextChanged += txtLibrarySize_TextChanged;
             // 
             // lblLibraryFbName
             // 
-            this.lblLibraryFbName.AutoSize = true;
-            this.lblLibraryFbName.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLibraryFbName.Location = new System.Drawing.Point(362, 29);
-            this.lblLibraryFbName.Name = "lblLibraryFbName";
-            this.lblLibraryFbName.Size = new System.Drawing.Size(56, 23);
-            this.lblLibraryFbName.TabIndex = 17;
-            this.lblLibraryFbName.Text = "Name";
+            lblLibraryFbName.AutoSize = true;
+            lblLibraryFbName.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLibraryFbName.Location = new Point(362, 29);
+            lblLibraryFbName.Name = "lblLibraryFbName";
+            lblLibraryFbName.Size = new Size(56, 23);
+            lblLibraryFbName.TabIndex = 17;
+            lblLibraryFbName.Text = "Name";
             // 
             // txtLibraryFbName
             // 
-            this.txtLibraryFbName.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLibraryFbName.Location = new System.Drawing.Point(362, 55);
-            this.txtLibraryFbName.Name = "txtLibraryFbName";
-            this.txtLibraryFbName.Size = new System.Drawing.Size(205, 30);
-            this.txtLibraryFbName.TabIndex = 16;
-            this.txtLibraryFbName.TextChanged += new System.EventHandler(this.txtLibraryFbName_TextChanged);
+            txtLibraryFbName.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLibraryFbName.Location = new Point(362, 55);
+            txtLibraryFbName.Name = "txtLibraryFbName";
+            txtLibraryFbName.Size = new Size(205, 30);
+            txtLibraryFbName.TabIndex = 16;
+            txtLibraryFbName.TextChanged += txtLibraryFbName_TextChanged;
             // 
             // btnLibrarySaveFileAs
             // 
-            this.btnLibrarySaveFileAs.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibrarySaveFileAs.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibrarySaveFileAs.FlatAppearance.BorderSize = 0;
-            this.btnLibrarySaveFileAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibrarySaveFileAs.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibrarySaveFileAs.Image = ((System.Drawing.Image)(resources.GetObject("btnLibrarySaveFileAs.Image")));
-            this.btnLibrarySaveFileAs.Location = new System.Drawing.Point(92, 30);
-            this.btnLibrarySaveFileAs.Name = "btnLibrarySaveFileAs";
-            this.btnLibrarySaveFileAs.Size = new System.Drawing.Size(55, 55);
-            this.btnLibrarySaveFileAs.TabIndex = 14;
-            this.btnLibrarySaveFileAs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibrarySaveFileAs.UseVisualStyleBackColor = false;
-            this.btnLibrarySaveFileAs.Click += new System.EventHandler(this.btnLibrarySaveFileAs_Click);
+            btnLibrarySaveFileAs.BackColor = Color.DarkGray;
+            btnLibrarySaveFileAs.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibrarySaveFileAs.FlatAppearance.BorderSize = 0;
+            btnLibrarySaveFileAs.FlatStyle = FlatStyle.Flat;
+            btnLibrarySaveFileAs.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibrarySaveFileAs.Image = (Image)resources.GetObject("btnLibrarySaveFileAs.Image");
+            btnLibrarySaveFileAs.Location = new Point(92, 30);
+            btnLibrarySaveFileAs.Name = "btnLibrarySaveFileAs";
+            btnLibrarySaveFileAs.Size = new Size(55, 55);
+            btnLibrarySaveFileAs.TabIndex = 14;
+            btnLibrarySaveFileAs.TextAlign = ContentAlignment.MiddleRight;
+            btnLibrarySaveFileAs.UseVisualStyleBackColor = false;
+            btnLibrarySaveFileAs.Click += btnLibrarySaveFileAs_Click;
             // 
             // btnLibraryTest
             // 
-            this.btnLibraryTest.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryTest.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryTest.FlatAppearance.BorderSize = 0;
-            this.btnLibraryTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryTest.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryTest.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryTest.Image")));
-            this.btnLibraryTest.Location = new System.Drawing.Point(265, 30);
-            this.btnLibraryTest.Name = "btnLibraryTest";
-            this.btnLibraryTest.Size = new System.Drawing.Size(55, 55);
-            this.btnLibraryTest.TabIndex = 13;
-            this.btnLibraryTest.Text = "Test";
-            this.btnLibraryTest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryTest.UseVisualStyleBackColor = false;
-            this.btnLibraryTest.Click += new System.EventHandler(this.btnLibraryTest_Click);
+            btnLibraryTest.BackColor = Color.DarkGray;
+            btnLibraryTest.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryTest.FlatAppearance.BorderSize = 0;
+            btnLibraryTest.FlatStyle = FlatStyle.Flat;
+            btnLibraryTest.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibraryTest.Image = (Image)resources.GetObject("btnLibraryTest.Image");
+            btnLibraryTest.Location = new Point(265, 30);
+            btnLibraryTest.Name = "btnLibraryTest";
+            btnLibraryTest.Size = new Size(55, 55);
+            btnLibraryTest.TabIndex = 13;
+            btnLibraryTest.Text = "Test";
+            btnLibraryTest.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryTest.UseVisualStyleBackColor = false;
+            btnLibraryTest.Click += btnLibraryTest_Click;
             // 
             // btnLibraryOpenFile
             // 
-            this.btnLibraryOpenFile.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryOpenFile.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryOpenFile.FlatAppearance.BorderSize = 0;
-            this.btnLibraryOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryOpenFile.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryOpenFile.Image = ((System.Drawing.Image)(resources.GetObject("btnLibraryOpenFile.Image")));
-            this.btnLibraryOpenFile.Location = new System.Drawing.Point(153, 30);
-            this.btnLibraryOpenFile.Name = "btnLibraryOpenFile";
-            this.btnLibraryOpenFile.Size = new System.Drawing.Size(55, 55);
-            this.btnLibraryOpenFile.TabIndex = 11;
-            this.btnLibraryOpenFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryOpenFile.UseVisualStyleBackColor = false;
-            this.btnLibraryOpenFile.Click += new System.EventHandler(this.btnLibraryOpenFile_Click);
+            btnLibraryOpenFile.BackColor = Color.DarkGray;
+            btnLibraryOpenFile.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryOpenFile.FlatAppearance.BorderSize = 0;
+            btnLibraryOpenFile.FlatStyle = FlatStyle.Flat;
+            btnLibraryOpenFile.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibraryOpenFile.Image = (Image)resources.GetObject("btnLibraryOpenFile.Image");
+            btnLibraryOpenFile.Location = new Point(153, 30);
+            btnLibraryOpenFile.Name = "btnLibraryOpenFile";
+            btnLibraryOpenFile.Size = new Size(55, 55);
+            btnLibraryOpenFile.TabIndex = 11;
+            btnLibraryOpenFile.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryOpenFile.UseVisualStyleBackColor = false;
+            btnLibraryOpenFile.Click += btnLibraryOpenFile_Click;
             // 
             // btnLibrarySaveFile
             // 
-            this.btnLibrarySaveFile.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibrarySaveFile.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibrarySaveFile.FlatAppearance.BorderSize = 0;
-            this.btnLibrarySaveFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibrarySaveFile.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibrarySaveFile.Image = ((System.Drawing.Image)(resources.GetObject("btnLibrarySaveFile.Image")));
-            this.btnLibrarySaveFile.Location = new System.Drawing.Point(30, 30);
-            this.btnLibrarySaveFile.Name = "btnLibrarySaveFile";
-            this.btnLibrarySaveFile.Size = new System.Drawing.Size(55, 55);
-            this.btnLibrarySaveFile.TabIndex = 10;
-            this.btnLibrarySaveFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibrarySaveFile.UseVisualStyleBackColor = false;
-            this.btnLibrarySaveFile.Click += new System.EventHandler(this.btnLibrarySaveFile_Click);
+            btnLibrarySaveFile.BackColor = Color.DarkGray;
+            btnLibrarySaveFile.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibrarySaveFile.FlatAppearance.BorderSize = 0;
+            btnLibrarySaveFile.FlatStyle = FlatStyle.Flat;
+            btnLibrarySaveFile.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibrarySaveFile.Image = (Image)resources.GetObject("btnLibrarySaveFile.Image");
+            btnLibrarySaveFile.Location = new Point(30, 30);
+            btnLibrarySaveFile.Name = "btnLibrarySaveFile";
+            btnLibrarySaveFile.Size = new Size(55, 55);
+            btnLibrarySaveFile.TabIndex = 10;
+            btnLibrarySaveFile.TextAlign = ContentAlignment.MiddleRight;
+            btnLibrarySaveFile.UseVisualStyleBackColor = false;
+            btnLibrarySaveFile.Click += btnLibrarySaveFile_Click;
             // 
             // btnLibraryCreateFb
             // 
-            this.btnLibraryCreateFb.BackColor = System.Drawing.Color.DarkGray;
-            this.btnLibraryCreateFb.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLibraryCreateFb.FlatAppearance.BorderSize = 0;
-            this.btnLibraryCreateFb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibraryCreateFb.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLibraryCreateFb.Image = global::TagTool.Properties.Resources.bearbeitensml;
-            this.btnLibraryCreateFb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibraryCreateFb.Location = new System.Drawing.Point(30, 91);
-            this.btnLibraryCreateFb.Name = "btnLibraryCreateFb";
-            this.btnLibraryCreateFb.Size = new System.Drawing.Size(213, 55);
-            this.btnLibraryCreateFb.TabIndex = 9;
-            this.btnLibraryCreateFb.Text = "New Functionblock";
-            this.btnLibraryCreateFb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLibraryCreateFb.UseVisualStyleBackColor = false;
-            this.btnLibraryCreateFb.Click += new System.EventHandler(this.btnLibraryCreateFb_Click);
+            btnLibraryCreateFb.BackColor = Color.DarkGray;
+            btnLibraryCreateFb.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnLibraryCreateFb.FlatAppearance.BorderSize = 0;
+            btnLibraryCreateFb.FlatStyle = FlatStyle.Flat;
+            btnLibraryCreateFb.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLibraryCreateFb.Image = Properties.Resources.bearbeitensml;
+            btnLibraryCreateFb.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLibraryCreateFb.Location = new Point(30, 91);
+            btnLibraryCreateFb.Name = "btnLibraryCreateFb";
+            btnLibraryCreateFb.Size = new Size(213, 55);
+            btnLibraryCreateFb.TabIndex = 9;
+            btnLibraryCreateFb.Text = "New Functionblock";
+            btnLibraryCreateFb.TextAlign = ContentAlignment.MiddleRight;
+            btnLibraryCreateFb.UseVisualStyleBackColor = false;
+            btnLibraryCreateFb.Click += btnLibraryCreateFb_Click;
             // 
             // btnNavLibrary
             // 
-            this.btnNavLibrary.BackColor = System.Drawing.Color.LightGray;
-            this.btnNavLibrary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNavLibrary.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnNavLibrary.FlatAppearance.BorderSize = 2;
-            this.btnNavLibrary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavLibrary.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNavLibrary.Image = global::TagTool.Properties.Resources.folder38px;
-            this.btnNavLibrary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNavLibrary.Location = new System.Drawing.Point(170, 4);
-            this.btnNavLibrary.Name = "btnNavLibrary";
-            this.btnNavLibrary.Size = new System.Drawing.Size(160, 82);
-            this.btnNavLibrary.TabIndex = 2;
-            this.btnNavLibrary.Text = "FB Library";
-            this.btnNavLibrary.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNavLibrary.UseVisualStyleBackColor = false;
-            this.btnNavLibrary.Click += new System.EventHandler(this.btnNavLibrary_Click);
+            btnNavLibrary.BackColor = Color.LightGray;
+            btnNavLibrary.BackgroundImageLayout = ImageLayout.Zoom;
+            btnNavLibrary.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnNavLibrary.FlatAppearance.BorderSize = 2;
+            btnNavLibrary.FlatStyle = FlatStyle.Flat;
+            btnNavLibrary.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavLibrary.Image = Properties.Resources.folder38px;
+            btnNavLibrary.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNavLibrary.Location = new Point(170, 4);
+            btnNavLibrary.Name = "btnNavLibrary";
+            btnNavLibrary.Size = new Size(160, 82);
+            btnNavLibrary.TabIndex = 2;
+            btnNavLibrary.Text = "FB Library";
+            btnNavLibrary.TextAlign = ContentAlignment.MiddleRight;
+            btnNavLibrary.UseVisualStyleBackColor = false;
+            btnNavLibrary.Click += btnNavLibrary_Click;
             // 
             // btnNavAlarms
             // 
-            this.btnNavAlarms.BackColor = System.Drawing.Color.DarkGray;
-            this.btnNavAlarms.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnNavAlarms.FlatAppearance.BorderSize = 2;
-            this.btnNavAlarms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavAlarms.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNavAlarms.Location = new System.Drawing.Point(336, 4);
-            this.btnNavAlarms.Name = "btnNavAlarms";
-            this.btnNavAlarms.Size = new System.Drawing.Size(160, 78);
-            this.btnNavAlarms.TabIndex = 3;
-            this.btnNavAlarms.Text = "Alarms";
-            this.btnNavAlarms.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNavAlarms.UseVisualStyleBackColor = false;
-            this.btnNavAlarms.Click += new System.EventHandler(this.btnNavAlarms_Click);
+            btnNavAlarms.BackColor = Color.DarkGray;
+            btnNavAlarms.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnNavAlarms.FlatAppearance.BorderSize = 2;
+            btnNavAlarms.FlatStyle = FlatStyle.Flat;
+            btnNavAlarms.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavAlarms.Location = new Point(336, 4);
+            btnNavAlarms.Name = "btnNavAlarms";
+            btnNavAlarms.Size = new Size(160, 78);
+            btnNavAlarms.TabIndex = 3;
+            btnNavAlarms.Text = "Alarms";
+            btnNavAlarms.TextAlign = ContentAlignment.MiddleRight;
+            btnNavAlarms.UseVisualStyleBackColor = false;
+            btnNavAlarms.Click += btnNavAlarms_Click;
             // 
             // btnNavExports
             // 
-            this.btnNavExports.BackColor = System.Drawing.Color.DarkGray;
-            this.btnNavExports.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnNavExports.FlatAppearance.BorderSize = 2;
-            this.btnNavExports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavExports.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNavExports.Location = new System.Drawing.Point(502, 4);
-            this.btnNavExports.Name = "btnNavExports";
-            this.btnNavExports.Size = new System.Drawing.Size(160, 78);
-            this.btnNavExports.TabIndex = 4;
-            this.btnNavExports.Text = "Exports";
-            this.btnNavExports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNavExports.UseVisualStyleBackColor = false;
-            this.btnNavExports.Click += new System.EventHandler(this.btnNavExports_Click);
+            btnNavExports.BackColor = Color.DarkGray;
+            btnNavExports.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnNavExports.FlatAppearance.BorderSize = 2;
+            btnNavExports.FlatStyle = FlatStyle.Flat;
+            btnNavExports.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavExports.Location = new Point(502, 4);
+            btnNavExports.Name = "btnNavExports";
+            btnNavExports.Size = new Size(160, 78);
+            btnNavExports.TabIndex = 4;
+            btnNavExports.Text = "Exports";
+            btnNavExports.TextAlign = ContentAlignment.MiddleRight;
+            btnNavExports.UseVisualStyleBackColor = false;
+            btnNavExports.Click += btnNavExports_Click;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkGray;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(668, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 78);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Components";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            button4.BackColor = Color.DarkGray;
+            button4.FlatAppearance.BorderColor = Color.DodgerBlue;
+            button4.FlatAppearance.BorderSize = 2;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Location = new Point(668, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(160, 78);
+            button4.TabIndex = 5;
+            button4.Text = "Components";
+            button4.TextAlign = ContentAlignment.MiddleRight;
+            button4.UseVisualStyleBackColor = false;
             // 
             // pnlComponents
             // 
-            this.pnlComponents.BackColor = System.Drawing.Color.LightGray;
-            this.pnlComponents.Controls.Add(this.lblCompUnits);
-            this.pnlComponents.Controls.Add(this.dgvCompUnits);
-            this.pnlComponents.Controls.Add(this.btnComponentAdd);
-            this.pnlComponents.Controls.Add(this.btnComponentLoad);
-            this.pnlComponents.Controls.Add(this.btnComponentsSave);
-            this.pnlComponents.Controls.Add(this.btnComponentsCreateNew);
-            this.pnlComponents.Controls.Add(this.dgvComponents);
-            this.pnlComponents.Location = new System.Drawing.Point(4, 84);
-            this.pnlComponents.Name = "pnlComponents";
-            this.pnlComponents.Size = new System.Drawing.Size(1176, 672);
-            this.pnlComponents.TabIndex = 6;
+            pnlComponents.BackColor = Color.LightGray;
+            pnlComponents.Controls.Add(lblCompUnits);
+            pnlComponents.Controls.Add(dgvCompUnits);
+            pnlComponents.Controls.Add(btnComponentAdd);
+            pnlComponents.Controls.Add(btnComponentLoad);
+            pnlComponents.Controls.Add(btnComponentsSave);
+            pnlComponents.Controls.Add(btnComponentsCreateNew);
+            pnlComponents.Controls.Add(dgvComponents);
+            pnlComponents.Location = new Point(4, 84);
+            pnlComponents.Name = "pnlComponents";
+            pnlComponents.Size = new Size(1176, 672);
+            pnlComponents.TabIndex = 6;
             // 
             // lblCompUnits
             // 
-            this.lblCompUnits.AutoSize = true;
-            this.lblCompUnits.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCompUnits.Location = new System.Drawing.Point(966, 39);
-            this.lblCompUnits.Name = "lblCompUnits";
-            this.lblCompUnits.Size = new System.Drawing.Size(111, 23);
-            this.lblCompUnits.TabIndex = 29;
-            this.lblCompUnits.Text = "Units/Groups";
+            lblCompUnits.AutoSize = true;
+            lblCompUnits.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCompUnits.Location = new Point(966, 39);
+            lblCompUnits.Name = "lblCompUnits";
+            lblCompUnits.Size = new Size(111, 23);
+            lblCompUnits.TabIndex = 29;
+            lblCompUnits.Text = "Units/Groups";
             // 
             // dgvCompUnits
             // 
-            this.dgvCompUnits.AllowUserToResizeRows = false;
-            this.dgvCompUnits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvCompUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompUnits.Location = new System.Drawing.Point(966, 67);
-            this.dgvCompUnits.Name = "dgvCompUnits";
-            this.dgvCompUnits.RowTemplate.Height = 25;
-            this.dgvCompUnits.Size = new System.Drawing.Size(202, 178);
-            this.dgvCompUnits.TabIndex = 28;
+            dgvCompUnits.AllowUserToResizeRows = false;
+            dgvCompUnits.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvCompUnits.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCompUnits.Location = new Point(966, 67);
+            dgvCompUnits.Name = "dgvCompUnits";
+            dgvCompUnits.RowTemplate.Height = 25;
+            dgvCompUnits.Size = new Size(202, 178);
+            dgvCompUnits.TabIndex = 28;
+            dgvCompUnits.CellValueChanged += dgvCompUnits_CellValueChanged;
             // 
             // btnComponentAdd
             // 
-            this.btnComponentAdd.BackColor = System.Drawing.Color.DarkGray;
-            this.btnComponentAdd.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnComponentAdd.FlatAppearance.BorderSize = 0;
-            this.btnComponentAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComponentAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnComponentAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnComponentAdd.Image")));
-            this.btnComponentAdd.Location = new System.Drawing.Point(905, 7);
-            this.btnComponentAdd.Name = "btnComponentAdd";
-            this.btnComponentAdd.Size = new System.Drawing.Size(55, 55);
-            this.btnComponentAdd.TabIndex = 27;
-            this.btnComponentAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnComponentAdd.UseVisualStyleBackColor = false;
-            this.btnComponentAdd.Click += new System.EventHandler(this.btnComponentAdd_Click);
+            btnComponentAdd.BackColor = Color.DarkGray;
+            btnComponentAdd.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnComponentAdd.FlatAppearance.BorderSize = 0;
+            btnComponentAdd.FlatStyle = FlatStyle.Flat;
+            btnComponentAdd.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnComponentAdd.Image = (Image)resources.GetObject("btnComponentAdd.Image");
+            btnComponentAdd.Location = new Point(905, 7);
+            btnComponentAdd.Name = "btnComponentAdd";
+            btnComponentAdd.Size = new Size(55, 55);
+            btnComponentAdd.TabIndex = 27;
+            btnComponentAdd.TextAlign = ContentAlignment.MiddleRight;
+            btnComponentAdd.UseVisualStyleBackColor = false;
+            btnComponentAdd.Click += btnComponentAdd_Click;
             // 
             // btnComponentLoad
             // 
-            this.btnComponentLoad.BackColor = System.Drawing.Color.DarkGray;
-            this.btnComponentLoad.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnComponentLoad.FlatAppearance.BorderSize = 0;
-            this.btnComponentLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComponentLoad.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnComponentLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnComponentLoad.Image")));
-            this.btnComponentLoad.Location = new System.Drawing.Point(130, 7);
-            this.btnComponentLoad.Name = "btnComponentLoad";
-            this.btnComponentLoad.Size = new System.Drawing.Size(55, 55);
-            this.btnComponentLoad.TabIndex = 8;
-            this.btnComponentLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnComponentLoad.UseVisualStyleBackColor = false;
-            this.btnComponentLoad.Click += new System.EventHandler(this.btnComponentLoad_Click);
+            btnComponentLoad.BackColor = Color.DarkGray;
+            btnComponentLoad.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnComponentLoad.FlatAppearance.BorderSize = 0;
+            btnComponentLoad.FlatStyle = FlatStyle.Flat;
+            btnComponentLoad.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnComponentLoad.Image = (Image)resources.GetObject("btnComponentLoad.Image");
+            btnComponentLoad.Location = new Point(130, 7);
+            btnComponentLoad.Name = "btnComponentLoad";
+            btnComponentLoad.Size = new Size(55, 55);
+            btnComponentLoad.TabIndex = 8;
+            btnComponentLoad.TextAlign = ContentAlignment.MiddleRight;
+            btnComponentLoad.UseVisualStyleBackColor = false;
+            btnComponentLoad.Click += btnComponentLoad_Click;
             // 
             // btnComponentsSave
             // 
-            this.btnComponentsSave.BackColor = System.Drawing.Color.DarkGray;
-            this.btnComponentsSave.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnComponentsSave.FlatAppearance.BorderSize = 0;
-            this.btnComponentsSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComponentsSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnComponentsSave.Image = ((System.Drawing.Image)(resources.GetObject("btnComponentsSave.Image")));
-            this.btnComponentsSave.Location = new System.Drawing.Point(69, 7);
-            this.btnComponentsSave.Name = "btnComponentsSave";
-            this.btnComponentsSave.Size = new System.Drawing.Size(55, 55);
-            this.btnComponentsSave.TabIndex = 7;
-            this.btnComponentsSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnComponentsSave.UseVisualStyleBackColor = false;
-            this.btnComponentsSave.Click += new System.EventHandler(this.btnComponentsSave_Click);
+            btnComponentsSave.BackColor = Color.DarkGray;
+            btnComponentsSave.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnComponentsSave.FlatAppearance.BorderSize = 0;
+            btnComponentsSave.FlatStyle = FlatStyle.Flat;
+            btnComponentsSave.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnComponentsSave.Image = (Image)resources.GetObject("btnComponentsSave.Image");
+            btnComponentsSave.Location = new Point(69, 7);
+            btnComponentsSave.Name = "btnComponentsSave";
+            btnComponentsSave.Size = new Size(55, 55);
+            btnComponentsSave.TabIndex = 7;
+            btnComponentsSave.TextAlign = ContentAlignment.MiddleRight;
+            btnComponentsSave.UseVisualStyleBackColor = false;
+            btnComponentsSave.Click += btnComponentsSave_Click;
             // 
             // btnComponentsCreateNew
             // 
-            this.btnComponentsCreateNew.BackColor = System.Drawing.Color.DarkGray;
-            this.btnComponentsCreateNew.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnComponentsCreateNew.FlatAppearance.BorderSize = 0;
-            this.btnComponentsCreateNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComponentsCreateNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnComponentsCreateNew.Image = global::TagTool.Properties.Resources.bearbeitensml;
-            this.btnComponentsCreateNew.Location = new System.Drawing.Point(8, 7);
-            this.btnComponentsCreateNew.Name = "btnComponentsCreateNew";
-            this.btnComponentsCreateNew.Size = new System.Drawing.Size(55, 55);
-            this.btnComponentsCreateNew.TabIndex = 6;
-            this.btnComponentsCreateNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnComponentsCreateNew.UseVisualStyleBackColor = false;
-            this.btnComponentsCreateNew.Click += new System.EventHandler(this.btnComponentsCreateNew_Click);
+            btnComponentsCreateNew.BackColor = Color.DarkGray;
+            btnComponentsCreateNew.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnComponentsCreateNew.FlatAppearance.BorderSize = 0;
+            btnComponentsCreateNew.FlatStyle = FlatStyle.Flat;
+            btnComponentsCreateNew.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnComponentsCreateNew.Image = Properties.Resources.bearbeitensml;
+            btnComponentsCreateNew.Location = new Point(8, 7);
+            btnComponentsCreateNew.Name = "btnComponentsCreateNew";
+            btnComponentsCreateNew.Size = new Size(55, 55);
+            btnComponentsCreateNew.TabIndex = 6;
+            btnComponentsCreateNew.TextAlign = ContentAlignment.MiddleRight;
+            btnComponentsCreateNew.UseVisualStyleBackColor = false;
+            btnComponentsCreateNew.Click += btnComponentsCreateNew_Click;
             // 
             // dgvComponents
             // 
-            this.dgvComponents.AllowUserToAddRows = false;
-            this.dgvComponents.AllowUserToDeleteRows = false;
-            this.dgvComponents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvComponents.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dgvComponents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComponents.Location = new System.Drawing.Point(8, 67);
-            this.dgvComponents.Name = "dgvComponents";
-            this.dgvComponents.RowTemplate.Height = 25;
-            this.dgvComponents.Size = new System.Drawing.Size(952, 598);
-            this.dgvComponents.TabIndex = 0;
-            this.dgvComponents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComponents_CellValueChanged);
+            dgvComponents.AllowUserToAddRows = false;
+            dgvComponents.AllowUserToDeleteRows = false;
+            dgvComponents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvComponents.BackgroundColor = Color.DarkGray;
+            dgvComponents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvComponents.Location = new Point(8, 67);
+            dgvComponents.Name = "dgvComponents";
+            dgvComponents.RowTemplate.Height = 25;
+            dgvComponents.Size = new Size(952, 598);
+            dgvComponents.TabIndex = 0;
+            dgvComponents.CellValueChanged += dgvComponents_CellValueChanged;
             // 
             // pnlAlarms
             // 
-            this.pnlAlarms.BackColor = System.Drawing.Color.LightGray;
-            this.pnlAlarms.Controls.Add(this.rdbAlmMemSelMix);
-            this.pnlAlarms.Controls.Add(this.rdbAlmMemSelHex);
-            this.pnlAlarms.Controls.Add(this.rdbAlmMemSelDec);
-            this.pnlAlarms.Controls.Add(this.lblAlmSize);
-            this.pnlAlarms.Controls.Add(this.txtAlmSize);
-            this.pnlAlarms.Controls.Add(this.btnAlmRefresh);
-            this.pnlAlarms.Controls.Add(this.lblAlmStartAdr);
-            this.pnlAlarms.Controls.Add(this.txtAlmStartAddr);
-            this.pnlAlarms.Controls.Add(this.lblAlmMemArea);
-            this.pnlAlarms.Controls.Add(this.txtAlmMemArea);
-            this.pnlAlarms.Controls.Add(this.dgvAlarms);
-            this.pnlAlarms.Location = new System.Drawing.Point(4, 84);
-            this.pnlAlarms.Name = "pnlAlarms";
-            this.pnlAlarms.Size = new System.Drawing.Size(1176, 672);
-            this.pnlAlarms.TabIndex = 7;
+            pnlAlarms.BackColor = Color.LightGray;
+            pnlAlarms.Controls.Add(rdbAlmMemSelMix);
+            pnlAlarms.Controls.Add(rdbAlmMemSelHex);
+            pnlAlarms.Controls.Add(rdbAlmMemSelDec);
+            pnlAlarms.Controls.Add(lblAlmSize);
+            pnlAlarms.Controls.Add(txtAlmSize);
+            pnlAlarms.Controls.Add(btnAlmRefresh);
+            pnlAlarms.Controls.Add(lblAlmStartAdr);
+            pnlAlarms.Controls.Add(txtAlmStartAddr);
+            pnlAlarms.Controls.Add(lblAlmMemArea);
+            pnlAlarms.Controls.Add(txtAlmMemArea);
+            pnlAlarms.Controls.Add(dgvAlarms);
+            pnlAlarms.Location = new Point(4, 84);
+            pnlAlarms.Name = "pnlAlarms";
+            pnlAlarms.Size = new Size(1176, 672);
+            pnlAlarms.TabIndex = 7;
             // 
             // rdbAlmMemSelMix
             // 
-            this.rdbAlmMemSelMix.AutoSize = true;
-            this.rdbAlmMemSelMix.Location = new System.Drawing.Point(619, 54);
-            this.rdbAlmMemSelMix.Name = "rdbAlmMemSelMix";
-            this.rdbAlmMemSelMix.Size = new System.Drawing.Size(144, 19);
-            this.rdbAlmMemSelMix.TabIndex = 33;
-            this.rdbAlmMemSelMix.TabStop = true;
-            this.rdbAlmMemSelMix.Text = "Mixed Address System";
-            this.rdbAlmMemSelMix.UseVisualStyleBackColor = true;
+            rdbAlmMemSelMix.AutoSize = true;
+            rdbAlmMemSelMix.Location = new Point(619, 54);
+            rdbAlmMemSelMix.Name = "rdbAlmMemSelMix";
+            rdbAlmMemSelMix.Size = new Size(144, 19);
+            rdbAlmMemSelMix.TabIndex = 33;
+            rdbAlmMemSelMix.TabStop = true;
+            rdbAlmMemSelMix.Text = "Mixed Address System";
+            rdbAlmMemSelMix.UseVisualStyleBackColor = true;
             // 
             // rdbAlmMemSelHex
             // 
-            this.rdbAlmMemSelHex.AutoSize = true;
-            this.rdbAlmMemSelHex.Location = new System.Drawing.Point(619, 33);
-            this.rdbAlmMemSelHex.Name = "rdbAlmMemSelHex";
-            this.rdbAlmMemSelHex.Size = new System.Drawing.Size(180, 19);
-            this.rdbAlmMemSelHex.TabIndex = 32;
-            this.rdbAlmMemSelHex.TabStop = true;
-            this.rdbAlmMemSelHex.Text = "Hexadecimal Address System";
-            this.rdbAlmMemSelHex.UseVisualStyleBackColor = true;
+            rdbAlmMemSelHex.AutoSize = true;
+            rdbAlmMemSelHex.Location = new Point(619, 33);
+            rdbAlmMemSelHex.Name = "rdbAlmMemSelHex";
+            rdbAlmMemSelHex.Size = new Size(180, 19);
+            rdbAlmMemSelHex.TabIndex = 32;
+            rdbAlmMemSelHex.TabStop = true;
+            rdbAlmMemSelHex.Text = "Hexadecimal Address System";
+            rdbAlmMemSelHex.UseVisualStyleBackColor = true;
             // 
             // rdbAlmMemSelDec
             // 
-            this.rdbAlmMemSelDec.AutoSize = true;
-            this.rdbAlmMemSelDec.Location = new System.Drawing.Point(619, 12);
-            this.rdbAlmMemSelDec.Name = "rdbAlmMemSelDec";
-            this.rdbAlmMemSelDec.Size = new System.Drawing.Size(154, 19);
-            this.rdbAlmMemSelDec.TabIndex = 31;
-            this.rdbAlmMemSelDec.TabStop = true;
-            this.rdbAlmMemSelDec.Text = "Decimal Address System";
-            this.rdbAlmMemSelDec.UseVisualStyleBackColor = true;
+            rdbAlmMemSelDec.AutoSize = true;
+            rdbAlmMemSelDec.Location = new Point(619, 12);
+            rdbAlmMemSelDec.Name = "rdbAlmMemSelDec";
+            rdbAlmMemSelDec.Size = new Size(154, 19);
+            rdbAlmMemSelDec.TabIndex = 31;
+            rdbAlmMemSelDec.TabStop = true;
+            rdbAlmMemSelDec.Text = "Decimal Address System";
+            rdbAlmMemSelDec.UseVisualStyleBackColor = true;
             // 
             // lblAlmSize
             // 
-            this.lblAlmSize.AutoSize = true;
-            this.lblAlmSize.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAlmSize.Location = new System.Drawing.Point(370, 16);
-            this.lblAlmSize.Name = "lblAlmSize";
-            this.lblAlmSize.Size = new System.Drawing.Size(175, 23);
-            this.lblAlmSize.TabIndex = 30;
-            this.lblAlmSize.Text = "Alarm Area Size [bits]";
+            lblAlmSize.AutoSize = true;
+            lblAlmSize.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAlmSize.Location = new Point(370, 16);
+            lblAlmSize.Name = "lblAlmSize";
+            lblAlmSize.Size = new Size(175, 23);
+            lblAlmSize.TabIndex = 30;
+            lblAlmSize.Text = "Alarm Area Size [bits]";
             // 
             // txtAlmSize
             // 
-            this.txtAlmSize.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAlmSize.Location = new System.Drawing.Point(370, 41);
-            this.txtAlmSize.Name = "txtAlmSize";
-            this.txtAlmSize.Size = new System.Drawing.Size(205, 30);
-            this.txtAlmSize.TabIndex = 29;
+            txtAlmSize.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAlmSize.Location = new Point(370, 41);
+            txtAlmSize.Name = "txtAlmSize";
+            txtAlmSize.Size = new Size(205, 30);
+            txtAlmSize.TabIndex = 29;
             // 
             // btnAlmRefresh
             // 
-            this.btnAlmRefresh.BackColor = System.Drawing.Color.DarkGray;
-            this.btnAlmRefresh.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnAlmRefresh.FlatAppearance.BorderSize = 0;
-            this.btnAlmRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlmRefresh.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAlmRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmRefresh.Image")));
-            this.btnAlmRefresh.Location = new System.Drawing.Point(822, 24);
-            this.btnAlmRefresh.Name = "btnAlmRefresh";
-            this.btnAlmRefresh.Size = new System.Drawing.Size(55, 55);
-            this.btnAlmRefresh.TabIndex = 28;
-            this.btnAlmRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAlmRefresh.UseVisualStyleBackColor = false;
-            this.btnAlmRefresh.Click += new System.EventHandler(this.btnAlmRefresh_Click);
+            btnAlmRefresh.BackColor = Color.DarkGray;
+            btnAlmRefresh.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnAlmRefresh.FlatAppearance.BorderSize = 0;
+            btnAlmRefresh.FlatStyle = FlatStyle.Flat;
+            btnAlmRefresh.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAlmRefresh.Image = (Image)resources.GetObject("btnAlmRefresh.Image");
+            btnAlmRefresh.Location = new Point(822, 24);
+            btnAlmRefresh.Name = "btnAlmRefresh";
+            btnAlmRefresh.Size = new Size(55, 55);
+            btnAlmRefresh.TabIndex = 28;
+            btnAlmRefresh.TextAlign = ContentAlignment.MiddleRight;
+            btnAlmRefresh.UseVisualStyleBackColor = false;
+            btnAlmRefresh.Click += btnAlmRefresh_Click;
             // 
             // lblAlmStartAdr
             // 
-            this.lblAlmStartAdr.AutoSize = true;
-            this.lblAlmStartAdr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAlmStartAdr.Location = new System.Drawing.Point(159, 16);
-            this.lblAlmStartAdr.Name = "lblAlmStartAdr";
-            this.lblAlmStartAdr.Size = new System.Drawing.Size(206, 23);
-            this.lblAlmStartAdr.TabIndex = 25;
-            this.lblAlmStartAdr.Text = "Start Address [Bitaddress]";
+            lblAlmStartAdr.AutoSize = true;
+            lblAlmStartAdr.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAlmStartAdr.Location = new Point(159, 16);
+            lblAlmStartAdr.Name = "lblAlmStartAdr";
+            lblAlmStartAdr.Size = new Size(206, 23);
+            lblAlmStartAdr.TabIndex = 25;
+            lblAlmStartAdr.Text = "Start Address [Bitaddress]";
             // 
             // txtAlmStartAddr
             // 
-            this.txtAlmStartAddr.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAlmStartAddr.Location = new System.Drawing.Point(159, 41);
-            this.txtAlmStartAddr.Name = "txtAlmStartAddr";
-            this.txtAlmStartAddr.Size = new System.Drawing.Size(205, 30);
-            this.txtAlmStartAddr.TabIndex = 24;
+            txtAlmStartAddr.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAlmStartAddr.Location = new Point(159, 41);
+            txtAlmStartAddr.Name = "txtAlmStartAddr";
+            txtAlmStartAddr.Size = new Size(205, 30);
+            txtAlmStartAddr.TabIndex = 24;
             // 
             // lblAlmMemArea
             // 
-            this.lblAlmMemArea.AutoSize = true;
-            this.lblAlmMemArea.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAlmMemArea.Location = new System.Drawing.Point(38, 15);
-            this.lblAlmMemArea.Name = "lblAlmMemArea";
-            this.lblAlmMemArea.Size = new System.Drawing.Size(115, 23);
-            this.lblAlmMemArea.TabIndex = 23;
-            this.lblAlmMemArea.Text = "Memory Area";
+            lblAlmMemArea.AutoSize = true;
+            lblAlmMemArea.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAlmMemArea.Location = new Point(38, 15);
+            lblAlmMemArea.Name = "lblAlmMemArea";
+            lblAlmMemArea.Size = new Size(115, 23);
+            lblAlmMemArea.TabIndex = 23;
+            lblAlmMemArea.Text = "Memory Area";
             // 
             // txtAlmMemArea
             // 
-            this.txtAlmMemArea.Font = new System.Drawing.Font("Malgun Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAlmMemArea.Location = new System.Drawing.Point(38, 41);
-            this.txtAlmMemArea.Name = "txtAlmMemArea";
-            this.txtAlmMemArea.Size = new System.Drawing.Size(115, 30);
-            this.txtAlmMemArea.TabIndex = 22;
+            txtAlmMemArea.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAlmMemArea.Location = new Point(38, 41);
+            txtAlmMemArea.Name = "txtAlmMemArea";
+            txtAlmMemArea.Size = new Size(115, 30);
+            txtAlmMemArea.TabIndex = 22;
             // 
             // dgvAlarms
             // 
-            this.dgvAlarms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlarms.Location = new System.Drawing.Point(30, 85);
-            this.dgvAlarms.Name = "dgvAlarms";
-            this.dgvAlarms.RowTemplate.Height = 25;
-            this.dgvAlarms.Size = new System.Drawing.Size(847, 556);
-            this.dgvAlarms.TabIndex = 0;
+            dgvAlarms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAlarms.Location = new Point(30, 85);
+            dgvAlarms.Name = "dgvAlarms";
+            dgvAlarms.RowTemplate.Height = 25;
+            dgvAlarms.Size = new Size(847, 556);
+            dgvAlarms.TabIndex = 0;
             // 
             // pnlExports
             // 
-            this.pnlExports.BackColor = System.Drawing.Color.LightGray;
-            this.pnlExports.Location = new System.Drawing.Point(4, 84);
-            this.pnlExports.Name = "pnlExports";
-            this.pnlExports.Size = new System.Drawing.Size(1176, 672);
-            this.pnlExports.TabIndex = 8;
+            pnlExports.BackColor = Color.LightGray;
+            pnlExports.Location = new Point(4, 84);
+            pnlExports.Name = "pnlExports";
+            pnlExports.Size = new Size(1176, 672);
+            pnlExports.TabIndex = 8;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.btnNavComponents);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnNavExports);
-            this.Controls.Add(this.btnNavAlarms);
-            this.Controls.Add(this.btnNavLibrary);
-            this.Controls.Add(this.pnlComponents);
-            this.Controls.Add(this.pnlLibrary);
-            this.Controls.Add(this.pnlExports);
-            this.Controls.Add(this.pnlAlarms);
-            this.Name = "MainWindow";
-            this.ShowIcon = false;
-            this.Text = "Form1";
-            this.pnlLibrary.ResumeLayout(false);
-            this.pnlLibrary.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryAlarms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLibraryParameters)).EndInit();
-            this.pnlComponents.ResumeLayout(false);
-            this.pnlComponents.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompUnits)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComponents)).EndInit();
-            this.pnlAlarms.ResumeLayout(false);
-            this.pnlAlarms.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlarms)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DodgerBlue;
+            ClientSize = new Size(1184, 761);
+            Controls.Add(btnNavComponents);
+            Controls.Add(button4);
+            Controls.Add(btnNavExports);
+            Controls.Add(btnNavAlarms);
+            Controls.Add(btnNavLibrary);
+            Controls.Add(pnlComponents);
+            Controls.Add(pnlLibrary);
+            Controls.Add(pnlExports);
+            Controls.Add(pnlAlarms);
+            Name = "MainWindow";
+            ShowIcon = false;
+            Text = "Form1";
+            pnlLibrary.ResumeLayout(false);
+            pnlLibrary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLibraryAlarms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLibraryParameters).EndInit();
+            pnlComponents.ResumeLayout(false);
+            pnlComponents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCompUnits).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvComponents).EndInit();
+            pnlAlarms.ResumeLayout(false);
+            pnlAlarms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAlarms).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

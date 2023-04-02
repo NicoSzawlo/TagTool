@@ -108,10 +108,10 @@ namespace TagTool
             }
             catch (Exception ex)
             {
-                
+
                 Debug.WriteLine(ex.Message);
             }
-            
+
 
         }
         //Saves current file under new name with savefiledialog
@@ -153,7 +153,7 @@ namespace TagTool
         //Add a new Functionblock to the list
         private void btnLibraryCreateFb_Click(object sender, EventArgs e)
         {
-            FbList.Add(new FunctionBlock { Name = "NewFb", Description = "This is a new Functionblock", Alarms = new List<Alarm>(), Parameters = new List<Parameter>()});
+            FbList.Add(new FunctionBlock { Name = "NewFb", Description = "This is a new Functionblock", Alarms = new List<Alarm>(), Parameters = new List<Parameter>() });
             refreshLibraryListView();
             InitCompControl();
 
@@ -187,7 +187,7 @@ namespace TagTool
         //Add alarm to currently selected functionblock
         private void btnLibraryAddAlarm_Click(object sender, EventArgs e)
         {
-            if(FbList.Count> 0)
+            if (FbList.Count > 0)
             {
                 FbList[SelectedFbId].Alarms = LibraryViewModel.NewAlarm(FbList[SelectedFbId].Alarms);
                 refreshLibraryAlarmView();
@@ -206,11 +206,11 @@ namespace TagTool
             {
                 FbList[SelectedFbId].Alarms = LibraryViewModel.ModifyAlarmList(
                     dgvLibraryAlarms.CurrentCell.ColumnIndex,
-                    dgvLibraryAlarms.CurrentCell.RowIndex, 
-                    dgvLibraryAlarms.CurrentCell.Value.ToString(), 
+                    dgvLibraryAlarms.CurrentCell.RowIndex,
+                    dgvLibraryAlarms.CurrentCell.Value.ToString(),
                     FbList[SelectedFbId].Alarms);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
@@ -334,9 +334,9 @@ namespace TagTool
                 Debug.WriteLine(ex.Message);
             }
         }
-        //User Component List interaction
-        //##########################
 
+        //User Components Panel Interaction
+        //##########################
         //Change Component list based on datagridview
         private void dgvComponents_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -358,21 +358,28 @@ namespace TagTool
             CompList.Add(ComponentsViewModel.GenerateNewComponent(ComponentIdCounter, FbList[0]));
             refreshComponentView();
         }
+        //Update UnitList when units datagridview has changed
+        private void dgvCompUnits_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            UnitList = Unit.UpdateUnitListWithId(UnitList, dgvCompUnits.Rows);
+            CompList = ComponentsViewModel.UpdateUnitInComponentsPerId(UnitList, CompList);
+            refreshComponentView();
+        }
 
         //Components Backend calls
         //##########################
-        
+
         //Refresh components datagridview after loading file
         private void refreshComponentView()
         {
             if (CompList.Count > 0)
             {
-                if(dgvComponents.Rows.Count >= 1)
+                if (dgvComponents.Rows.Count >= 1)
                 {
                     dgvComponents.DataSource = null;
                     dgvComponents.Rows.Clear();
                 }
-                
+
                 foreach (Component component in CompList)
                 {
                     dgvComponents.Rows.Add(
@@ -392,7 +399,7 @@ namespace TagTool
         private void checkComponentStartaddress()
         {
             //Get list of faulty Id's
-            List<int>faultyComponents = ComponentsViewModel.CheckStartAddress(CompList);
+            List<int> faultyComponents = ComponentsViewModel.CheckStartAddress(CompList);
             //Color every Startaddress cell white
             foreach (DataGridViewRow row in dgvComponents.Rows)
             {
@@ -401,7 +408,7 @@ namespace TagTool
             //Check if any component faulty
             if (faultyComponents.Count > 0)
             {
-                foreach(DataGridViewRow dgvr in dgvComponents.Rows)
+                foreach (DataGridViewRow dgvr in dgvComponents.Rows)
                 {
                     foreach (int faultyComponent in faultyComponents)
                     {
@@ -409,7 +416,7 @@ namespace TagTool
                         {
                             dgvr.Cells["Startaddress of Structure"].Style.BackColor = Color.Red;
                         }
-                            
+
                     }
                 }
             }
@@ -417,12 +424,18 @@ namespace TagTool
         //Refresh Units Dgv
         private void refreshUnits()
         {
+            //Clear datagridview
             dgvCompUnits.DataSource = null;
             dgvCompUnits.Rows.Clear();
+
+            //Set backend data
             UnitList = ComponentsViewModel.UpdateUnitList(UnitList, dgvComponents.Rows);
+            CompList = ComponentsViewModel.SetUnitToComponentsPerText(UnitList, CompList);
+
+            //Setup datagridview for Units
             dgvCompUnits.DataSource = DataTableHandler.UnitsToDt(UnitList);
             dgvCompUnits.Columns["ID"].Visible = false;
-            foreach(DataGridViewColumn col in dgvCompUnits.Columns)
+            foreach (DataGridViewColumn col in dgvCompUnits.Columns)
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -440,7 +453,7 @@ namespace TagTool
             AlarmTextCol.Name = "Alarmtext";
             AlarmTextCol.ReadOnly = true;
             dgvAlarms.Columns.Add(AlarmTextCol);
-            foreach(Alarm alarm in AlarmsViewModel.FillAlarmList("40000", 10000, "MB"))
+            foreach (Alarm alarm in AlarmsViewModel.FillAlarmList("40000", 10000, "MB"))
             {
                 dgvAlarms.Rows.Add(alarm.Text);
             }
@@ -494,7 +507,7 @@ namespace TagTool
         private void InitCompControl()
         {
             //When Fb List empty disable adding of components
-            if(FbList.Count == 0)
+            if (FbList.Count == 0)
             {
                 this.btnComponentAdd.Enabled = false;
             }
@@ -540,11 +553,11 @@ namespace TagTool
         //Load Library for Combobox column
         private void loadDgvComboboxSelection()
         {
-            if(((DataGridViewComboBoxColumn)dgvComponents.Columns["Function Block"]).Items.Count != 0)
+            if (((DataGridViewComboBoxColumn)dgvComponents.Columns["Function Block"]).Items.Count != 0)
             {
                 ((DataGridViewComboBoxColumn)dgvComponents.Columns["Function Block"]).Items.Clear();
             }
-            
+
             //Add functionblocks for dropdown menu in datagridview
             foreach (FunctionBlock fb in FbList)
             {
@@ -563,5 +576,7 @@ namespace TagTool
             UnitList = ComponentsViewModel.UpdateUnitList(UnitList, dgvComponents.Rows);
             dgvCompUnits.DataSource = DataTableHandler.UnitsToDt(UnitList);
         }
+
+        
     }
 }

@@ -160,7 +160,7 @@ namespace TagTool.ViewModels
         }
         
         //Function to set units to componentslist based on text property of unitlist and component unit text
-        public static List<Component> SetUnitToComponents(List<Unit> unitList, List<Component> components)
+        public static List<Component> SetUnitToComponentsPerText(List<Unit> unitList, List<Component> components)
         {
             //Go through components
             foreach(Component component in components)
@@ -170,6 +170,25 @@ namespace TagTool.ViewModels
                 {
                     //Check if unit text is the same as component unit text
                     if(unit.Text == component.Unit.Text)
+                    {
+                        //Set unit to component
+                        component.Unit = unit;
+                    }
+                }
+            }
+            return components;
+        }
+        //Function to update the units set in the componentslist by the id of the unit
+        public static List<Component> UpdateUnitInComponentsPerId(List<Unit> unitList, List<Component> components)
+        {
+            //Go through components
+            foreach(Component component in components)
+            {
+                //Go through units
+                foreach(Unit unit in unitList)
+                {
+                    //Check if unit id is the same as component unit id
+                    if(unit.Id == component.Unit.Id)
                     {
                         //Set unit to component
                         component.Unit = unit;
