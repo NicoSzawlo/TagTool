@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             btnNavComponents = new Button();
             pnlLibrary = new Panel();
@@ -67,6 +66,10 @@
             btnComponentsCreateNew = new Button();
             dgvComponents = new DataGridView();
             pnlAlarms = new Panel();
+            btnAlmGroupDel = new Button();
+            btnAlmGroupAdd = new Button();
+            lblAlarmGroups = new Label();
+            dgvAlarmGroups = new DataGridView();
             rdbAlmMemSelMix = new RadioButton();
             rdbAlmMemSelHex = new RadioButton();
             rdbAlmMemSelDec = new RadioButton();
@@ -79,7 +82,7 @@
             txtAlmMemArea = new TextBox();
             dgvAlarms = new DataGridView();
             pnlExports = new Panel();
-            ttAlmMemSelMixInfo = new ToolTip(components);
+            btnComponentsDel = new Button();
             pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLibraryAlarms).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLibraryParameters).BeginInit();
@@ -87,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvCompUnits).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvComponents).BeginInit();
             pnlAlarms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAlarmGroups).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAlarms).BeginInit();
             SuspendLayout();
             // 
@@ -495,6 +499,7 @@
             // pnlComponents
             // 
             pnlComponents.BackColor = Color.LightGray;
+            pnlComponents.Controls.Add(btnComponentsDel);
             pnlComponents.Controls.Add(lblCompUnits);
             pnlComponents.Controls.Add(dgvCompUnits);
             pnlComponents.Controls.Add(btnComponentAdd);
@@ -610,6 +615,10 @@
             // pnlAlarms
             // 
             pnlAlarms.BackColor = Color.LightGray;
+            pnlAlarms.Controls.Add(btnAlmGroupDel);
+            pnlAlarms.Controls.Add(btnAlmGroupAdd);
+            pnlAlarms.Controls.Add(lblAlarmGroups);
+            pnlAlarms.Controls.Add(dgvAlarmGroups);
             pnlAlarms.Controls.Add(rdbAlmMemSelMix);
             pnlAlarms.Controls.Add(rdbAlmMemSelHex);
             pnlAlarms.Controls.Add(rdbAlmMemSelDec);
@@ -626,10 +635,61 @@
             pnlAlarms.Size = new Size(1176, 672);
             pnlAlarms.TabIndex = 7;
             // 
+            // btnAlmGroupDel
+            // 
+            btnAlmGroupDel.BackColor = Color.DarkGray;
+            btnAlmGroupDel.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnAlmGroupDel.FlatAppearance.BorderSize = 0;
+            btnAlmGroupDel.FlatStyle = FlatStyle.Flat;
+            btnAlmGroupDel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAlmGroupDel.Image = (Image)resources.GetObject("btnAlmGroupDel.Image");
+            btnAlmGroupDel.Location = new Point(1040, 84);
+            btnAlmGroupDel.Name = "btnAlmGroupDel";
+            btnAlmGroupDel.Size = new Size(55, 55);
+            btnAlmGroupDel.TabIndex = 37;
+            btnAlmGroupDel.TextAlign = ContentAlignment.MiddleRight;
+            btnAlmGroupDel.UseVisualStyleBackColor = false;
+            btnAlmGroupDel.Click += btnAlmGroupDel_Click;
+            // 
+            // btnAlmGroupAdd
+            // 
+            btnAlmGroupAdd.BackColor = Color.DarkGray;
+            btnAlmGroupAdd.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnAlmGroupAdd.FlatAppearance.BorderSize = 0;
+            btnAlmGroupAdd.FlatStyle = FlatStyle.Flat;
+            btnAlmGroupAdd.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAlmGroupAdd.Image = (Image)resources.GetObject("btnAlmGroupAdd.Image");
+            btnAlmGroupAdd.Location = new Point(1101, 84);
+            btnAlmGroupAdd.Name = "btnAlmGroupAdd";
+            btnAlmGroupAdd.Size = new Size(55, 55);
+            btnAlmGroupAdd.TabIndex = 36;
+            btnAlmGroupAdd.TextAlign = ContentAlignment.MiddleRight;
+            btnAlmGroupAdd.UseVisualStyleBackColor = false;
+            btnAlmGroupAdd.Click += btnAlmGroupAdd_Click;
+            // 
+            // lblAlarmGroups
+            // 
+            lblAlarmGroups.AutoSize = true;
+            lblAlarmGroups.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAlarmGroups.Location = new Point(893, 116);
+            lblAlarmGroups.Name = "lblAlarmGroups";
+            lblAlarmGroups.Size = new Size(116, 23);
+            lblAlarmGroups.TabIndex = 35;
+            lblAlarmGroups.Text = "Alarm Groups";
+            // 
+            // dgvAlarmGroups
+            // 
+            dgvAlarmGroups.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAlarmGroups.Location = new Point(737, 142);
+            dgvAlarmGroups.Name = "dgvAlarmGroups";
+            dgvAlarmGroups.RowTemplate.Height = 25;
+            dgvAlarmGroups.Size = new Size(419, 271);
+            dgvAlarmGroups.TabIndex = 34;
+            // 
             // rdbAlmMemSelMix
             // 
             rdbAlmMemSelMix.AutoSize = true;
-            rdbAlmMemSelMix.Location = new Point(619, 54);
+            rdbAlmMemSelMix.Location = new Point(607, 53);
             rdbAlmMemSelMix.Name = "rdbAlmMemSelMix";
             rdbAlmMemSelMix.Size = new Size(144, 19);
             rdbAlmMemSelMix.TabIndex = 33;
@@ -640,7 +700,7 @@
             // rdbAlmMemSelHex
             // 
             rdbAlmMemSelHex.AutoSize = true;
-            rdbAlmMemSelHex.Location = new Point(619, 33);
+            rdbAlmMemSelHex.Location = new Point(607, 32);
             rdbAlmMemSelHex.Name = "rdbAlmMemSelHex";
             rdbAlmMemSelHex.Size = new Size(180, 19);
             rdbAlmMemSelHex.TabIndex = 32;
@@ -651,7 +711,7 @@
             // rdbAlmMemSelDec
             // 
             rdbAlmMemSelDec.AutoSize = true;
-            rdbAlmMemSelDec.Location = new Point(619, 12);
+            rdbAlmMemSelDec.Location = new Point(607, 11);
             rdbAlmMemSelDec.Name = "rdbAlmMemSelDec";
             rdbAlmMemSelDec.Size = new Size(154, 19);
             rdbAlmMemSelDec.TabIndex = 31;
@@ -663,7 +723,7 @@
             // 
             lblAlmSize.AutoSize = true;
             lblAlmSize.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAlmSize.Location = new Point(370, 16);
+            lblAlmSize.Location = new Point(358, 15);
             lblAlmSize.Name = "lblAlmSize";
             lblAlmSize.Size = new Size(175, 23);
             lblAlmSize.TabIndex = 30;
@@ -672,7 +732,7 @@
             // txtAlmSize
             // 
             txtAlmSize.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAlmSize.Location = new Point(370, 41);
+            txtAlmSize.Location = new Point(358, 40);
             txtAlmSize.Name = "txtAlmSize";
             txtAlmSize.Size = new Size(205, 30);
             txtAlmSize.TabIndex = 29;
@@ -685,7 +745,7 @@
             btnAlmRefresh.FlatStyle = FlatStyle.Flat;
             btnAlmRefresh.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAlmRefresh.Image = (Image)resources.GetObject("btnAlmRefresh.Image");
-            btnAlmRefresh.Location = new Point(822, 24);
+            btnAlmRefresh.Location = new Point(793, 15);
             btnAlmRefresh.Name = "btnAlmRefresh";
             btnAlmRefresh.Size = new Size(55, 55);
             btnAlmRefresh.TabIndex = 28;
@@ -697,7 +757,7 @@
             // 
             lblAlmStartAdr.AutoSize = true;
             lblAlmStartAdr.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAlmStartAdr.Location = new Point(159, 16);
+            lblAlmStartAdr.Location = new Point(141, 15);
             lblAlmStartAdr.Name = "lblAlmStartAdr";
             lblAlmStartAdr.Size = new Size(206, 23);
             lblAlmStartAdr.TabIndex = 25;
@@ -706,7 +766,7 @@
             // txtAlmStartAddr
             // 
             txtAlmStartAddr.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAlmStartAddr.Location = new Point(159, 41);
+            txtAlmStartAddr.Location = new Point(141, 40);
             txtAlmStartAddr.Name = "txtAlmStartAddr";
             txtAlmStartAddr.Size = new Size(205, 30);
             txtAlmStartAddr.TabIndex = 24;
@@ -715,7 +775,7 @@
             // 
             lblAlmMemArea.AutoSize = true;
             lblAlmMemArea.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAlmMemArea.Location = new Point(38, 15);
+            lblAlmMemArea.Location = new Point(18, 15);
             lblAlmMemArea.Name = "lblAlmMemArea";
             lblAlmMemArea.Size = new Size(115, 23);
             lblAlmMemArea.TabIndex = 23;
@@ -724,7 +784,7 @@
             // txtAlmMemArea
             // 
             txtAlmMemArea.Font = new Font("Malgun Gothic", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAlmMemArea.Location = new Point(38, 41);
+            txtAlmMemArea.Location = new Point(18, 41);
             txtAlmMemArea.Name = "txtAlmMemArea";
             txtAlmMemArea.Size = new Size(115, 30);
             txtAlmMemArea.TabIndex = 22;
@@ -732,10 +792,10 @@
             // dgvAlarms
             // 
             dgvAlarms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAlarms.Location = new Point(30, 85);
+            dgvAlarms.Location = new Point(18, 84);
             dgvAlarms.Name = "dgvAlarms";
             dgvAlarms.RowTemplate.Height = 25;
-            dgvAlarms.Size = new Size(847, 556);
+            dgvAlarms.Size = new Size(713, 571);
             dgvAlarms.TabIndex = 0;
             // 
             // pnlExports
@@ -745,6 +805,22 @@
             pnlExports.Name = "pnlExports";
             pnlExports.Size = new Size(1176, 672);
             pnlExports.TabIndex = 8;
+            // 
+            // btnComponentsDel
+            // 
+            btnComponentsDel.BackColor = Color.DarkGray;
+            btnComponentsDel.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnComponentsDel.FlatAppearance.BorderSize = 0;
+            btnComponentsDel.FlatStyle = FlatStyle.Flat;
+            btnComponentsDel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnComponentsDel.Image = (Image)resources.GetObject("btnComponentsDel.Image");
+            btnComponentsDel.Location = new Point(844, 7);
+            btnComponentsDel.Name = "btnComponentsDel";
+            btnComponentsDel.Size = new Size(55, 55);
+            btnComponentsDel.TabIndex = 38;
+            btnComponentsDel.TextAlign = ContentAlignment.MiddleRight;
+            btnComponentsDel.UseVisualStyleBackColor = false;
+            btnComponentsDel.Click += btnComponentsDel_Click;
             // 
             // MainWindow
             // 
@@ -774,6 +850,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvComponents).EndInit();
             pnlAlarms.ResumeLayout(false);
             pnlAlarms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAlarmGroups).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvAlarms).EndInit();
             ResumeLayout(false);
         }
@@ -829,6 +906,10 @@
         private RadioButton rdbAlmMemSelMix;
         private RadioButton rdbAlmMemSelHex;
         private RadioButton rdbAlmMemSelDec;
-        private ToolTip ttAlmMemSelMixInfo;
+        private Label lblAlarmGroups;
+        private DataGridView dgvAlarmGroups;
+        private Button btnAlmGroupDel;
+        private Button btnAlmGroupAdd;
+        private Button btnComponentsDel;
     }
 }

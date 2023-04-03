@@ -72,6 +72,17 @@ namespace TagTool.Services
 
             return dt;
         }
+        //Initialize datatable for Alarm areas
+        private static DataTable InitAlarmAreasDt()
+        {
+            DataTable dt = new DataTable();
 
+            dt.Columns.Add("Text");
+            dt.Columns.Add("Tag");
+            dt.Columns.Add("Startaddress");
+            dt.Columns.Add("Endaddress");
+
+            return dt;
+        }
     }
 }

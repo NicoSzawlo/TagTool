@@ -22,6 +22,8 @@ namespace TagTool.Models
         public List<FunctionBlock> FbLibrary { get; set; }
         //Units as generated from the Components list
         public List<Unit> Units { get; set; }
+        //List of defined alarm areas (e.g. System,Safety, Unit1,...)
+        public List<AlarmArea> AlarmAreas { get; set; } 
         //Short version of the memory area (e.g. MW, D,...)
         public string MemoryArea { get; set; }
 

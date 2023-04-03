@@ -22,6 +22,7 @@ namespace TagTool
         public List<Component> CompList = new List<Component>();
         public List<Unit> UnitList = new List<Unit>();
         public List<Alarm> AlarmList = new List<Alarm>();
+        public List<AlarmArea> AlarmAreaList = new List<AlarmArea>();
 
         //Initialize Ids
         public int SelectedFbId = 0;
@@ -348,14 +349,18 @@ namespace TagTool
                 FbList);
             checkComponentStartaddress();
             refreshUnits();
-
-
         }
         //Adds new default component to list
         private void btnComponentAdd_Click(object sender, EventArgs e)
         {
             ComponentIdCounter++;
             CompList.Add(ComponentsViewModel.GenerateNewComponent(ComponentIdCounter, FbList[0]));
+            refreshComponentView();
+        }
+        //Deletes currently selected component
+        private void btnComponentsDel_Click(object sender, EventArgs e)
+        {
+            CompList = ComponentsViewModel.DeleteComponentFromList(CompList, Convert.ToInt32(dgvComponents.CurrentRow.Cells["ID"].Value));
             refreshComponentView();
         }
         //Update UnitList when units datagridview has changed
@@ -457,6 +462,15 @@ namespace TagTool
             {
                 dgvAlarms.Rows.Add(alarm.Text);
             }
+        }
+
+        private void btnAlmGroupDel_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAlmGroupAdd_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion
@@ -567,16 +581,11 @@ namespace TagTool
         #endregion
 
 
-
         //##################################################################################################################################
         //TESTING AREA
         //##################################################################################################################################
         private void btnLibraryTest_Click(object sender, EventArgs e)
         {
-            UnitList = ComponentsViewModel.UpdateUnitList(UnitList, dgvComponents.Rows);
-            dgvCompUnits.DataSource = DataTableHandler.UnitsToDt(UnitList);
         }
-
-        
     }
 }

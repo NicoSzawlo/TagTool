@@ -115,7 +115,7 @@ namespace TagTool.ViewModels
             }
             return faultyComponents;
         }
-
+        //Get last id of componentlist
         public static int GetLastId(List<Component> components)
         {
             int lastid = 0;
@@ -146,6 +146,11 @@ namespace TagTool.ViewModels
             return comp;
         }
         //Function to update unitlist based on another unitlist but only compare Text property
+        public static List<Component> DeleteComponentFromList(List<Component> components, int id) 
+        {
+            components = components.Where(comp => comp.Id != id).ToList();
+            return components;
+        }
         public static List<Unit> UpdateUnitList(List<Unit> unitList, DataGridViewRowCollection rows)
         {
             List<Unit> newUnitList = Unit.GenerateRawUnitList(rows);
@@ -158,7 +163,6 @@ namespace TagTool.ViewModels
 
             return unitList;
         }
-        
         //Function to set units to componentslist based on text property of unitlist and component unit text
         public static List<Component> SetUnitToComponentsPerText(List<Unit> unitList, List<Component> components)
         {
