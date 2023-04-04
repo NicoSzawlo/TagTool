@@ -293,6 +293,7 @@ namespace TagTool
             ActiveProject.Components = CompList;
             ActiveProject.AlarmList = AlarmList;
             ActiveProject.Units = UnitList;
+            ActiveProject.AlarmAreas = AlarmAreaList;
             try
             {
                 JsonHandler.SerializeProject(ActiveProject, ProjectPath);
@@ -318,6 +319,7 @@ namespace TagTool
             CompList = ActiveProject.Components;
             AlarmList = ActiveProject.AlarmList;
             UnitList = ActiveProject.Units;
+            AlarmAreaList = ActiveProject.AlarmAreas;
 
             ComponentIdCounter = ComponentsViewModel.GetLastId(CompList);
 
@@ -463,18 +465,53 @@ namespace TagTool
                 dgvAlarms.Rows.Add(alarm.Text);
             }
         }
-
+        //Delete selected alarm area
         private void btnAlmGroupDel_Click(object sender, EventArgs e)
         {
-        }
+            int index = dgvAlarmGroups.CurrentRow.Index;
+            bool isUnit = AlarmsViewModel.CheckAlarmAreaText(AlarmAreaList[index], UnitList);
 
+            if (AlarmAreaList.Count > 0 && !isUnit)
+            {
+                AlarmAreaList.RemoveAt(index);
+            }
+            refreshAlarmGroups();
+        }
+        //Add new alarm area
         private void btnAlmGroupAdd_Click(object sender, EventArgs e)
         {
+            AlarmAreaList.Add(new AlarmArea() { 
+                Text = "NewGroup", 
+                Tag = "NewGrp",
+                Start = 0, 
+                End = 10 });
 
+            refreshAlarmGroups();
+        }
+        //Update alarm area list when cell value changed
+        private void dgvAlarmGroups_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            AlarmAreaList = AlarmsViewModel.ModifyAlarmAreaList(AlarmAreaList, dgvAlarmGroups.Rows);
         }
 
+        //Alarms "Backend" calls
+        //##########################
+        private void refreshAlarmGroups()
+        {
+            if (AlarmAreaList.Count > 0)
+            {
+                if (dgvAlarmGroups.Rows.Count >= 1)
+                {
+                    dgvComponents.DataSource = null;
+                    dgvComponents.Rows.Clear();
+                }
+            }
+
+            dgvAlarmGroups.DataSource = DataTableHandler.AlarmAreasToDt(AlarmAreaList);
+        }
         #endregion
 
+        //
         //##################################################################################################################################
         //Application Initializaion
         //##################################################################################################################################
@@ -586,6 +623,7 @@ namespace TagTool
         //##################################################################################################################################
         private void btnLibraryTest_Click(object sender, EventArgs e)
         {
+
         }
     }
 }

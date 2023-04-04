@@ -50,7 +50,6 @@ namespace TagTool.Services
             dt.Columns.Add("Value");
             return dt;
         }
-        
         //Generate DataTable from Units List to display in datagridview
         public static DataTable UnitsToDt(List<Unit> units)
         {
@@ -70,6 +69,16 @@ namespace TagTool.Services
             dt.Columns.Add("Full Text");
             dt.Columns.Add("Tag");
 
+            return dt;
+        }
+        //Fill datatable with list of alarm areas
+        public static DataTable AlarmAreasToDt(List<AlarmArea> alarmAreas)
+        {
+            DataTable dt = InitAlarmAreasDt();
+            foreach (AlarmArea area in alarmAreas)
+            {
+                dt.Rows.Add(area.Text, area.Tag, area.Start, area.End);
+            }
             return dt;
         }
         //Initialize datatable for Alarm areas

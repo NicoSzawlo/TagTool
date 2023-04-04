@@ -58,6 +58,7 @@
             btnNavExports = new Button();
             button4 = new Button();
             pnlComponents = new Panel();
+            btnComponentsDel = new Button();
             lblCompUnits = new Label();
             dgvCompUnits = new DataGridView();
             btnComponentAdd = new Button();
@@ -82,7 +83,6 @@
             txtAlmMemArea = new TextBox();
             dgvAlarms = new DataGridView();
             pnlExports = new Panel();
-            btnComponentsDel = new Button();
             pnlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLibraryAlarms).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLibraryParameters).BeginInit();
@@ -512,6 +512,22 @@
             pnlComponents.Size = new Size(1176, 672);
             pnlComponents.TabIndex = 6;
             // 
+            // btnComponentsDel
+            // 
+            btnComponentsDel.BackColor = Color.DarkGray;
+            btnComponentsDel.FlatAppearance.BorderColor = Color.DodgerBlue;
+            btnComponentsDel.FlatAppearance.BorderSize = 0;
+            btnComponentsDel.FlatStyle = FlatStyle.Flat;
+            btnComponentsDel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnComponentsDel.Image = (Image)resources.GetObject("btnComponentsDel.Image");
+            btnComponentsDel.Location = new Point(844, 7);
+            btnComponentsDel.Name = "btnComponentsDel";
+            btnComponentsDel.Size = new Size(55, 55);
+            btnComponentsDel.TabIndex = 38;
+            btnComponentsDel.TextAlign = ContentAlignment.MiddleRight;
+            btnComponentsDel.UseVisualStyleBackColor = false;
+            btnComponentsDel.Click += btnComponentsDel_Click;
+            // 
             // lblCompUnits
             // 
             lblCompUnits.AutoSize = true;
@@ -679,12 +695,15 @@
             // 
             // dgvAlarmGroups
             // 
+            dgvAlarmGroups.AllowUserToAddRows = false;
+            dgvAlarmGroups.AllowUserToDeleteRows = false;
             dgvAlarmGroups.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAlarmGroups.Location = new Point(737, 142);
             dgvAlarmGroups.Name = "dgvAlarmGroups";
             dgvAlarmGroups.RowTemplate.Height = 25;
             dgvAlarmGroups.Size = new Size(419, 271);
             dgvAlarmGroups.TabIndex = 34;
+            dgvAlarmGroups.CellValueChanged += dgvAlarmGroups_CellValueChanged;
             // 
             // rdbAlmMemSelMix
             // 
@@ -806,22 +825,6 @@
             pnlExports.Size = new Size(1176, 672);
             pnlExports.TabIndex = 8;
             // 
-            // btnComponentsDel
-            // 
-            btnComponentsDel.BackColor = Color.DarkGray;
-            btnComponentsDel.FlatAppearance.BorderColor = Color.DodgerBlue;
-            btnComponentsDel.FlatAppearance.BorderSize = 0;
-            btnComponentsDel.FlatStyle = FlatStyle.Flat;
-            btnComponentsDel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnComponentsDel.Image = (Image)resources.GetObject("btnComponentsDel.Image");
-            btnComponentsDel.Location = new Point(844, 7);
-            btnComponentsDel.Name = "btnComponentsDel";
-            btnComponentsDel.Size = new Size(55, 55);
-            btnComponentsDel.TabIndex = 38;
-            btnComponentsDel.TextAlign = ContentAlignment.MiddleRight;
-            btnComponentsDel.UseVisualStyleBackColor = false;
-            btnComponentsDel.Click += btnComponentsDel_Click;
-            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -833,10 +836,10 @@
             Controls.Add(btnNavExports);
             Controls.Add(btnNavAlarms);
             Controls.Add(btnNavLibrary);
+            Controls.Add(pnlAlarms);
             Controls.Add(pnlComponents);
             Controls.Add(pnlLibrary);
             Controls.Add(pnlExports);
-            Controls.Add(pnlAlarms);
             Name = "MainWindow";
             ShowIcon = false;
             Text = "Form1";
