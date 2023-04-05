@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TagTool.Services;
 
 namespace TagTool.Models
 {
@@ -19,6 +20,15 @@ namespace TagTool.Models
         //EG: MB4000: Winding S1 Axis **Drive Error**
         public string Text { get; set; }
 
+        public static List<AlarmText> InitializeAlarmTextList(List<Component> compList, List<AlarmArea> alarmAreas, string startaddress, int size)
+        {
+            List<AlarmText> alarmTexts = new List<AlarmText>();
 
+            int id = 0;
+
+
+
+            return alarmTexts;
+        }
     }
 }

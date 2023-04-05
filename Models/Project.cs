@@ -25,7 +25,7 @@ namespace TagTool.Models
         //List of defined alarm areas (e.g. System,Safety, Unit1,...)
         public List<AlarmArea> AlarmAreas { get; set; } 
         //Short version of the memory area (e.g. MW, D,...)
-        public string MemoryArea { get; set; }
+        public int AddressType { get; set; }
 
     }
 }

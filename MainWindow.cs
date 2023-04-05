@@ -23,6 +23,7 @@ namespace TagTool
         public List<Unit> UnitList = new List<Unit>();
         public List<Alarm> AlarmList = new List<Alarm>();
         public List<AlarmArea> AlarmAreaList = new List<AlarmArea>();
+        public int AddressType = new int(); // 1=Decimal, 2=Hexadecimal, 3=Mixed System
 
         //Initialize Ids
         public int SelectedFbId = 0;
@@ -294,6 +295,7 @@ namespace TagTool
             ActiveProject.AlarmList = AlarmList;
             ActiveProject.Units = UnitList;
             ActiveProject.AlarmAreas = AlarmAreaList;
+            ActiveProject.AddressType = AddressType;
             try
             {
                 JsonHandler.SerializeProject(ActiveProject, ProjectPath);
@@ -320,21 +322,36 @@ namespace TagTool
             AlarmList = ActiveProject.AlarmList;
             UnitList = ActiveProject.Units;
             AlarmAreaList = ActiveProject.AlarmAreas;
+            AddressType = ActiveProject.AddressType;
 
             ComponentIdCounter = ComponentsViewModel.GetLastId(CompList);
 
-            refreshComponentView();
+            initProject();
         }
         //Save last saved/loaded components file 
         private void btnComponentsSave_Click(object sender, EventArgs e)
         {
-            try
+            ActiveProject.FbLibrary = FbList;
+            ActiveProject.Components = CompList;
+            ActiveProject.AlarmList = AlarmList;
+            ActiveProject.Units = UnitList;
+            ActiveProject.AlarmAreas = AlarmAreaList;
+            ActiveProject.AddressType = AddressType;
+            if (ProjectPath != "")
             {
-                JsonHandler.SerializeProject(ActiveProject, ProjectPath);
+                try
+                {
+                    JsonHandler.SerializeProject(ActiveProject, ProjectPath);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Debug.WriteLine(ex.Message);
+                ProjectPath = FormsHelper.CallSaveFileDialog();
+                JsonHandler.SerializeProject(ActiveProject, ProjectPath);
             }
         }
 
@@ -365,6 +382,7 @@ namespace TagTool
             CompList = ComponentsViewModel.DeleteComponentFromList(CompList, Convert.ToInt32(dgvComponents.CurrentRow.Cells["ID"].Value));
             refreshComponentView();
         }
+
         //Update UnitList when units datagridview has changed
         private void dgvCompUnits_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -469,9 +487,8 @@ namespace TagTool
         private void btnAlmGroupDel_Click(object sender, EventArgs e)
         {
             int index = dgvAlarmGroups.CurrentRow.Index;
-            bool isUnit = AlarmsViewModel.CheckAlarmAreaText(AlarmAreaList[index], UnitList);
 
-            if (AlarmAreaList.Count > 0 && !isUnit)
+            if (AlarmAreaList.Count > 0)
             {
                 AlarmAreaList.RemoveAt(index);
             }
@@ -480,11 +497,13 @@ namespace TagTool
         //Add new alarm area
         private void btnAlmGroupAdd_Click(object sender, EventArgs e)
         {
-            AlarmAreaList.Add(new AlarmArea() { 
-                Text = "NewGroup", 
+            AlarmAreaList.Add(new AlarmArea()
+            {
+                Text = "NewGroup",
                 Tag = "NewGrp",
-                Start = 0, 
-                End = 10 });
+                Start = 0,
+                End = 10
+            });
 
             refreshAlarmGroups();
         }
@@ -493,7 +512,21 @@ namespace TagTool
         {
             AlarmAreaList = AlarmsViewModel.ModifyAlarmAreaList(AlarmAreaList, dgvAlarmGroups.Rows);
         }
-
+        private void rdbSelectionChanged(object sender, EventArgs e)
+        {
+            if(rdbAlmMemSelDec.Checked)
+            {
+                AddressType = 1;
+            }
+            if (rdbAlmMemSelHex.Checked)
+            {
+                AddressType = 2;
+            }
+            if (rdbAlmMemSelMix.Checked)
+            {
+                AddressType = 3;
+            }
+        }
         //Alarms "Backend" calls
         //##########################
         private void refreshAlarmGroups()
@@ -509,14 +542,36 @@ namespace TagTool
 
             dgvAlarmGroups.DataSource = DataTableHandler.AlarmAreasToDt(AlarmAreaList);
         }
-        #endregion
 
-        //
+        //Set radiobutton when addresstype is set
+        private void setAddressTypeRdb()
+        {
+            switch (AddressType)
+            {
+                case 1:
+                    rdbAlmMemSelDec.Checked = true;
+                    break;
+                case 2:
+                    rdbAlmMemSelHex.Checked = true;
+                    break;
+                case 3:
+                    rdbAlmMemSelMix.Checked = true;
+                    break;
+            }
+        }
+        #endregion
+        
         //##################################################################################################################################
         //Application Initializaion
         //##################################################################################################################################
         #region
 
+        //Initializing Views after loading a existing project
+        private void initProject()
+        {
+            refreshComponentView();
+            setAddressTypeRdb();
+        }
         //Initializing summary method
         private void initApp()
         {

@@ -715,6 +715,7 @@
             rdbAlmMemSelMix.TabStop = true;
             rdbAlmMemSelMix.Text = "Mixed Address System";
             rdbAlmMemSelMix.UseVisualStyleBackColor = true;
+            rdbAlmMemSelMix.CheckedChanged += rdbSelectionChanged;
             // 
             // rdbAlmMemSelHex
             // 
@@ -726,6 +727,7 @@
             rdbAlmMemSelHex.TabStop = true;
             rdbAlmMemSelHex.Text = "Hexadecimal Address System";
             rdbAlmMemSelHex.UseVisualStyleBackColor = true;
+            rdbAlmMemSelHex.CheckedChanged += rdbSelectionChanged;
             // 
             // rdbAlmMemSelDec
             // 
@@ -737,6 +739,7 @@
             rdbAlmMemSelDec.TabStop = true;
             rdbAlmMemSelDec.Text = "Decimal Address System";
             rdbAlmMemSelDec.UseVisualStyleBackColor = true;
+            rdbAlmMemSelDec.CheckedChanged += rdbSelectionChanged;
             // 
             // lblAlmSize
             // 
