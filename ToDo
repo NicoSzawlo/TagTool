@@ -1,0 +1,3 @@
+Parameterwegspeicherung aus PLC Memory in Datenbank(basierend auf Struct für FB). 
+Damit könnte man bausteine vorparametrieren (aus eplan zb) bzw parametersicherungen für speicherverschiebung oder
+datenverlust machen und wieder zurück reinladen. (Modbus TCP)
